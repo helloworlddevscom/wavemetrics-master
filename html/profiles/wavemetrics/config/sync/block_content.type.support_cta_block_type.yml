@@ -1,0 +1,8 @@
+uuid: 3ec205e4-c769-4310-8079-24694c3ec8e1
+langcode: en
+status: true
+dependencies: {  }
+id: support_cta_block_type
+label: 'Support CTA Block Type'
+revision: 0
+description: ''

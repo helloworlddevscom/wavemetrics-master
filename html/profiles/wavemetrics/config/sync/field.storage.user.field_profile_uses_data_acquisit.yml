@@ -1,0 +1,18 @@
+uuid: a4092bfd-a4af-457c-98b3-96a449c45a2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_profile_uses_data_acquisit
+field_name: field_profile_uses_data_acquisit
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

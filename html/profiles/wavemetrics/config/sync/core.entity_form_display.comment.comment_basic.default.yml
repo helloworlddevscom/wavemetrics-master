@@ -1,0 +1,43 @@
+uuid: 61c5d43d-d74e-4cbe-bc76-6fb55aecb5a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_basic
+    - field.field.comment.comment_basic.comment_body
+    - field.field.comment.comment_basic.field_comment_file
+    - field.field.comment.comment_basic.field_comment_subject
+    - field.field.comment.comment_basic.field_old_cid
+  module:
+    - file
+    - text
+id: comment.comment_basic.default
+targetEntityType: comment
+bundle: comment_basic
+mode: default
+content:
+  comment_body:
+    type: text_textarea
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  comment_notify_settings:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_comment_file:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+hidden:
+  author: true
+  field_comment_subject: true
+  field_old_cid: true
+  subject: true

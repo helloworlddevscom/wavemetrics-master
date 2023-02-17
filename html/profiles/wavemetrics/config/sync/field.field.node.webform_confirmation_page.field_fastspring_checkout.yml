@@ -1,0 +1,23 @@
+uuid: 1c85a74a-92f0-4f7a-bdcc-5a432947ca63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fastspring_checkout
+    - node.type.webform_confirmation_page
+id: node.webform_confirmation_page.field_fastspring_checkout
+field_name: field_fastspring_checkout
+entity_type: node
+bundle: webform_confirmation_page
+label: 'Enable FastSpring Checkout Overlays (if they exist)'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

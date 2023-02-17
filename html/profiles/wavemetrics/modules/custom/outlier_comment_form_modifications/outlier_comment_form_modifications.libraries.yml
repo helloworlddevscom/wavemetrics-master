@@ -1,0 +1,13 @@
+wavemetrics_ckeditor_adjustments:
+  version: 1.x
+  css:
+    component:
+      css/ckeditor.css: {}
+wavemetrics_admin_adjustments:
+  css:
+    component:
+      css/wm-admin.css: {}
+  js:
+    js/wm-instructions.js: {}
+  dependencies:
+    - core/jquery

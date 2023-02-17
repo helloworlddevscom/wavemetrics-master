@@ -1,0 +1,23 @@
+uuid: d7192448-5668-4c96-8a00-b726acb1faf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.type.field_taxonomy_old_tid
+    - taxonomy.vocabulary.type
+  module:
+    - text
+id: taxonomy_term.type.default
+targetEntityType: taxonomy_term
+bundle: type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_taxonomy_old_tid: true

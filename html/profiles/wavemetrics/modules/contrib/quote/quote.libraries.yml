@@ -1,0 +1,11 @@
+quote:
+  version: 1.x
+  css:
+    theme:
+      quote.css: {}
+  js:
+    quote.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+

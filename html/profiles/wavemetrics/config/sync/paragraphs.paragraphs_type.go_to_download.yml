@@ -1,0 +1,9 @@
+uuid: a42fd1d7-a06e-4ff0-9a30-1370e1521bd8
+langcode: en
+status: true
+dependencies: {  }
+id: go_to_download
+label: 'Go To Download'
+icon_uuid: null
+description: 'Inserts a link to go to a specific software family''s current download'
+behavior_plugins: {  }

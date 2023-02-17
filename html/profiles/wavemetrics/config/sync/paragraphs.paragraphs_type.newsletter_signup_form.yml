@@ -1,0 +1,9 @@
+uuid: ce471366-cf3e-450f-831e-22745ce46a9d
+langcode: en
+status: true
+dependencies: {  }
+id: newsletter_signup_form
+label: 'Newsletter Signup Form'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

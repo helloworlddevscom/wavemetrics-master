@@ -1,0 +1,9 @@
+<?php
+
+
+/**
+ * Implements hook_install().
+ */
+function codesnippet_igor_install() {
+    module_set_weight('codesnippet_igor','44');
+}

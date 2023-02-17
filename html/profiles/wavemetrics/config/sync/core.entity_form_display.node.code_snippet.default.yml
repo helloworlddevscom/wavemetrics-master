@@ -1,0 +1,88 @@
+uuid: e8a02925-b0dd-4632-94a4-0389df20906d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.code_snippet.body
+    - field.field.node.code_snippet.field_code_type
+    - field.field.node.code_snippet.field_comments_basic
+    - field.field.node.code_snippet.field_file_attachment
+    - field.field.node.code_snippet.field_image_multiple
+    - field.field.node.code_snippet.field_meta_tags
+    - field.field.node.code_snippet.field_old_path
+    - field.field.node.code_snippet.field_supported_version
+    - field.field.node.code_snippet.field_voting
+    - image.style.thumbnail
+    - node.type.code_snippet
+  module:
+    - comment
+    - file
+    - image
+    - text
+id: node.code_snippet.default
+targetEntityType: node
+bundle: code_snippet
+mode: default
+content:
+  body:
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_code_type:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_comments_basic:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_file_attachment:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_image_multiple:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_supported_version:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_meta_tags: true
+  field_old_path: true
+  field_voting: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

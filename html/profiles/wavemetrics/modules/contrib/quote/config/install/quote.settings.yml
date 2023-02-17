@@ -1,0 +1,8 @@
+# default settings for Quote module
+
+node_types:
+  - blog
+  - story
+node_link_display: 1
+format: 0
+nest: 2

@@ -1,0 +1,19 @@
+uuid: f46a13c6-c9bd-4757-9596-feaa9fdf2721
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_changelog
+    - node.type.prototype
+id: node.prototype.field_project_changelog
+field_name: field_project_changelog
+entity_type: node
+bundle: prototype
+label: 'Project Changelog'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

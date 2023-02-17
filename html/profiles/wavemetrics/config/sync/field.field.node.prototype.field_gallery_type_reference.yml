@@ -1,0 +1,29 @@
+uuid: 4463e815-6b08-421a-9f90-1a4771626eb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gallery_type_reference
+    - node.type.prototype
+    - taxonomy.vocabulary.gallery_item_type
+id: node.prototype.field_gallery_type_reference
+field_name: field_gallery_type_reference
+entity_type: node
+bundle: prototype
+label: 'Gallery Type Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gallery_item_type: gallery_item_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

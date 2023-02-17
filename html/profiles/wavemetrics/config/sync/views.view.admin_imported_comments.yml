@@ -1,0 +1,502 @@
+uuid: 8741d4f9-d3c8-424d-9d5e-49cca2a8b209
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_forum
+    - field.storage.comment.field_old_cid
+    - system.menu.administer-imported-content
+  module:
+    - comment
+    - node
+    - tracker
+    - user
+    - views_bulk_operations
+id: admin_imported_comments
+label: 'Admin Imported Comments'
+module: views
+description: ''
+tag: ''
+base_table: comment_field_data
+base_field: cid
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: perm
+        options:
+          perm: 'access comments'
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: mini
+        options:
+          items_per_page: 200
+          offset: 0
+          id: 0
+          total_pages: null
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          tags:
+            previous: ‹‹
+            next: ››
+      style:
+        type: table
+      row:
+        type: fields
+      relationships:
+        node:
+          id: node
+          table: comment_field_data
+          field: node
+          entity_type: comment_field_data
+          required: true
+          plugin_id: standard
+          relationship: none
+          group_type: group
+          admin_label: Content
+      fields:
+        views_bulk_operations_bulk_form:
+          id: views_bulk_operations_bulk_form
+          table: views
+          field: views_bulk_operations_bulk_form
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Operations
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          batch: true
+          batch_size: 10
+          form_step: true
+          buttons: false
+          action_title: Action
+          selected_actions:
+            -
+              action_id: comment_delete_action
+              preconfiguration:
+                label_override: ''
+          plugin_id: views_bulk_operations_bulk_form
+        subject:
+          id: subject
+          table: comment_field_data
+          field: subject
+          entity_type: comment
+          entity_field: subject
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          plugin_id: field
+          type: string
+          settings:
+            link_to_entity: true
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Title
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_old_cid:
+          id: field_old_cid
+          table: comment__field_old_cid
+          field: field_old_cid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Old CID'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        nid:
+          id: nid
+          table: tracker_node
+          field: nid
+          relationship: node
+          group_type: group
+          admin_label: ''
+          label: 'Parent Content NID'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          link_to_node: false
+          plugin_id: node
+        edit_node:
+          id: edit_node
+          table: node
+          field: edit_node
+          relationship: node
+          group_type: group
+          admin_label: ''
+          label: 'Go To Parent Content'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: 'Go To Parent Content'
+          entity_type: node
+          plugin_id: entity_link_edit
+        edit_comment:
+          id: edit_comment
+          table: comment
+          field: edit_comment
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Edit Comment'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: edit
+          entity_type: comment
+          plugin_id: entity_link_edit
+      filters:
+        comment_type:
+          id: comment_type
+          table: comment_field_data
+          field: comment_type
+          value:
+            comment_forum: comment_forum
+          entity_type: comment
+          entity_field: comment_type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_old_cid_value:
+          id: field_old_cid_value
+          table: comment__field_old_cid
+          field: field_old_cid_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not empty'
+          value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: string
+      sorts: {  }
+      title: 'Admin Imported Comments'
+      header: {  }
+      footer: {  }
+      empty: {  }
+      arguments: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags:
+        - 'config:field.storage.comment.field_old_cid'
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: admin/content/imported/wavemetrics/Comments
+      menu:
+        type: normal
+        title: Comments
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 20
+        context: '0'
+        menu_name: administer-imported-content
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags:
+        - 'config:field.storage.comment.field_old_cid'

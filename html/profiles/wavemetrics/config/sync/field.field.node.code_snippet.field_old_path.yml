@@ -1,0 +1,19 @@
+uuid: 779f8fad-ca68-4bc2-ab65-dc828a878b9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_old_path
+    - node.type.code_snippet
+id: node.code_snippet.field_old_path
+field_name: field_old_path
+entity_type: node
+bundle: code_snippet
+label: 'Old Path'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

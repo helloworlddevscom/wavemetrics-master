@@ -1,0 +1,56 @@
+<div class="software-wrapper">
+
+    <label>Download Software:</label>
+    {% spaceless %}    
+        {% if content.field_file_mac | render %}
+            <a class="software-link" href="{{ content.field_file_mac|escape|striptags('<!-- -->') }}">Download Mac Version</a>
+        {% endif %}
+        {% if content.field_file_win | render %}
+            <a class="software-link" href="{{ content.field_file_win|escape|striptags('<!-- -->') }}">Download Windows Version</a>
+        {% endif %}
+        {% if content.field_file_win_zip | render %}
+            <a class="software-link software-link-last" href="{{ content.field_file_win_zip|escape|striptags('<!-- -->') }}">Windows (.zip)</a>
+        {% endif %}
+    {% endspaceless %}
+    <label>Specifications:</label>
+    <table>
+        <tbody>
+            {% if content.field_release_type %}
+                <tr>
+                    <td>Release Type:</td>
+                    <td>{{ content.field_release_type }}</td>
+                </tr>
+            {% endif %}
+            {% if content.field_product_catalog_reference %}
+                <tr>
+                    <td>Product Catalog:</td>
+                    <td>{{ content.field_product_catalog_reference }}</td>
+                </tr>
+            {% endif %}
+            {% if content.field_software_family %}
+                <tr>
+                    <td>Software Family:</td>
+                    <td>{{ content.field_software_family }}</td>
+                </tr>
+            {% endif %}
+            {% if content.field_version_number %}
+                <tr>
+                    <td>Version Number:</td>
+                    <td>{{ content.field_version_number }}</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    {% if content.field_readme_ref %}
+        <span role="tab" tabindex="{{ node.nid.0.value }}" class="release-title"  aria-controls="release-{{ node.nid.0.value }}" title="{{ label }}">View Readme</span>
+        <div role="tabpanel" id="release-{{ node.nid.0.value }}" class="release-notes" aria-labelledby="tab">
+            {{ content.field_readme_ref }}
+        </div>
+    {% endif %}
+
+    {% if content.field_paragraphs %}
+        {{ content.field_paragraphs }}
+    {% endif %}
+
+</div>

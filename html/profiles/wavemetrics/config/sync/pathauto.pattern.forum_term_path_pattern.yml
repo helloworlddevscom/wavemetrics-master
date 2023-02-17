@@ -1,0 +1,23 @@
+uuid: 00a9d0bb-e828-46b5-aea3-d6a471d593a2
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: forum_term_path_pattern
+label: 'Forum Term Path Pattern'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/forum/[term:name]'
+selection_criteria:
+  0b898186-43a9-4f4c-86fb-a44d6bfa90bb:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      forums: forums
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 0b898186-43a9-4f4c-86fb-a44d6bfa90bb
+selection_logic: and
+weight: -5
+relationships: {  }

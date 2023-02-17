@@ -1,0 +1,18 @@
+uuid: 04409932-91d5-4c93-8a5f-375406b2e8e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_profile_contlist_forums_li
+field_name: field_profile_contlist_forums_li
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

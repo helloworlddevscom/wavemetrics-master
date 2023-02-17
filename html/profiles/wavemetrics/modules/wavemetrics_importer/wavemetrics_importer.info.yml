@@ -1,0 +1,5 @@
+name: WaveMetrics Importer
+type: module
+description: 'Custom Module to Import WaveMetrics Content'
+package: WaveMetrics
+core: 8.x

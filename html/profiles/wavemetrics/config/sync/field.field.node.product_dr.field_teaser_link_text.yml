@@ -1,0 +1,19 @@
+uuid: eb109d7c-d281-45f1-b683-294b6e63f586
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_link_text
+    - node.type.product_dr
+id: node.product_dr.field_teaser_link_text
+field_name: field_teaser_link_text
+entity_type: node
+bundle: product_dr
+label: 'Text For Teaser Link'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

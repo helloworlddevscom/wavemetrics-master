@@ -1,0 +1,31 @@
+uuid: e0e8fa04-4f12-4d67-b841-7b60d797bde4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.case_studies.field_meta_tags
+    - field.field.node.case_studies.field_old_path
+    - field.field.node.case_studies.field_paragraphs
+    - node.type.case_studies
+  module:
+    - entity_reference_revisions
+    - user
+id: node.case_studies.default
+targetEntityType: node
+bundle: case_studies
+mode: default
+content:
+  field_paragraphs:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  field_meta_tags: true
+  field_old_path: true
+  links: true
+  share_everywhere: true

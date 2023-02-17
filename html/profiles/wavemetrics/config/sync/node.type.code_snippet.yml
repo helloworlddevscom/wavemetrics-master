@@ -1,0 +1,17 @@
+uuid: 725e0fb0-1785-44c0-9544-eb8fe76d1534
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Code Snippet'
+type: code_snippet
+description: 'A (short) piece of code that serves a specific purpose.  Larger pieces of code with multiple functions, etc. should usually be created as a project instead.'
+help: '<p><i>Note: All WaveMetrics users who have logged in can edit any code snippet. </i></p><h3 id="wm-instruction-header" class="wm-instruction-toggle"><img src="/sites/www.wavemetrics.com/files/instructions/instructions_icon.png"> How To Insert Code</h3><div id="wm-instructions"><p>1) You may use the WYSIWYG to Insert Code Snippets. When properly inserted, code will be syntax highlighted.</p><p>Use the “Insert Code Snippet” Button:<br/><img src="/sites/www.wavemetrics.com/files/instructions/CodeInsertButton-resized.png"></p><p>2) Choose your language and add your code:<br/><img src="/sites/www.wavemetrics.com/files/instructions/CodeInsertOverlay-resized.png"></p></div>'
+new_revision: false
+preview_mode: 1
+display_submitted: true

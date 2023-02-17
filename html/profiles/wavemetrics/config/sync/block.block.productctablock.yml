@@ -1,0 +1,31 @@
+uuid: 4d3e7e5d-7334-4970-9035-a6e5398ef047
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:product_cta_block_type:3a0cac0c-ba51-4a9c-a496-aa76a1f134c7'
+  module:
+    - block_content
+    - system
+  theme:
+    - wave
+id: productctablock
+theme: wave
+region: bottom_content
+weight: -7
+provider: null
+plugin: 'block_content:3a0cac0c-ba51-4a9c-a496-aa76a1f134c7'
+settings:
+  id: 'block_content:3a0cac0c-ba51-4a9c-a496-aa76a1f134c7'
+  label: 'Product CTA Block'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/product/*\r\n/user\r\n/user/*\r\n/forum\r\n/forum/*\r\n/cart\r\n/cart/*\r\n/checkout\r\n/checkout/*"
+    negate: true
+    context_mapping: {  }

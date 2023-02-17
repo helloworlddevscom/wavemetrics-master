@@ -1,0 +1,23 @@
+uuid: 086c9f46-0a13-4a91-b2df-89234d8009e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_general_cta
+    - node.type.home_page
+  module:
+    - link
+id: node.home_page.field_general_cta
+field_name: field_general_cta
+entity_type: node
+bundle: home_page
+label: 'General CTA'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

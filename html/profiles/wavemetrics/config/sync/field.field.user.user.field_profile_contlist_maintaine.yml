@@ -1,0 +1,24 @@
+uuid: 0a21c198-71e2-41ef-a1ff-af19edf1fbfb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_contlist_maintaine
+  module:
+    - user
+id: user.user.field_profile_contlist_maintaine
+field_name: field_profile_contlist_maintaine
+entity_type: user
+bundle: user
+label: 'I am an author/maintainer of a package'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

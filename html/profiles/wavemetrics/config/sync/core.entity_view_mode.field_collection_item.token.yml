@@ -1,0 +1,10 @@
+uuid: 8e82a467-3060-4f64-9d5c-3271851360c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+id: field_collection_item.token
+label: Token
+targetEntityType: field_collection_item
+cache: true

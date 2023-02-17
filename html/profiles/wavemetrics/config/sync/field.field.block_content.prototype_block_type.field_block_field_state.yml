@@ -1,0 +1,19 @@
+uuid: 42d68b89-13e1-49d5-b289-57d51d92d8ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.prototype_block_type
+    - field.storage.block_content.field_block_field_state
+id: block_content.prototype_block_type.field_block_field_state
+field_name: field_block_field_state
+entity_type: block_content
+bundle: prototype_block_type
+label: 'Block Field - State'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

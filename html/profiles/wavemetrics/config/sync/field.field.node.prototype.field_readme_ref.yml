@@ -1,0 +1,28 @@
+uuid: 9edb7aa3-6579-4638-895b-e4477f853019
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_readme_ref
+    - node.type.prototype
+    - node.type.readme
+id: node.prototype.field_readme_ref
+field_name: field_readme_ref
+entity_type: node
+bundle: prototype
+label: Readme
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      readme: readme
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

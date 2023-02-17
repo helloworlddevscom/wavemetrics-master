@@ -1,0 +1,29 @@
+uuid: a581235d-c634-4fcf-92a8-f09ddbbb897e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_software_family
+    - node.type.prototype
+    - taxonomy.vocabulary.product_family_downloads
+id: node.prototype.field_software_family
+field_name: field_software_family
+entity_type: node
+bundle: prototype
+label: 'Software Family'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_family_downloads: product_family_downloads
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

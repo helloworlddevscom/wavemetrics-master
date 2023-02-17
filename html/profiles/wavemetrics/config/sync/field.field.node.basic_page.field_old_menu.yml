@@ -1,0 +1,19 @@
+uuid: 0d01f3f1-28fa-4532-94bb-84e9fca1fa98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_old_menu
+    - node.type.basic_page
+id: node.basic_page.field_old_menu
+field_name: field_old_menu
+entity_type: node
+bundle: basic_page
+label: 'Old Menu'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

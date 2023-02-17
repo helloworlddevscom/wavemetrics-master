@@ -1,0 +1,19 @@
+uuid: 24c5de1b-f96e-4af6-891e-8b8fcc694aea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_menu_old_parent
+    - system.menu.menu-prototype
+id: menu_link_content.menu-prototype.field_menu_old_parent
+field_name: field_menu_old_parent
+entity_type: menu_link_content
+bundle: menu-prototype
+label: 'Menu Old Parent'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

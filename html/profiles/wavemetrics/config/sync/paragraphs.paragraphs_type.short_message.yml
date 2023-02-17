@@ -1,0 +1,9 @@
+uuid: 8833cee0-a8d3-4b76-88ec-064a3e2dac1c
+langcode: en
+status: true
+dependencies: {  }
+id: short_message
+label: 'Short Message'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

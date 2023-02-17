@@ -1,0 +1,9 @@
+uuid: edd521ab-af4e-4608-b134-c2923cd0d135
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph_product_features_table
+label: 'Paragraph - Product Features Table'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

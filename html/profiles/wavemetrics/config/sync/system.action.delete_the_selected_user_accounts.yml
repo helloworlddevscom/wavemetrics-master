@@ -1,0 +1,18 @@
+uuid: 02c7a656-1e9d-49c1-8642-5ffae8970a3c
+langcode: en
+status: true
+dependencies:
+  module:
+    - views_bulk_operations
+id: delete_the_selected_user_accounts
+label: 'Cancel and Delete the selected user accounts'
+type: user
+plugin: vbo_cancel_user_action
+configuration:
+  label: 'Cancel and Delete the selected user accounts'
+  id: delete_the_selected_user_accounts
+  plugin: vbo_cancel_user_action
+  type: user
+  user_cancel_method: user_cancel_delete
+  user_cancel_confirm: 0
+  user_cancel_notify: false

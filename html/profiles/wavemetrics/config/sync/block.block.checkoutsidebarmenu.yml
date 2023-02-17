@@ -1,0 +1,37 @@
+uuid: 27ad6bf2-0a9c-42f7-a32c-6367bb00d021
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.continue-shopping
+  module:
+    - menu_block
+    - system
+  theme:
+    - wave
+id: checkoutsidebarmenu
+theme: wave
+region: sidebar
+weight: -4
+provider: null
+plugin: 'menu_block:continue-shopping'
+settings:
+  id: 'menu_block:continue-shopping'
+  label: 'Checkout Sidebar Menu'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'continue-shopping:'
+  suggestion: main
+  label_type: block
+  label_link: false
+visibility:
+  request_path:
+    id: request_path
+    pages: "/checkout\r\n/checkout/*\r\n/cart\r\n/cart/*"
+    negate: false
+    context_mapping: {  }

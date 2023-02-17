@@ -1,0 +1,8 @@
+uuid: b883e162-c9ee-4af5-b7ca-0d894bc7476d
+langcode: en
+status: true
+dependencies: {  }
+id: administer-imported-content
+label: 'Administer Imported Content'
+description: ''
+locked: false

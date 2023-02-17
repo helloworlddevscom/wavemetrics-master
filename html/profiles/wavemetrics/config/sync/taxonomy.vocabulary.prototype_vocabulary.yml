@@ -1,0 +1,8 @@
+uuid: c3ca18ec-8acc-41e5-acd6-5f8a3a2a55d3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Prototype Vocabulary'
+vid: prototype_vocabulary
+description: 'An admin taxonomy. A container used to store all fields for admin user. This vocabulary is not meant for use with content. '
+weight: 0

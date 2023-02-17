@@ -1,0 +1,38 @@
+uuid: 31a24c7e-e48b-462a-bddb-1e256f852979
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_single
+    - node.type.product_dr
+  module:
+    - image
+id: node.product_dr.field_image_single
+field_name: field_image_single
+entity_type: node
+bundle: product_dr
+label: 'Header Image'
+description: 'This image will be resized to a max width of 1440px and maintain the original aspect ratio without any cropping. Suggested aspect ratio is 16x9, but it more important that all product images share the same aspect ratio. Please ensure image is saved for web to reduce file size before uploading.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

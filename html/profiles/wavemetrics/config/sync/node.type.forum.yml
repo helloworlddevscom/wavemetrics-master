@@ -1,0 +1,22 @@
+uuid: 56ea250e-27c8-483d-b679-a0cc4de1483d
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - forum
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: ERCHDVB33lub-cz7DSYR7HuBlYJjmVUdPw0IIYa3ZXc
+name: 'Forum topic'
+type: forum
+description: 'A <em>forum topic</em> starts a new discussion thread within a forum.'
+help: '<h3 id="wm-instruction-header" class="wm-instruction-toggle"><img src="/sites/www.wavemetrics.com/files/instructions/instructions_icon.png"> How To Insert Code</h3><div id="wm-instructions"><p>1) You may use the WYSIWYG to Insert Code Snippets. When properly inserted, code will be syntax highlighted.</p><p>Use the “Insert Code Snippet” Button:<br/><img src="/sites/www.wavemetrics.com/files/instructions/CodeInsertButton-resized.png"></p><p>2) Choose your language and add your code:<br/><img src="/sites/www.wavemetrics.com/files/instructions/CodeInsertOverlay-resized.png"></p></div>'
+new_revision: false
+preview_mode: 1
+display_submitted: true

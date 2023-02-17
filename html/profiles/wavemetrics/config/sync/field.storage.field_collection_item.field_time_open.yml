@@ -1,0 +1,20 @@
+uuid: 1b535d24-6de1-4ce0-9f8f-b71a6eda1a8a
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - field_collection
+id: field_collection_item.field_time_open
+field_name: field_time_open
+entity_type: field_collection_item
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

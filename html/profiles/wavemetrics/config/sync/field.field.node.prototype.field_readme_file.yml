@@ -1,0 +1,27 @@
+uuid: fe88b791-2322-4c07-acd6-8982a7f21a14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_readme_file
+    - node.type.prototype
+  module:
+    - file
+id: node.prototype.field_readme_file
+field_name: field_readme_file
+entity_type: node
+bundle: prototype
+label: 'Readme File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: redme-files
+  file_extensions: 'txt pdf png jpg doc docx'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

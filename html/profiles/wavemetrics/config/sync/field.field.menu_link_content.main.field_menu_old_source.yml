@@ -1,0 +1,19 @@
+uuid: 48eda704-30c8-4d53-8b0d-9f033349e8c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_menu_old_source
+    - system.menu.main
+id: menu_link_content.main.field_menu_old_source
+field_name: field_menu_old_source
+entity_type: menu_link_content
+bundle: main
+label: 'Menu Old Source'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

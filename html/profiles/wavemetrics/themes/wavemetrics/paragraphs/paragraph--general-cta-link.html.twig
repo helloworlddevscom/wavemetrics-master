@@ -1,0 +1,6 @@
+<a class="general-cta-link" href="{{ content.field_paragraph_single_link[0]['#url'].toString() }}">
+    <h2>{{ content.field_paragraph_single_link['#items'].0.title }}</h2>
+    {% if content.field_paragraph_p | render %}
+        {{ content.field_paragraph_p }}
+    {% endif %}
+</a>

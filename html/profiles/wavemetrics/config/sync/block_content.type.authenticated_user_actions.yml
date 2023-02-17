@@ -1,0 +1,8 @@
+uuid: 1f5bc9d0-d7f2-4962-8173-05639c5b2f4d
+langcode: en
+status: true
+dependencies: {  }
+id: authenticated_user_actions
+label: 'Authenticated User Actions'
+revision: 0
+description: ''

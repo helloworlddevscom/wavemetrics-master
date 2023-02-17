@@ -1,0 +1,53 @@
+uuid: f755d772-a54b-48ee-b77f-79f2ca5dff79
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.code_snippet.body
+    - field.field.node.code_snippet.field_code_type
+    - field.field.node.code_snippet.field_comments_basic
+    - field.field.node.code_snippet.field_file_attachment
+    - field.field.node.code_snippet.field_image_multiple
+    - field.field.node.code_snippet.field_meta_tags
+    - field.field.node.code_snippet.field_old_path
+    - field.field.node.code_snippet.field_supported_version
+    - field.field.node.code_snippet.field_voting
+    - node.type.code_snippet
+  module:
+    - file
+    - user
+id: node.code_snippet.teaser
+targetEntityType: node
+bundle: code_snippet
+mode: teaser
+content:
+  field_code_type:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_file_attachment:
+    type: file_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_comments_basic: true
+  field_image_multiple: true
+  field_meta_tags: true
+  field_old_path: true
+  field_supported_version: true
+  field_voting: true
+  share_everywhere: true

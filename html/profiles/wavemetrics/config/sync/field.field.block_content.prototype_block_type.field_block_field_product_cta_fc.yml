@@ -1,0 +1,21 @@
+uuid: 6dc403e1-c659-4cfe-85fb-68f23f0f82c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.prototype_block_type
+    - field.storage.block_content.field_block_field_product_cta_fc
+  module:
+    - field_collection
+id: block_content.prototype_block_type.field_block_field_product_cta_fc
+field_name: field_block_field_product_cta_fc
+entity_type: block_content
+bundle: prototype_block_type
+label: 'Block Field - Product CTA FC'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection

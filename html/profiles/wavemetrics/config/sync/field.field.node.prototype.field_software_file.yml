@@ -1,0 +1,27 @@
+uuid: be4174cc-41d1-4fb7-ad8a-bd41b094dccc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_software_file
+    - node.type.prototype
+  module:
+    - file
+id: node.prototype.field_software_file
+field_name: field_software_file
+entity_type: node
+bundle: prototype
+label: 'Software File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: software
+  file_extensions: 'pdf jpg png'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

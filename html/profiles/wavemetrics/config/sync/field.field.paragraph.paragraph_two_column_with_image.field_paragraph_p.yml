@@ -1,0 +1,19 @@
+uuid: 16bcf283-14ce-4f1a-accd-f63ca8c9ce9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_p
+    - paragraphs.paragraphs_type.paragraph_two_column_with_image
+id: paragraph.paragraph_two_column_with_image.field_paragraph_p
+field_name: field_paragraph_p
+entity_type: paragraph
+bundle: paragraph_two_column_with_image
+label: 'Paragraph p'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

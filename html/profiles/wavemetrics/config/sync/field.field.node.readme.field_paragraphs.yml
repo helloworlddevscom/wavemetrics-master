@@ -1,0 +1,62 @@
+uuid: d15eb79c-635a-4ed1-8912-f9f3b31c23b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.readme
+  module:
+    - entity_reference_revisions
+id: node.readme.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: readme
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      background_image_gallery:
+        weight: 13
+        enabled: false
+      general_cta_link:
+        weight: 14
+        enabled: false
+      go_to_download:
+        weight: 15
+        enabled: false
+      newsletter_signup_form:
+        weight: 16
+        enabled: false
+      paragraph_full_html:
+        weight: 17
+        enabled: false
+      paragraph_product_features_table:
+        weight: 18
+        enabled: false
+      paragraph_project_release:
+        weight: 19
+        enabled: false
+      paragraph_prototype:
+        weight: 20
+        enabled: false
+      paragraph_table:
+        weight: 21
+        enabled: false
+      paragraph_two_column_with_image:
+        weight: 22
+        enabled: false
+      short_message:
+        weight: 23
+        enabled: false
+      support_center_link:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

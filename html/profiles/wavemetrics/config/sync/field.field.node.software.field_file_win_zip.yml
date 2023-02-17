@@ -1,0 +1,23 @@
+uuid: 2a6d4fac-dfc2-43d3-bd37-447f0ff6f077
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_win_zip
+    - node.type.software
+  module:
+    - link
+id: node.software.field_file_win_zip
+field_name: field_file_win_zip
+entity_type: node
+bundle: software
+label: 'Windows Version (Additional Zip File)'
+description: 'Use this field only if you have also added a "Windows Version (Main File - .exe)" file. This field should only have a file of the format .zip. '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

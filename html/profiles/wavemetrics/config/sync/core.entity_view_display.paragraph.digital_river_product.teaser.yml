@@ -1,0 +1,24 @@
+uuid: 21327581-fa31-403c-bf29-fe359e36033e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.teaser
+    - field.field.paragraph.digital_river_product.field_paragraph_title
+    - field.field.paragraph.digital_river_product.field_paragraph_webform
+    - paragraphs.paragraphs_type.digital_river_product
+id: paragraph.digital_river_product.teaser
+targetEntityType: paragraph
+bundle: digital_river_product
+mode: teaser
+content:
+  field_paragraph_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_paragraph_webform: true

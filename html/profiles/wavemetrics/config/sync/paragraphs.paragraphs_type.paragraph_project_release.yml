@@ -1,0 +1,9 @@
+uuid: b4168519-96f3-4aca-b9e3-8e0daf80a7c0
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph_project_release
+label: 'Project Release'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

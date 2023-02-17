@@ -1,0 +1,14 @@
+uuid: 6567c368-0a65-446f-9cb5-d8e0421dc037
+langcode: en
+status: true
+dependencies: {  }
+name: 'Plain Text - Forced'
+format: plain_text_forced
+weight: 0
+filters:
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: true
+    weight: -10
+    settings: {  }

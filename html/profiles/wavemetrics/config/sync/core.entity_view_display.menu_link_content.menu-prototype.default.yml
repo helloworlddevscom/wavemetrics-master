@@ -1,0 +1,21 @@
+uuid: 3abf784f-f588-4661-a6b0-c61fcbaf5e81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.menu-prototype.field_menu_old_parent
+    - field.field.menu_link_content.menu-prototype.field_menu_old_source
+    - system.menu.menu-prototype
+id: menu_link_content.menu-prototype.default
+targetEntityType: menu_link_content
+bundle: menu-prototype
+mode: default
+content:
+  children:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_menu_old_parent: true
+  field_menu_old_source: true

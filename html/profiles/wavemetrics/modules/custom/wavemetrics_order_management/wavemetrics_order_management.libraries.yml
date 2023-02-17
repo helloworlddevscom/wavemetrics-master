@@ -1,0 +1,39 @@
+wm-fastspring:
+  js:
+    js/wm-fastspring.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+wm-fastspring-checkout:
+  js:
+    js/wm-fastspring-checkout.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+fastspring.builderjs:
+  remote: https://docs.fastspring.com/integrating-with-fastspring/store-builder-library
+  version: 1.x
+  license:
+    name: CUSTOM
+    url: https://fastspring.com/terms-use/
+    gpl-compatible: false
+  js:
+    https://d1f8f9xcsvx3ha.cloudfront.net/sbl/0.7.6/fastspring-builder.min.js: { type: external, attributes: { type: "text/javascript", data-storefront: "wavemetrics.onfastspring.com/popup-wavemetrics", 'id': 'fsc-api', 'data-popup-closed': 'onFSPopupClosed' } }
+wm-stripe-checkout:
+  js:
+    js/wm-stripe-checkout.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+wm-stripe-polyfill-fetch:
+  js:
+    https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch: { type: external, minified: true }
+wm-stripe-checkout_v3:
+  js:
+    https://js.stripe.com/v3/: { type: external, minified: true }
+wm-stripe-checkout-confirmation:
+  js:
+    js/wm-stripe-checkout-confirmation.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

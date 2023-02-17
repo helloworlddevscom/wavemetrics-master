@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Installation and uninstallation functions for the WaveMetrics Bug Fixes module.
+ */
+
+//Needed for update_8001
+use Drupal\user\Entity\User;
+
+/**
+ * Run these fixes every time.
+ */
+function wavemetrics_bug_fixes_install() {
+    // This was the first fix ever. Moving forward this module can stay enabled and updates will use hook_update_n
+    // If this module was uninstalled and reenabled, the only consequences would be users names starting with
+        // email_restistration_ would be reverted to the username part of the user's email. An unlikely and "not-negative results"
+   wavemetrics_bug_fixes_update_8001();
+
+}
+
+/**
+ * Fixes users who's username was wrongly updated to email_registration_********* because of a bug introduced in the
+ * email_registration module's upgrade to 1.0-rc6 (upgraded during the upgrade to Core 8.6.6).
+ * Bug: https://www.drupal.org/project/email_registration/issues/3024558
+ * Fix came from comment: https://www.drupal.org/project/email_registration/issues/3024558#comment-12955791
+ * Outlier Ticket: https://app.asana.com/0/406058977421395/1108684704350325
+ *
+ * Update 8001: Fixes users who's username was wrongly updated to email_registration_*********
+ */
+function wavemetrics_bug_fixes_update_8001() {
+    $ids = Drupal::entityQuery('user')
+        ->condition('status', 1)
+        ->condition('name', "email_registration_",'STARTS_WITH')
+        ->execute();
+    $users = User::loadMultiple($ids);
+    foreach ($users as $account) {
+        $new_name = preg_replace('/@.*$/', '', $account->getEmail());
+        // Clean up the username.
+        $new_name = email_registration_cleanup_username($new_name);
+        $new_name = email_registration_unique_username($new_name, $account->id());
+        print 'Setting username back to ' . $new_name . "\n";
+        $account->setUsername($new_name);
+        $account->save();
+    }
+}
+

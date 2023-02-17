@@ -1,0 +1,207 @@
+uuid: ec7c58c0-06c2-4bf8-a168-0c432161462a
+langcode: en
+status: open
+dependencies:
+  module:
+    - wavemetrics_order_management
+open: null
+close: null
+weight: 0
+uid: 3
+template: false
+archive: false
+id: digitalriver_igor_pro_academic
+title: 'Igor Pro Academic'
+description: 'These are the questions and data collected for Product orders. This is for Academic Igor Pro licenses and also allows for XOP and Nidaq purchases as an add-on.'
+category: 'Product Order Forms'
+elements: "header_container:\n  '#type': webform_flexbox\n  '#align_items': flex-end\n  header_product_name:\n    '#type': webform_markup\n    '#flex': 3\n    '#markup': |\n      <p>Academic order requests&nbsp;are processed after status verification, usually within one business day. We will then send you instructions on how to complete your academic order. You can begin using Igor now by <a href=\"/order/order_igordownloads.htm\">downloading Igor here</a>.</p>\n      \n      <p>To place a purchase order you must first <strong>Request a Quote</strong> by submitting&nbsp;this form. <a href=\"/order/igorpro/academic\">Link to this form</a>.</p>\n      \n      <h4>Select Your Igor Pro Product</h4>\n      \n  header_price:\n    '#type': webform_markup\n  header_quantity:\n    '#type': webform_markup\n    '#flex': 2\n    '#markup': Quantity\nigor_container:\n  '#type': webform_flexbox\n  '#align_items': center\n  product_title_igor:\n    '#type': webform_markup\n    '#flex': 3\n    '#markup': |\n      <strong>Igor Pro Academic</strong>\n      <p class=\"dr-product-descr\">A perpetual Academic Igor Pro License. WaveMetrics extends academic pricing to students and faculty in degree granting university programs and to academic institutions purchasing software for end-users in those positions. Our academic pricing is not intended for research facilities associated with universities unless the end-user is a student or teacher.</p>\n      \n  product_price_igor:\n    '#type': webform_markup\n    '#markup': '<strong><span data-sheets-formula=\"=R[-3]C[0]/2\" data-sheets-userformat=\"{&quot;2&quot;:1,&quot;3&quot;:[null,2,&quot;\\&quot;$\\&quot;#,##0.00&quot;,1]}\" data-sheets-value=\"{&quot;1&quot;:3,&quot;3&quot;:497.5}\" style=\"font-family:Arial; font-size:10pt; font-style:normal; text-align:right\">$695</span></strong>'\n  product_quantity_igor_su_acad:\n    '#type': number\n    '#title': 'Quantity (Igor Academic)'\n    '#title_display': invisible\n    '#required': true\n    '#flex': 2\n    '#default_value': '0'\n    '#format_items': comma\n    '#min': 0\n    '#step': 1\nigor_multiuser_container:\n  '#type': webform_flexbox\n  '#align_items': center\n  product_title_igor_multiuser:\n    '#type': webform_markup\n    '#flex': 3\n    '#markup': |\n      Academic Multi-User License (min of 3)\n      <p class=\"dr-product-descr\">An academic multi-user license authorizes Igor on multiple computers so long as the number of concurrent users does not exceed the number of seats on the license. An academic Igor multi-user license must have at least three seats.</p>\n      \n  product_price_igor_multiuser:\n    '#type': webform_markup\n    '#markup': |\n      <span class=\"dr-product-descr\">Starting at </span>$440<span class=\"dr-product-descr\"> per seat</span><br />\n      <a href=\"/order/order_volPrices#multiuserprices\" target=\"_blank\">See All Discounts</a>\n      \n  product_quantity_igor_mu_acad:\n    '#type': number\n    '#title': 'Quantity (Igor Academic Multiuser)'\n    '#title_display': invisible\n    '#flex': 2\n    '#format_items': comma\n    '#min': 3\n    '#step': 1\nigor_oneyear_container:\n  '#type': webform_flexbox\n  '#align_items': center\n  product_title_igor_oneyear:\n    '#type': webform_markup\n    '#flex': 3\n    '#markup': 'Igor Pro Academic One Year License<p class=\"dr-product-descr\">This academic license will expire in one year.</p>'\n  product_price_igor_oneyear:\n    '#type': webform_markup\n    '#markup': $225\n  product_quantity_igor_su_acad_expiring:\n    '#type': number\n    '#title': 'Quantity (Igor Academic Expiring)'\n    '#title_display': invisible\n    '#required': true\n    '#required_error': 'Quantity is required.'\n    '#flex': 2\n    '#default_value': '0'\n    '#format_items': comma\n    '#min': 0\n    '#step': 1\nmarkup_addons:\n  '#type': webform_markup\n  '#markup': '<h4>Add These Complementary Products</h4>'\nxop_container:\n  '#type': webform_flexbox\n  '#align_items': center\n  product_title_xop:\n    '#type': webform_markup\n    '#flex': 3\n    '#markup': 'XOP Toolkit<p class=\"dr-product-descr\">Allows a C programmer to extend Igor Pro. You can add operations, functions, menus, dialogs, and windows for data analysis, data acquisition or other purposes. Go to the <a href=\"/products/xoptoolkit\" target=\"_blank\">XOP Toolkit product page</a> for details.</p>'\n  product_price_xop:\n    '#type': webform_markup\n    '#markup': $100\n  product_quantity_xop_toolkit:\n    '#type': number\n    '#title': 'Quantity (XOP)'\n    '#title_display': invisible\n    '#required': true\n    '#required_error': 'Quantity is required.'\n    '#flex': 2\n    '#default_value': '0'\n    '#format_items': comma\n    '#min': 0\n    '#step': 1\nnidaq_container:\n  '#type': webform_flexbox\n  '#align_items': center\n  product_title_nidaq:\n    '#type': webform_markup\n    '#flex': 3\n    '#markup': 'NIDAQ Tools MX<p class=\"dr-product-descr\">Adds support for data acquisition directly into Igor Pro. It supports most &quot;multifunction data acquisition&quot; boards made by National Instruments. Go to the <a href=\"/products/nidaqtools\" target=\"_blank\"> NIDAQ Tools MX product page</a> for details.</p>'\n  product_price_nidaq:\n    '#type': webform_markup\n    '#markup': $225\n  product_quantity_nidaq_tools_mx:\n    '#type': number\n    '#title': 'Quantity (NIDAQ)'\n    '#title_display': invisible\n    '#required': true\n    '#required_error': 'Quantity is required.'\n    '#flex': 2\n    '#default_value': '0'\n    '#format_items': comma\n    '#min': 0\n    '#step': 1\nfooter_container:\n  '#type': webform_flexbox\n  footer_product_name:\n    '#type': webform_markup\n    '#flex': 3\n    '#markup': '<a href=\"/vat-and-sales-tax\">About VAT and Sales Tax</a>'\n  footer_product_price:\n    '#type': webform_markup\n    '#markup': '<a href=\"/vat-and-sales-tax\" target=\"_blank\">+VAT/Sales Tax where applicable</a>'\n  footer_product_quantity:\n    '#type': webform_markup\norder_name:\n  '#type': webform_name\n  '#title': 'Your Name'\n  '#title_display': ''\n  '#required': true\n  '#required_error': 'Your name is a required field.'\n  '#wrapper_type': container\n  '#title__access': false\n  '#first__help': 'Please provide your name. License keys and other other communications will be sent to you.'\n  '#first__required': true\n  '#middle__access': false\n  '#last__help': 'Please provide your name. License keys and other other communications will be sent to you.'\n  '#last__required': true\n  '#suffix__access': false\n  '#degree__access': false\norder_address:\n  '#type': webform_address\n  '#title': Address\n  '#title_display': ''\n  '#required': true\n  '#wrapper_type': container\n  '#address__access': false\n  '#address_2__access': false\n  '#city__access': false\n  '#state_province__required': true\n  '#state_province__type': textfield\n  '#postal_code__required': true\n  '#country__required': true\n  '#flexbox': '1'\norder_email:\n  '#type': email\n  '#title': Email\n  '#help': 'Please provide your email. License keys and other other communications are sent to this email.'\n  '#required': true\n  '#required_error': 'Email is a required field. License keys and other other data are sent to this email.'\norder_institution:\n  '#type': textfield\n  '#title': 'Institution Name'\n  '#help': 'Please provide name of your associated academic institute. It can speed the verification of your academic status.&nbsp;'\n  '#required': true\n  '#required_error': 'Institution Name is a required field. Please help us verify your academic status.'\norder_department:\n  '#type': textfield\n  '#title': 'Department (Field of Study)'\n  '#help': 'Please provide your Department (Field of Study) at this academic institute. It can speed the verification of your academic status.&nbsp;'\n  '#required': true\n  '#required_error': 'Department is a required field. Please help us verify your academic status.'\norder_position:\n  '#type': textfield\n  '#title': Position\n  '#help': 'Please provide your position at this academic institute. It can speed the verification of your academic status.&nbsp;'\n  '#required_error': 'Position is a required field. Please help us verify your academic status.'\norder_urlhelper:\n  '#type': url\n  '#title': 'Professional Profile URL (with https:// or http://)'\n  '#help': 'If you have a professional profile on a University website it can speed the verification of your academic status. If entered, please include https:// or http:// in the URL.'\n  '#placeholder': 'https://'\n  '#format_items': comma\norder_policy:\n  '#type': checkbox\n  '#title': 'I agree to the Academic License Policy'\n  '#description': '<div class=\"scrollable-y\"><h4>Academic License Policy</h4><p>WaveMetrics extends academic pricing to students and faculty in degree granting university programs and to academic institutions purchasing software for end-users in those positions. Our academic pricing is not intended for research facilities associated with universities unless the end-user is a student or teacher.</p></div>'\n  '#title_display': inline\n  '#description_display': before\n  '#required': true\n  '#required_error': 'You must agree to this license type''s policy by checking the corresponding box below. '\n  '#label_attributes':\n    class:\n      - dr-checkbox\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#states':\n    enabled:\n      - ':input[name=\"product_quantity_nidaq_tools_mx\"]':\n          value:\n            greater: '0'\n      - or\n      - ':input[name=\"product_quantity_xop_toolkit\"]':\n          value:\n            greater: '0'\n      - or\n      - ':input[name=\"product_quantity_igor_su_acad_expiring\"]':\n          value:\n            greater: '0'\n      - or\n      - ':input[name=\"product_quantity_igor_mu_acad\"]':\n          value:\n            greater: '0'\n      - or\n      - ':input[name=\"product_quantity_igor_su_acad\"]':\n          value:\n            greater: '0'\n    visible:\n      ':input[name=\"order_policy\"]':\n        checked: true"
+css: ''
+javascript: ''
+settings:
+  ajax: true
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: order/igorpro/academic
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: url
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: /order/confirmation/academic
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  wm_fast_spring:
+    id: WMFastSpringHandler_form_handler
+    label: 'WM Fast Spring'
+    notes: ''
+    handler_id: wm_fast_spring
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      wm_fs_order_type: academic
+variants: {  }

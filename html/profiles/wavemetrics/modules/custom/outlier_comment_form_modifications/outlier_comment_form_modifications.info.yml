@@ -1,0 +1,6 @@
+name: Outlier Comment Form Modifications
+type: module
+description: 'Modifies elements of comment forms'
+package: Outlier
+core: 8.x
+hidden: false

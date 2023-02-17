@@ -1,0 +1,21 @@
+uuid: cfc4c1e1-5f49-410a-a5a8-7fc512b9adf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_time_close
+    - field_collection.field_collection.field_prototype_fc_field
+  module:
+    - datetime
+id: field_collection_item.field_prototype_fc_field.field_time_close
+field_name: field_time_close
+entity_type: field_collection_item
+bundle: field_prototype_fc_field
+label: 'Time Close'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

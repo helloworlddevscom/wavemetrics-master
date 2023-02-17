@@ -1,0 +1,325 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for WaveMetrics Order Management
+ *
+ * This table contains order information in a format similar to the order management system used at WaveMetrics. WaveMetrics will read and write to this table to retrieve order inforamtion. Column definitions match the WaveMetrics table as closely as possible
+ *
+ */
+
+use Drupal\Core\Database\Database;
+
+function wavemetrics_order_management_schema()
+{
+    $schema['weborders'] = array(
+        'description' => "This table contains order information in a format similar to the order management system used at WaveMetrics. WaveMetrics will read and write to this table to retrieve order inforamtion. Column definitions match the WaveMetrics table as closely as possible",
+        'fields' => array(
+            'entryid' => array(
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ),
+            'orderid' => array(
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => FALSE,
+                'length' => 10,
+            ),
+            'email' => array(
+                'type' => 'varchar',
+                'length' => 320,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'name' => array(
+                'type' => 'text',
+                'not null' => FALSE,
+            ),
+            'amountcents' => array(
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => FALSE,
+                'default' => 0,
+                'length' => 10,
+            ),
+            'address1' => array(
+                'type' => 'varchar',
+                'length' => 128,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'city' => array(
+                'type' => 'varchar',
+                'length' => 45,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'state' => array(
+                'type' => 'varchar',
+                'length' => 45,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'zip' => array(
+                'type' => 'varchar',
+                'length' => 45,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'country' => array(
+                'type' => 'varchar',
+                'length' => 45,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'phone' => array(
+                'type' => 'varchar',
+                'length' => 45,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'ordertime' => array(
+                'type' => 'varchar',
+                'mysql_type' => 'datetime',
+                'not null' => FALSE,
+            ),
+            'handled' => array(
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => FALSE,
+                'default' => 0,
+                'length' => 11,
+            ),
+            'wmdborderid' => array(
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => FALSE,
+                'default' => 0,
+                'length' => 10,
+            ),
+            'stripecustomerid' => array(
+                'type' => 'text',
+                'not null' => FALSE,
+            ),
+            'orderitems' => array(
+                'type' => 'text',
+                'not null' => FALSE,
+            ),
+            'comment' => array(
+                'type' => 'text',
+                'not null' => FALSE,
+            ),
+            'ordertype' => array(
+                'type' => 'varchar',
+                'length' => 16,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'confirmation' => array(
+                'type' => 'varchar',
+                'length' => 45,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'institution' => array(
+                'type' => 'varchar',
+                'length' => 250,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'department' => array(
+                'type' => 'varchar',
+                'length' => 200,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'degree' => array(
+                'type' => 'varchar',
+                'length' => 128,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'urlhelper' => array(
+                'type' => 'text',
+                'not null' => FALSE,
+            ),
+            'request' => array(
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => FALSE,
+                'default' => 0,
+                'length' => 1,
+            ),
+            'course' => array(
+                'type' => 'varchar',
+                'length' => 128,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'serials' => array(
+                'type' => 'text',
+                'not null' => FALSE,
+            ),
+            'source' => array(
+                'type' => 'varchar',
+                'length' => 128,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'position' => array(
+                'type' => 'varchar',
+                'length' => 128,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'activation' => array(
+                'type' => 'text',
+                'not null' => FALSE,
+            ),
+        ),
+        'primary key' => array('entryid'),
+        'auto increment' => 15000
+    );
+    return $schema;
+}
+
+/**
+ *
+ * New columns as products were adjusted for the move to Digital River
+ *
+ */
+function wavemetrics_order_management_update_8001(&$sandbox)
+{
+
+    $institution = array(
+        'type' => 'varchar',
+        'length' => 250,
+        'not null' => FALSE,
+        'default' => '',
+    );
+    $department = array(
+        'type' => 'varchar',
+        'length' => 200,
+        'not null' => FALSE,
+        'default' => '',
+    );
+    $degree = array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+        'default' => '',
+    );
+    $urlhelper = array(
+        'type' => 'text',
+        'not null' => FALSE,
+    );
+    $request = array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 0,
+        'length' => 1,
+    );
+    $course = array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 0,
+        'length' => 1,
+    );
+    $serials = array(
+        'type' => 'text',
+        'not null' => FALSE,
+    );
+
+    $schema = Database::getConnection()->schema();
+    $schema->addField('weborders', 'institution', $institution);
+    $schema->addField('weborders', 'department', $department);
+    $schema->addField('weborders', 'degree', $degree);
+    $schema->addField('weborders', 'urlhelper', $urlhelper);
+    $schema->addField('weborders', 'request', $request);
+    $schema->addField('weborders', 'course', $course);
+    $schema->addField('weborders', 'serials', $serials);
+
+}
+
+/**
+ *
+ * Lets denote if this is from Drupal Commerce or the Webforms.
+ *
+ */
+function wavemetrics_order_management_update_8002(&$sandbox)
+{
+
+    $source = array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+        'default' => '',
+    );
+
+    $schema = Database::getConnection()->schema();
+    $schema->addField('weborders', 'source', $source);
+
+}
+
+
+
+/**
+ *
+ * Add Two New Fields
+ *
+ */
+function wavemetrics_order_management_update_8003(&$sandbox)
+{
+
+    $position = array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+        'default' => '',
+    );
+    $activation = array(
+        'type' => 'text',
+        'not null' => FALSE,
+    );
+    $schema = Database::getConnection()->schema();
+    $schema->addField('weborders', 'position', $position);
+    $schema->addField('weborders', 'activation', $activation);
+}
+
+/**
+ *
+ * Change the `course` col to the type varchar(128) from INT.
+ *
+ */
+function wavemetrics_order_management_update_8004(&$sandbox)
+{
+    $course = array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+        'default' => '',
+    );
+    $schema = Database::getConnection()->schema();
+    $schema->changeField('weborders', 'course', 'course',$course);
+}
+
+/**
+ *
+ * Correct the column name `wmborderid` to `wmdborderid`
+ *
+ */
+function wavemetrics_order_management_update_8005(&$sandbox)
+{
+    $wmdborderid = array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 0,
+        'length' => 10,
+    );
+    $schema = Database::getConnection()->schema();
+    $schema->changeField('weborders', 'wmborderid', 'wmdborderid',$wmdborderid);
+}

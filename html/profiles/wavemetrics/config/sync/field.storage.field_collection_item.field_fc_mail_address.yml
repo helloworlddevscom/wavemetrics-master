@@ -1,0 +1,21 @@
+uuid: 3c31d95f-9a7f-4995-b067-efb28fb2d2ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+id: field_collection_item.field_fc_mail_address
+field_name: field_fc_mail_address
+entity_type: field_collection_item
+type: string
+settings:
+  max_length: 500
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

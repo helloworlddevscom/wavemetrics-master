@@ -1,0 +1,25 @@
+uuid: 2f8f7406-2f22-4bff-bbe7-98c8cf4799a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.faq.body
+    - node.type.faq
+  module:
+    - text
+    - user
+id: node.faq.default
+targetEntityType: node
+bundle: faq
+mode: default
+content:
+  body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  links: true
+  share_everywhere: true

@@ -1,0 +1,23 @@
+uuid: db508b69-a8ce-46f0-9cdf-df65838a7639
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.code_snippet
+  module:
+    - text
+id: node.code_snippet.body
+field_name: body
+entity_type: node
+bundle: code_snippet
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

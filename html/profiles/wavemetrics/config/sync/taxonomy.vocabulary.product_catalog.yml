@@ -1,0 +1,8 @@
+uuid: 019a5251-0615-481e-988c-4c84c9dcf541
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product Catalog'
+vid: product_catalog
+description: ''
+weight: 0

@@ -1,0 +1,68 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+ 
+function outlier_comment_form_modifications_form_alter(&$form, &$form_state, &$form_id) {
+
+	if ($form_id == 'comment_comment_basic_form' || $form_id == 'comment_comment_forum_form') {
+		
+		//Hide the "about text formats" link
+		$form['comment_body']['widget']['#after_build'][] = 'outlier_comment_form_modifications_allowed_formats_remove_textarea_help';
+		//Change the submit button text
+		$form['actions']['submit']['#value'] = 'Comment';
+		//Hide the preview button
+		unset($form['actions']['preview']);
+    
+	}
+
+	//user content creation preview form
+    if($form_id=="node_preview_form_select") {
+        //make the backlink look like a button
+        $form['backlink']['#options']['attributes']['class'][] = "button-action";
+        //Make the view mode select on a  new line.
+        $form['view_mode']['#prefix'] = "<div id='preview-view-mode-select'>";
+        $form['view_mode']['#suffix'] = "</div>";
+
+    }
+
+    //user content creation form
+    if($form_id=="node_forum_form" || $form_id=="node_code_snippet_form") {
+        //make the save button say "Post"
+        $form['actions']['submit']['#value']= t("Post Topic");
+    }
+    if($form_id=="node_code_snippet_form") {
+        //make the save button say "Post"
+        $form['actions']['submit']['#value']= t("Post Code Snippet");
+    }
+    if($form_id=="node_project_project_form") {
+        //make the save button say "Post"
+        $form['actions']['submit']['#value']= t("Post Project");
+    }
+
+}
+
+function outlier_comment_form_modifications_allowed_formats_remove_textarea_help($form_element, FormStateInterface $form_state) {
+
+	if (isset($form_element[0]['format'])) {
+	
+		// All this stuff is needed to hide the help text.
+		unset($form_element[0]['format']['guidelines']);
+		unset($form_element[0]['format']['help']);
+		unset($form_element[0]['format']['#type']);
+		unset($form_element[0]['format']['#theme_wrappers']);
+		$form_element[0]['format']['format']['#access'] = FALSE;
+		
+	}
+
+	return $form_element;
+}
+
+function outlier_comment_form_modifications_page_attachments(&$attachments){
+    $attachments['#attached']['library'][] =  'outlier_comment_form_modifications/wavemetrics_ckeditor_adjustments';
+    $attachments['#attached']['library'][] =  'outlier_comment_form_modifications/wavemetrics_admin_adjustments';
+}
+?>

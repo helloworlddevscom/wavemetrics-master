@@ -1,0 +1,19 @@
+<a class="blog-post-teaser-wrapper" href="{{ path('entity.node.canonical', {'node': node.id}) }}">    
+
+    <h2>{{ label }}</h2>
+    <p class="post-date">{{ node.createdtime | date('F j') }} at {{ node.createdtime | date('h:i a') }}</p>
+
+    <div class="blog-teaser-body">
+            
+        {% set text = content.body|render|striptags %}
+        <p>{{ text|length > 115 ? text|slice(0, 115) ~ '...' : text }}</p>
+                
+    </div>
+    
+    {% if content.field_blog_category | render %}
+        <div class="blog-tags">
+            {{ content.field_blog_category }}
+        </div>
+    {% endif %}
+
+</a>

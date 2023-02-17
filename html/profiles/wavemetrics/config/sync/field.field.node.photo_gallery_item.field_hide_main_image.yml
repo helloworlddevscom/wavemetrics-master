@@ -1,0 +1,23 @@
+uuid: b92db313-2171-46e5-985d-0473fd27befe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_main_image
+    - node.type.photo_gallery_item
+id: node.photo_gallery_item.field_hide_main_image
+field_name: field_hide_main_image
+entity_type: node
+bundle: photo_gallery_item
+label: 'Hide Main Image From Post (Thumbnail Only)'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

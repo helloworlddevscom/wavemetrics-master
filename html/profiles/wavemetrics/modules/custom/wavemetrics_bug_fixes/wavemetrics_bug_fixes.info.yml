@@ -1,0 +1,6 @@
+name: WaveMetrics Bug Fixes
+type: module
+description: 'Adjustments and modifications to the system to address bugs and issues that have arisen'
+package: WaveMetrics
+core: 8.x
+hidden: false

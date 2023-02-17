@@ -1,0 +1,42 @@
+uuid: 4361dc70-5e96-41f6-99aa-4c74c172ed7f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: -9
+is_admin: false
+permissions:
+  - 'access cart'
+  - 'access checkout'
+  - 'access comments'
+  - 'access content'
+  - 'access devel information'
+  - 'access kint'
+  - 'access user profiles'
+  - 'change own username'
+  - 'create code_snippet content'
+  - 'create forum content'
+  - 'create project_project content'
+  - 'edit any code_snippet content'
+  - 'edit own code_snippet content'
+  - 'edit own comments'
+  - 'edit own forum content'
+  - 'edit own project_project content'
+  - 'edit own vote on node:forum:field_voting'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'subscribe to comments'
+  - 'use text format basic_html'
+  - 'use text format forum_no_editor'
+  - 'use text format full_html'
+  - 'use text format plain_text_forced'
+  - 'use text format text'
+  - 'view commerce_product'
+  - 'view post access counter'
+  - 'view the administration theme'
+  - 'vote on node:code_snippet:field_voting'
+  - 'vote on node:forum:field_voting'

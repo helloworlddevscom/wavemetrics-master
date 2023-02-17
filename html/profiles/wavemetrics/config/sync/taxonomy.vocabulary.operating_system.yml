@@ -1,0 +1,8 @@
+uuid: af4a420c-a35f-4a44-af7a-53ca881fca10
+langcode: en
+status: true
+dependencies: {  }
+name: 'Operating System'
+vid: operating_system
+description: ''
+weight: 0

@@ -1,0 +1,19 @@
+uuid: f47cc496-2ff6-4278-aed6-745278b39d57
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+    - user
+id: user.field_profile_igor_uses
+field_name: field_profile_igor_uses
+entity_type: user
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

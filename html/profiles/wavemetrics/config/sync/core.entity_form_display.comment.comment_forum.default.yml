@@ -1,0 +1,45 @@
+uuid: dee6ca97-cb9b-48b6-93a4-db98520a4d23
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_forum
+    - field.field.comment.comment_forum.comment_body
+    - field.field.comment.comment_forum.field_comment_file
+    - field.field.comment.comment_forum.field_comment_subject
+    - field.field.comment.comment_forum.field_old_cid
+  module:
+    - file
+    - text
+_core:
+  default_config_hash: FbD0Vvben3VEPcKqe88Y_ABUUW3RKq0AGFLwtZtYaVY
+id: comment.comment_forum.default
+targetEntityType: comment
+bundle: comment_forum
+mode: default
+content:
+  comment_body:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 4
+      placeholder: 'Add your comment. Formatting is allowed.'
+    third_party_settings: {  }
+  comment_notify_settings:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_comment_file:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+hidden:
+  author: true
+  field_comment_subject: true
+  field_old_cid: true
+  subject: true

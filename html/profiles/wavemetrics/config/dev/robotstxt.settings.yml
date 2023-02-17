@@ -1,0 +1,3 @@
+content: "#\r\n# robots.txt\r\n#\r\n# DEV SITE\r\n#\r\n\r\nUser-agent: *\r\nDisallow: /"
+_core:
+  default_config_hash: ceCx5XZ_ay1Mxcv-sB95U_fBKoVkpvo8RaQiwutSZLI

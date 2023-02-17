@@ -1,0 +1,22 @@
+uuid: 02fb5e79-b331-4ea6-8db5-eac4edc3886f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: code_snippet_path_pattern
+label: 'Code Snippet Path Pattern'
+type: 'canonical_entities:node'
+pattern: '/code-snippet/[node:title]'
+selection_criteria:
+  f16ae6be-cea6-42b4-859d-fb1ef0fddc37:
+    id: node_type
+    bundles:
+      code_snippet: code_snippet
+    negate: false
+    context_mapping:
+      node: node
+    uuid: f16ae6be-cea6-42b4-859d-fb1ef0fddc37
+selection_logic: and
+weight: -5
+relationships: {  }

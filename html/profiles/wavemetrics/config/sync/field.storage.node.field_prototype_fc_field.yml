@@ -1,0 +1,19 @@
+uuid: 2ae5cfe4-578a-46d0-ab16-565c7e07bdc8
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+    - node
+id: node.field_prototype_fc_field
+field_name: field_prototype_fc_field
+entity_type: node
+type: field_collection
+settings: {  }
+module: field_collection
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

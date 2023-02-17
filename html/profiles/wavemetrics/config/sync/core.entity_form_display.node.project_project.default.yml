@@ -1,0 +1,192 @@
+uuid: 5cba1b81-ca15-4abd-b243-4a0472bb3b5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project_project.body
+    - field.field.node.project_project.field_comments_basic
+    - field.field.node.project_project.field_image_multiple
+    - field.field.node.project_project.field_meta_tags
+    - field.field.node.project_project.field_old_path
+    - field.field.node.project_project.field_os_compatibility
+    - field.field.node.project_project.field_paragraphs
+    - field.field.node.project_project.field_project_changelog
+    - field.field.node.project_project.field_project_cvs
+    - field.field.node.project_project.field_project_demo
+    - field.field.node.project_project.field_project_documentation
+    - field.field.node.project_project.field_project_homepage
+    - field.field.node.project_project.field_project_license
+    - field.field.node.project_project.field_project_screenshots
+    - field.field.node.project_project.field_project_type
+    - field.field.node.project_project.field_short_title
+    - field.field.node.project_project.field_supported_version
+    - image.style.thumbnail
+    - node.type.project_project
+  module:
+    - comment
+    - field_group
+    - image
+    - paragraphs
+    - text
+third_party_settings:
+  field_group:
+    group_project_details:
+      children:
+        - field_project_changelog
+        - field_project_documentation
+        - field_project_homepage
+        - field_project_cvs
+        - field_project_license
+        - field_project_demo
+        - field_project_screenshots
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Project Details'
+      region: content
+id: node.project_project.default
+targetEntityType: node
+bundle: project_project
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_comments_basic:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_image_multiple:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_os_compatibility:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_paragraphs:
+    weight: 8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_project_changelog:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_cvs:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_demo:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_documentation:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_homepage:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_license:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_screenshots:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_type:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_short_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_supported_version:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_meta_tags: true
+  field_old_path: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

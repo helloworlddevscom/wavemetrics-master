@@ -1,0 +1,32 @@
+uuid: 18d64188-abcf-4d70-878a-2696e1b880d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.digital_river_product.field_paragraph_title
+    - field.field.paragraph.digital_river_product.field_paragraph_webform
+    - paragraphs.paragraphs_type.digital_river_product
+  module:
+    - webform
+id: paragraph.digital_river_product.default
+targetEntityType: paragraph
+bundle: digital_river_product
+mode: default
+content:
+  field_paragraph_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_webform:
+    weight: 1
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+hidden: {  }

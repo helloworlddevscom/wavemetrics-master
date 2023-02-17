@@ -1,0 +1,23 @@
+uuid: 4101ea0d-8058-4eb3-bb5d-4bc2d8fd047d
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+    - file
+id: field_collection_item.field_fc_field_general_file
+field_name: field_fc_field_general_file
+entity_type: field_collection_item
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

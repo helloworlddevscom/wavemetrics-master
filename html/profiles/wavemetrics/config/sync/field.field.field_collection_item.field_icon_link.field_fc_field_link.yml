@@ -1,0 +1,23 @@
+uuid: 548049d1-0b98-4abd-90df-5287f609042f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_fc_field_link
+    - field_collection.field_collection.field_icon_link
+  module:
+    - link
+id: field_collection_item.field_icon_link.field_fc_field_link
+field_name: field_fc_field_link
+entity_type: field_collection_item
+bundle: field_icon_link
+label: 'FC Field - Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

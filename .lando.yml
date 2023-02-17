@@ -1,0 +1,11 @@
+name: wavemetrics
+recipe: lamp
+config:
+  webroot: html
+  php: '7.3'
+  via: apache
+  database: mysql
+  xdebug: true
+proxy:
+  appserver:
+    - local.wavemetrics.com

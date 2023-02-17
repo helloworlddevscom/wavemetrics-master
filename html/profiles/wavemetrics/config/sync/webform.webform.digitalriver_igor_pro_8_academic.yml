@@ -1,0 +1,207 @@
+uuid: 5416817e-acf8-455f-bc0e-571999877da7
+langcode: en
+status: open
+dependencies:
+  module:
+    - wavemetrics_order_management
+open: null
+close: null
+weight: 0
+uid: 3
+template: false
+archive: false
+id: digitalriver_igor_pro_8_academic
+title: 'Igor Pro Academic Upgrades'
+description: 'These are the questions and data collected for Product orders. This is for Academic Upgrades Igor Pro licenses and also allows for XOP and Nidaq purchases as an add-on.'
+category: 'Product Order Forms'
+elements: "header_container:\n  '#type': webform_flexbox\n  '#align_items': flex-end\n  header_product_name:\n    '#type': webform_markup\n    '#flex': 3\n    '#markup': |\n      <p>Academic upgrade requests&nbsp;are processed after we verify upgrade eligibility, usually within one business day. We will then&nbsp;send you instructions on how to complete your upgrade order. You can begin using Igor now by <a href=\"/order/order_igordownloads.htm\">downloading Igor here</a>.</p>\n      \n      <p>To place a purchase order you must first <strong>Request a Quote</strong> by submitting&nbsp;this form. <a href=\"/order/igorpro/academic-upgrades\">Link to this order form</a>.</p>\n      \n  header_price:\n    '#type': webform_markup\n  header_quantity:\n    '#type': webform_markup\n    '#markup': Quantity\nigor_academic_upgrade_container:\n  '#type': webform_flexbox\n  '#align_items': center\n  product_title_igor_upgrade:\n    '#type': webform_markup\n    '#flex': 3\n    '#markup': |\n      <strong>Igor Pro 9 Upgrade from Igor Pro 8</strong>\n      <p class=\"dr-product-descr\">Upgrade from a perpetual Igor Pro 8 License. A valid serial number and activation code will be required.</p>\n      \n  product_price_igor_upgrade:\n    '#type': webform_markup\n    '#markup': '<strong><span data-sheets-formula=\"=R[-3]C[0]/2\" data-sheets-userformat=\"{&quot;2&quot;:1,&quot;3&quot;:[null,2,&quot;\\&quot;$\\&quot;#,##0.00&quot;,1]}\" data-sheets-value=\"{&quot;1&quot;:3,&quot;3&quot;:497.5}\" style=\"font-family:Arial; font-size:10pt; font-style:normal; text-align:right\">$195</span></strong>'\n  product_quantity_igor_su_acad_upgrade:\n    '#type': number\n    '#title': Quantity\n    '#title_display': invisible\n    '#required': true\n    '#required_error': 'Quantity is required.'\n    '#default_value': '0'\n    '#min': 0\n    '#step': 1\nigor_academic_upgrade_old_container:\n  '#type': webform_flexbox\n  '#align_items': center\n  product_title_igor_su_acad_oldupgrade:\n    '#type': webform_markup\n    '#flex': 3\n    '#markup': |\n      <strong>Igor Pro 9 Upgrade from Igor Pro 7 or Earlier</strong>\n      <p class=\"dr-product-descr\">Upgrade from a perpetual Igor Pro 7 or earlier license. A valid serial number and activation code will be required.</p>\n      \n  product_price_igor_su_acad_oldupgrade:\n    '#type': webform_markup\n    '#markup': '<strong><span data-sheets-formula=\"=R[-3]C[0]/2\" data-sheets-userformat=\"{&quot;2&quot;:1,&quot;3&quot;:[null,2,&quot;\\&quot;$\\&quot;#,##0.00&quot;,1]}\" data-sheets-value=\"{&quot;1&quot;:3,&quot;3&quot;:497.5}\" style=\"font-family:Arial; font-size:10pt; font-style:normal; text-align:right\">$295</span></strong>'\n  product_quantity_igor_su_acad_oldupgrade:\n    '#type': number\n    '#title': Quantity\n    '#title_display': invisible\n    '#required': true\n    '#required_error': 'Quantity is required.'\n    '#default_value': '0'\n    '#min': 0\n    '#step': 1\nfooter_container:\n  '#type': webform_flexbox\n  footer_product_name:\n    '#type': webform_markup\n    '#flex': 3\n    '#markup': '<a href=\"/vat-and-sales-tax\">About VAT and Sales Tax</a>'\n  footer_product_price:\n    '#type': webform_markup\n    '#markup': '<a href=\"/vat-and-sales-tax\" target=\"_blank\">+VAT/Sales Tax where applicable</a>'\n  footer_product_quantity:\n    '#type': webform_markup\norder_email:\n  '#type': email\n  '#title': Email\n  '#help': 'Please provide your email. License keys and other other communications are sent to this email.'\n  '#required': true\n  '#required_error': 'Email is a requied field. License keys and other other data are sent to this email.'\norder_name:\n  '#type': webform_name\n  '#title': 'Your Name'\n  '#title_display': ''\n  '#required': true\n  '#required_error': 'Your name is a required field.'\n  '#wrapper_type': container\n  '#title__access': false\n  '#first__help': 'Please provide your name. License keys and other other communications will be sent to you.'\n  '#first__required': true\n  '#middle__access': false\n  '#last__help': 'Please provide your name. License keys and other other communications will be sent to you.'\n  '#last__required': true\n  '#suffix__access': false\n  '#degree__access': false\norder_address:\n  '#type': webform_address\n  '#title': Address\n  '#title_display': ''\n  '#required': true\n  '#wrapper_type': container\n  '#address__access': false\n  '#address_2__access': false\n  '#city__access': false\n  '#state_province__required': true\n  '#state_province__type': textfield\n  '#postal_code__required': true\n  '#country__required': true\n  '#flexbox': '1'\norder_upgrade_serial:\n  '#type': textfield\n  '#title': 'Serial Number(s)'\n  '#help': 'Upgrades require a serial number from a qualifying product. Enter multiple serial numbers using a comma seperator.'\n  '#required': true\n  '#required_error': 'Serial Number(s) is a required field. Upgrades require a serial number from a qualifying product.'\norder_activation_code:\n  '#type': textfield\n  '#title': 'Activation Code(s)'\n  '#help': |\n    <p>Upgrades require an activation code from a qualifying product. <a href=\"/contact-us\">Contact Us</a> for help locating your previous activation code.</p>\n    \n    <p>An Activation code will look something like:<br />\n    AAAA-BBBB-CCCC-DDDD-XXXX-YYYY-ZZZ (Igor 8)<br />\n    AAAA-BBBB-CCCC-DDDD-XXXX-YYYY-Z (Igor 7)<br />\n    AAAA-BBBB-CCCC-DDDD-XX (Igor 6)<br />\n    ABCDWXYZ (Igor 3-5)<br />\n    <br />\n    Enter multiple activation codes using a comma seperator.</p>\n    \norder_policy:\n  '#type': checkbox\n  '#title': 'I agree to the Academic License Policy'\n  '#description': '<div class=\"scrollable-y\"><h4>Academic License Policy</h4><p>WaveMetrics extends academic pricing to students and faculty in degree granting university programs and to academic institutions purchasing software for end-users in those positions. Our academic pricing is not intended for research facilities associated with universities unless the end-user is a student or teacher.</p></div>'\n  '#title_display': inline\n  '#description_display': before\n  '#required': true\n  '#required_error': 'You must agree to this license type''s policy by checking the corresponding box below. '\n  '#label_attributes':\n    class:\n      - dr-checkbox\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#states':\n    visible:\n      ':input[name=\"order_policy\"]':\n        checked: true\n    enabled:\n      - ':input[name=\"product_quantity_igor_su_acad_upgrade\"]':\n          value:\n            greater: '0'\n      - or\n      - ':input[name=\"product_quantity_igor_su_acad_oldupgrade\"]':\n          value:\n            greater: '0'"
+css: ''
+javascript: ''
+settings:
+  ajax: true
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: order/igorpro/academic-upgrades
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: url
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: /order/confirmation/academic-upgrade
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  wm_fast_spring:
+    id: WMFastSpringHandler_form_handler
+    label: 'WM Fast Spring'
+    notes: ''
+    handler_id: wm_fast_spring
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      wm_fs_order_type: academic
+variants: {  }

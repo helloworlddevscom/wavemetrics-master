@@ -1,0 +1,27 @@
+uuid: ed3b9945-a4bd-411b-b056-0ed5427ac77f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document
+    - node.type.documentation
+  module:
+    - file
+id: node.documentation.field_document
+field_name: field_document
+entity_type: node
+bundle: documentation
+label: Document
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: documents
+  file_extensions: 'txt pdf doc docx ppt ai psd indd'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

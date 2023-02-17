@@ -1,0 +1,6 @@
+name: Outlier Commerce Form Modifications
+type: module
+description: 'Modifies elements of various commerce cart forms'
+package: Outlier
+core: 8.x
+hidden: false

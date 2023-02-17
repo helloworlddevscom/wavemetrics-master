@@ -1,0 +1,29 @@
+uuid: 1f0514ae-d558-435e-ac17-1f5f118ffe42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_supported_version
+    - node.type.code_snippet
+    - taxonomy.vocabulary.supported_igor_version
+id: node.code_snippet.field_supported_version
+field_name: field_supported_version
+entity_type: node
+bundle: code_snippet
+label: 'Supported Version'
+description: 'Select the version of Igor on which this has been tested and is supported.  In most cases this will also run on later versions of Igor, so if you have used multiple versions of Igor for testing (eg. 7.00, 7.01, 7.02), choose the earliest version of Igor that works (in this example, Igor 7.00).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      supported_igor_version: supported_igor_version
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

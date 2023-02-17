@@ -1,0 +1,56 @@
+uuid: 0d484abe-3661-420a-b043-2002e90cf8c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.software
+  module:
+    - entity_reference_revisions
+id: node.software.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: software
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      background_image_gallery:
+        weight: 11
+        enabled: false
+      general_cta_link:
+        weight: 12
+        enabled: false
+      paragraph_full_html:
+        weight: 13
+        enabled: false
+      paragraph_product_features_table:
+        weight: 14
+        enabled: false
+      paragraph_project_release:
+        weight: 15
+        enabled: false
+      paragraph_prototype:
+        weight: 16
+        enabled: false
+      paragraph_table:
+        weight: 17
+        enabled: false
+      paragraph_two_column_with_image:
+        weight: 18
+        enabled: false
+      short_message:
+        weight: 19
+        enabled: false
+      support_center_link:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

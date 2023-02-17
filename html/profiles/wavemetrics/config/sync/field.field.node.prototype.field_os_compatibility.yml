@@ -1,0 +1,29 @@
+uuid: 138c8d40-c54d-4723-a5e6-2d712444fcd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_os_compatibility
+    - node.type.prototype
+    - taxonomy.vocabulary.operating_system_compatability
+id: node.prototype.field_os_compatibility
+field_name: field_os_compatibility
+entity_type: node
+bundle: prototype
+label: 'Operating System Compatibility'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      operating_system_compatability: operating_system_compatability
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

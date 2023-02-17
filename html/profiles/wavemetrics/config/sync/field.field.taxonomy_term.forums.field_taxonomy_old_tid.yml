@@ -1,0 +1,19 @@
+uuid: 2e48a857-d75d-401a-8286-5c78b66ee05c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_taxonomy_old_tid
+    - taxonomy.vocabulary.forums
+id: taxonomy_term.forums.field_taxonomy_old_tid
+field_name: field_taxonomy_old_tid
+entity_type: taxonomy_term
+bundle: forums
+label: 'Old TID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

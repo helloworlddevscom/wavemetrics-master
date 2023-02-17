@@ -1,0 +1,39 @@
+uuid: a10236c4-d29f-47ad-b136-61b1ed75f125
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:authenticated_user_actions:02decd88-3ec6-421b-9a4e-204fe08a3d4e'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - wave
+id: anonusercodesnippetactions
+theme: wave
+region: drupal
+weight: 0
+provider: null
+plugin: 'block_content:02decd88-3ec6-421b-9a4e-204fe08a3d4e'
+settings:
+  id: 'block_content:02decd88-3ec6-421b-9a4e-204fe08a3d4e'
+  label: 'Anon User Code Snippet Actions'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/code-snippets\r\n/code-snippets/*\r\n/code-snippet\r\n/code-snippet/*"
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

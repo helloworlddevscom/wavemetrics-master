@@ -1,0 +1,19 @@
+uuid: 28b6eb58-110b-433b-8b38-d5800dadf2bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+    - user
+id: user.field_profile_igoruse
+field_name: field_profile_igoruse
+entity_type: user
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

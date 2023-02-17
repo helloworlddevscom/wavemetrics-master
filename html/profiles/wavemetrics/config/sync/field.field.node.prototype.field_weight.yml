@@ -1,0 +1,23 @@
+uuid: ddd69d17-7e05-4d76-b450-8afc4b9ce97d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.prototype
+id: node.prototype.field_weight
+field_name: field_weight
+entity_type: node
+bundle: prototype
+label: 'Sorting Weight'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

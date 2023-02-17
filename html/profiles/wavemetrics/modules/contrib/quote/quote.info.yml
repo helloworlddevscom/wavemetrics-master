@@ -1,0 +1,12 @@
+name: 'Quote'
+description: 'Allows users to quote posts or comments.'
+type: module
+core: 8.x
+
+configure: quote.admin
+
+dependencies:
+  - drupal:comment
+
+libraries:
+  - quote/quote

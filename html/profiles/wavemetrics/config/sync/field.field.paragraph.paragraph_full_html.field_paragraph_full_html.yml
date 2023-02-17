@@ -1,0 +1,21 @@
+uuid: 1fcd7e6e-3456-47b5-8488-6032bb35f43d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_full_html
+    - paragraphs.paragraphs_type.paragraph_full_html
+  module:
+    - text
+id: paragraph.paragraph_full_html.field_paragraph_full_html
+field_name: field_paragraph_full_html
+entity_type: paragraph
+bundle: paragraph_full_html
+label: 'Paragraph Full HTML'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,17 @@
+<?php
+
+use \Drupal\views\ViewExecutable;
+
+function wavemetrics_user_content_views_post_execute(ViewExecutable &$view){
+    foreach($view->result as $k => $r) {
+        if( !empty($view->result[$k]->comment_entity_statistics_last_updated) ){
+            //if the changed date is before the new site import, set this to null as the changed date is the import date and not accurate.
+            if($view->result[$k]->comment_entity_statistics_last_updated < 1529132400) {
+                $view->result[$k]->comment_entity_statistics_last_updated = null;
+            }
+        }
+    }
+}
+
+
+?>

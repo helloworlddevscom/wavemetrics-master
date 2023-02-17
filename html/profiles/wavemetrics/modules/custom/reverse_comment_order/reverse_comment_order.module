@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Implements hook_query_TAG_alter() for comment_filter tag.
+ *
+ * @see CommentStorage::loadThread().
+ */
+
+function reverse_comment_order_query_comment_filter_alter(Drupal\Core\Database\Query\AlterableInterface $query) {
+
+  // Change comment order to DESC for 'comment' field.
+    if ($query->getMetaData('field_name') == 'comment') {
+        /** @var \Drupal\Core\Database\Query\SelectInterface $query */
+        $order_by = &$query->getOrderBy();
+        if (isset($order_by['torder']) && $order_by['torder'] == 'ASC') {
+            $order_by['torder'] = 'DESC';
+        }
+     }
+
+}
+
+?>

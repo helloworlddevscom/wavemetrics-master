@@ -1,0 +1,19 @@
+uuid: d8e5e1a3-9d89-40d0-8b7e-d97dc8d7fd05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_demo
+    - node.type.project_project
+id: node.project_project.field_project_demo
+field_name: field_project_demo
+entity_type: node
+bundle: project_project
+label: 'Project Demo'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

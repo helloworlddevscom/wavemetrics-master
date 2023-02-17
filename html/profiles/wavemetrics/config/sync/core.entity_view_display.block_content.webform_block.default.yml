@@ -1,0 +1,23 @@
+uuid: f7f82936-4445-48ae-96cb-bd3365c5df56
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.webform_block
+    - field.field.block_content.webform_block.field_webform_reference
+  module:
+    - webform
+id: block_content.webform_block.default
+targetEntityType: block_content
+bundle: webform_block
+mode: default
+content:
+  field_webform_reference:
+    weight: 0
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+hidden: {  }

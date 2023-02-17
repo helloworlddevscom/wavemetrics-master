@@ -1,0 +1,19 @@
+uuid: a141aab7-098f-45e7-b4af-77a909f8ca26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_p
+    - paragraphs.paragraphs_type.short_message
+id: paragraph.short_message.field_paragraph_p
+field_name: field_paragraph_p
+entity_type: paragraph
+bundle: short_message
+label: 'Paragraph p'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

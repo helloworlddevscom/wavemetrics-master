@@ -1,0 +1,23 @@
+uuid: 9b1c7968-b722-4e95-8f53-7b2876662a43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_main_image
+    - node.type.prototype
+id: node.prototype.field_hide_main_image
+field_name: field_hide_main_image
+entity_type: node
+bundle: prototype
+label: 'Hide Main Image'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

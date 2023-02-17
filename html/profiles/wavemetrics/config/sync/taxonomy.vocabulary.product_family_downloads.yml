@@ -1,0 +1,8 @@
+uuid: 7528ac6b-43e9-4645-be89-6c949ef4ac87
+langcode: en
+status: true
+dependencies: {  }
+name: 'Downloads - Software Families'
+vid: product_family_downloads
+description: 'Family Groupings of Downloads'
+weight: 0

@@ -1,0 +1,27 @@
+uuid: 702e5a3d-e61c-4cda-91c0-690e332c8b71
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_basic
+    - field.storage.comment.field_comment_file
+  module:
+    - file
+id: comment.comment_basic.field_comment_file
+field_name: field_comment_file
+entity_type: comment
+bundle: comment_basic
+label: Attachment
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'zip jpg png txt xls pxp ipf pdf dmg xop ihf csv ibw doc pxt jpeg ifn gzip gz tarm uxp uxt'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

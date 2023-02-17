@@ -1,0 +1,18 @@
+uuid: 6527787f-bf5a-46bd-9837-39d8a2c62659
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'WebForm Confirmation Page'
+type: webform_confirmation_page
+description: 'Required for WebForms integrated with FastSpring. Can be used for any webform confirmation page. '
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

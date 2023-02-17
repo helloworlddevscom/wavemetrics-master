@@ -1,0 +1,45 @@
+uuid: 41c46060-4078-4b4d-a8ca-c0a5db64dc6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.administer-imported-content
+  module:
+    - menu_block
+    - system
+    - user
+  theme:
+    - adminimal_theme
+id: administerimportedcontent_2
+theme: adminimal_theme
+region: content
+weight: 0
+provider: null
+plugin: 'menu_block:administer-imported-content'
+settings:
+  id: 'menu_block:administer-imported-content'
+  label: 'Administer Imported Content'
+  provider: menu_block
+  label_display: visible
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'administer-imported-content:'
+  suggestion: administer_imported_content
+  label_type: block
+  label_link: false
+visibility:
+  request_path:
+    id: request_path
+    pages: "/admin/content/imported/wavemetrics/*\r\n/admin/structure/migrate/wavemetrics"
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

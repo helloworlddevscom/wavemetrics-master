@@ -1,0 +1,29 @@
+uuid: 12de311e-813e-41c1-9ea8-b2d27a81ea55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_volume_reference
+    - node.type.prototype
+    - taxonomy.vocabulary.volume
+id: node.prototype.field_volume_reference
+field_name: field_volume_reference
+entity_type: node
+bundle: prototype
+label: 'Volume Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      volume: volume
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,15 @@
+theme: wave
+defaults:
+  sender: swiftmailer
+  formatter: swiftmailer
+_core:
+  default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+modules:
+  swiftmailer:
+    none:
+      formatter: swiftmailer
+      sender: swiftmailer
+  comment_notify:
+    none:
+      formatter: php_mail
+      sender: swiftmailer

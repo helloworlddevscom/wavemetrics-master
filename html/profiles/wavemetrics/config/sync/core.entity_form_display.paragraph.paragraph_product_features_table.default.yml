@@ -1,0 +1,42 @@
+uuid: 86611c02-d1ba-4fb9-a058-ddcc5e477836
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_product_features_table.field_paragraph_h2
+    - field.field.paragraph.paragraph_product_features_table.field_paragraph_li
+    - field.field.paragraph.paragraph_product_features_table.field_paragraph_p
+    - paragraphs.paragraphs_type.paragraph_product_features_table
+id: paragraph.paragraph_product_features_table.default
+targetEntityType: paragraph
+bundle: paragraph_product_features_table
+mode: default
+content:
+  field_paragraph_h2:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_li:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_p:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

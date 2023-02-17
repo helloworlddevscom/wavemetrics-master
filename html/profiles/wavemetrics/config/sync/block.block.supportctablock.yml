@@ -1,0 +1,31 @@
+uuid: 0925f504-144a-47c6-9cc3-1973131cd932
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:support_cta_block_type:1936ecb1-472c-440e-a6c6-125ffc71fdb2'
+  module:
+    - block_content
+    - system
+  theme:
+    - wave
+id: supportctablock
+theme: wave
+region: bottom_content
+weight: -8
+provider: null
+plugin: 'block_content:1936ecb1-472c-440e-a6c6-125ffc71fdb2'
+settings:
+  id: 'block_content:1936ecb1-472c-440e-a6c6-125ffc71fdb2'
+  label: 'Support CTA Block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user\r\n/user/*\r\n/forum\r\n/forum/*\r\n/cart\r\n/cart/*\r\n/checkout\r\n/checkout/*"
+    negate: true
+    context_mapping: {  }

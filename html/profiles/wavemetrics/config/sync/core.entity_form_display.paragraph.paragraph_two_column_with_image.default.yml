@@ -1,0 +1,55 @@
+uuid: aa71fd83-f54b-41a3-a018-7ab7660599aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_two_column_with_image.field_paragraph_float_option
+    - field.field.paragraph.paragraph_two_column_with_image.field_paragraph_h2
+    - field.field.paragraph.paragraph_two_column_with_image.field_paragraph_image_single
+    - field.field.paragraph.paragraph_two_column_with_image.field_paragraph_p
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.paragraph_two_column_with_image
+  module:
+    - image
+    - imce
+id: paragraph.paragraph_two_column_with_image.default
+targetEntityType: paragraph
+bundle: paragraph_two_column_with_image
+mode: default
+content:
+  field_paragraph_float_option:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_paragraph_h2:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_image_single:
+    weight: 0
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+    region: content
+  field_paragraph_p:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

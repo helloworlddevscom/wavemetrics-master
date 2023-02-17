@@ -1,0 +1,19 @@
+uuid: a9b340e0-f4b6-4e23-b64a-df4ca16481c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_taxonomy_old_tid
+    - taxonomy.vocabulary.project_type
+id: taxonomy_term.project_type.field_taxonomy_old_tid
+field_name: field_taxonomy_old_tid
+entity_type: taxonomy_term
+bundle: project_type
+label: 'Old TID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

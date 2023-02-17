@@ -1,0 +1,175 @@
+uuid: f90e02b0-3f53-4646-b480-97425be8eab7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.software.field_file_mac
+    - field.field.node.software.field_file_win
+    - field.field.node.software.field_file_win_zip
+    - field.field.node.software.field_not_current
+    - field.field.node.software.field_paragraphs
+    - field.field.node.software.field_product_catalog_reference
+    - field.field.node.software.field_readme_ref
+    - field.field.node.software.field_release_type
+    - field.field.node.software.field_software_family
+    - field.field.node.software.field_version_number
+    - node.type.software
+  module:
+    - field_group
+    - link
+    - paragraphs
+    - path
+third_party_settings:
+  field_group:
+    group_release_file:
+      children:
+        - field_file_mac
+        - field_file_win
+        - field_file_win_zip
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Release File'
+      region: content
+id: node.software.default
+targetEntityType: node
+bundle: software
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_file_mac:
+    weight: 27
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_file_win:
+    weight: 28
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_file_win_zip:
+    weight: 29
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_not_current:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_paragraphs:
+    weight: 15
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_product_catalog_reference:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_readme_ref:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_release_type:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_software_family:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_version_number:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 10
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 13
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 11
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

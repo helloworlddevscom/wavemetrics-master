@@ -1,0 +1,8 @@
+uuid: 72b2b0b1-8ce5-4b8d-9a53-c65e99c12680
+langcode: en
+status: true
+dependencies: {  }
+name: 'Operating System Compatability'
+vid: operating_system_compatability
+description: 'Which operating system is this project or release compatible with?  Most Igor procedure files will work the same on either opera'
+weight: 0

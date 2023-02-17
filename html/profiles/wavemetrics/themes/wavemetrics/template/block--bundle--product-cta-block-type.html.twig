@@ -1,0 +1,11 @@
+<section class="product-cta-wrapper">
+
+    {% for item in content.field_block_field_product_cta_fc['#items'] %}
+        <a class="product-cta-column {% if loop.first %}product-cta-column-first{% endif %} {% if loop.last %}product-cta-column-last{% endif %}" href="{{ item.getFieldCollectionItem().field_fc_field_link.0.url }}">
+            <h3>{{ item.getFieldCollectionItem().field_fc_field_product_name.value }}</h3>
+            <p>{{ item.getFieldCollectionItem().field_fc_field_link.0.title }}</p>
+        </a>
+    {% endfor %}
+
+    <div class="clearit"></div>
+</section>

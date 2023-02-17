@@ -1,0 +1,30 @@
+uuid: 09a5ae15-8c5d-4851-931f-1b39240a566e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_scientific_disipl
+    - taxonomy.vocabulary.scientific_discipline
+  module:
+    - user
+id: user.user.field_profile_scientific_disipl
+field_name: field_profile_scientific_disipl
+entity_type: user
+bundle: user
+label: 'Scientific Discipline'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      scientific_discipline: scientific_discipline
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

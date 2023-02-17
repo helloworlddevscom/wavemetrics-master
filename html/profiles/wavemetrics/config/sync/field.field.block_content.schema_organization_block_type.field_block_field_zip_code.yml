@@ -1,0 +1,19 @@
+uuid: 213c9510-c08a-46e4-a0e2-700049f18401
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.schema_organization_block_type
+    - field.storage.block_content.field_block_field_zip_code
+id: block_content.schema_organization_block_type.field_block_field_zip_code
+field_name: field_block_field_zip_code
+entity_type: block_content
+bundle: schema_organization_block_type
+label: 'Block Field - Zip Code'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

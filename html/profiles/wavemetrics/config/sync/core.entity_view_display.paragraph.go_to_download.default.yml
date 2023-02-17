@@ -1,0 +1,39 @@
+uuid: ce87aad8-c6af-4095-8541-ea314ddb74a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.go_to_download.field_paragraph_h2
+    - field.field.paragraph.go_to_download.field_paragraph_p
+    - field.field.paragraph.go_to_download.field_paragraph_ref_download_fam
+    - paragraphs.paragraphs_type.go_to_download
+id: paragraph.go_to_download.default
+targetEntityType: paragraph
+bundle: go_to_download
+mode: default
+content:
+  field_paragraph_h2:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_p:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_ref_download_fam:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

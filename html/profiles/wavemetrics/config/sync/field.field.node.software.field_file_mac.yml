@@ -1,0 +1,23 @@
+uuid: 04b8ade2-ff09-4e99-8cd5-fea92fd2f914
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_mac
+    - node.type.software
+  module:
+    - link
+id: node.software.field_file_mac
+field_name: field_file_mac
+entity_type: node
+bundle: software
+label: 'Macintosh Version'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

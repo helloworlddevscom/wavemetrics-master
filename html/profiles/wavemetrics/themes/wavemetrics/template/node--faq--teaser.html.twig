@@ -1,0 +1,9 @@
+<h2 role="tab" tabindex="{{ node.nid.0.value }}" class="accordion-title"  aria-controls="accordion-{{ node.nid.0.value }}" title="{{ label }}">{{ label }}</h2>
+
+<div role="tabpanel" id="accordion-{{ node.nid.0.value }}" class="accordion-content" aria-labelledby="tab">
+    {{ content.body }}
+    <div class="accordion-content-footer">
+        <span class="content-date">{{ node.created.0.value | date('M d Y') }}</span>
+        <a class="faq-teaser-link" href="{{ url }}">View FAQ</a>
+    </div>
+</div>

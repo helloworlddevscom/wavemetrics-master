@@ -1,0 +1,18 @@
+uuid: 0b58f8b5-9f98-4d89-b6b4-c1a0c8072152
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+id: field_collection_item.field_close_timestamp
+field_name: field_close_timestamp
+entity_type: field_collection_item
+type: timestamp
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

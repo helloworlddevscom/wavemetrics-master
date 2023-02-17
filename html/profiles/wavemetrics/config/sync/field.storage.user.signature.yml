@@ -1,0 +1,21 @@
+uuid: 9c266154-a48e-4d94-9405-185a48b4e875
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: N-3ZhUxWpqv4rZF5ncKtpxLj4nVo5OXVBK5zkhHpv74
+id: user.signature
+field_name: signature
+entity_type: user
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

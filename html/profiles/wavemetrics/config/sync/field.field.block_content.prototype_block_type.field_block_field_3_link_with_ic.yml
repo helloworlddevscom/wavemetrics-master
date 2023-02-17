@@ -1,0 +1,21 @@
+uuid: b537f749-6336-4266-8796-1589447be9a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.prototype_block_type
+    - field.storage.block_content.field_block_field_3_link_with_ic
+  module:
+    - field_collection
+id: block_content.prototype_block_type.field_block_field_3_link_with_ic
+field_name: field_block_field_3_link_with_ic
+entity_type: block_content
+bundle: prototype_block_type
+label: 'Block Field - 3 Link with Icon FC'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection

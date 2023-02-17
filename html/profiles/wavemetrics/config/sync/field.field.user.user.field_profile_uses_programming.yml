@@ -1,0 +1,24 @@
+uuid: 1cdbbd79-aa07-4e0d-a490-c71cfb3f28b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_uses_programming
+  module:
+    - user
+id: user.user.field_profile_uses_programming
+field_name: field_profile_uses_programming
+entity_type: user
+bundle: user
+label: Programming
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

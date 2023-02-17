@@ -1,0 +1,24 @@
+uuid: 1ed1adf3-b8e9-4b39-a2a4-8941d169ec10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_contlist_forums_li
+  module:
+    - user
+id: user.user.field_profile_contlist_forums_li
+field_name: field_profile_contlist_forums_li
+entity_type: user
+bundle: user
+label: 'I help out in the IgorExchange forums or on the Igor Pro mailing list'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

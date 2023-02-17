@@ -1,0 +1,30 @@
+uuid: 6e4eb450-f66c-4663-9f48-ecb294b19d9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_igoruse
+  module:
+    - allowed_formats
+    - text
+    - user
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    full_html: '0'
+    admins_only: '0'
+    forum_no_editor: '0'
+    text: '0'
+    plain_text: '0'
+id: user.user.field_profile_igoruse
+field_name: field_profile_igoruse
+entity_type: user
+bundle: user
+label: 'Igor Use'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

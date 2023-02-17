@@ -1,0 +1,18 @@
+{% if items is not empty %}
+    
+    {%- if title is not empty -%}
+        <h3>{{ title }}</h3>        
+    {%- endif -%}
+
+    {%- for item in items -%}
+        {{ item.value }}
+    {%- endfor -%}
+    
+{%- elseif items is empty -%}
+    
+    <h3>Search Results</h3>
+    <div class="empty-search-results-wrapper">
+        <p>results will appear here when a keyword matches content</p>
+    </div>
+    
+{%- endif %}

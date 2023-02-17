@@ -1,0 +1,29 @@
+uuid: bec233ca-aa8b-4daf-8845-0a08d1c63fa6
+langcode: en
+status: true
+dependencies:
+  module:
+    - forum
+    - system
+  theme:
+    - wave
+id: newforumtopics
+theme: wave
+region: content
+weight: -7
+provider: null
+plugin: forum_new_block
+settings:
+  id: forum_new_block
+  label: 'New forum topics'
+  provider: forum
+  label_display: visible
+  properties:
+    administrative: '1'
+  block_count: 5
+visibility:
+  request_path:
+    id: request_path
+    pages: /forum
+    negate: false
+    context_mapping: {  }

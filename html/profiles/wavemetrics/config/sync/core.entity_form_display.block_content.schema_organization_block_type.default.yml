@@ -1,0 +1,103 @@
+uuid: a13d963a-0541-4c48-bc41-87c49d507fbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.schema_organization_block_type
+    - field.field.block_content.schema_organization_block_type.field_block_fc_business_hours
+    - field.field.block_content.schema_organization_block_type.field_block_field_city
+    - field.field.block_content.schema_organization_block_type.field_block_field_company_descri
+    - field.field.block_content.schema_organization_block_type.field_block_field_company_name
+    - field.field.block_content.schema_organization_block_type.field_block_field_phone_number
+    - field.field.block_content.schema_organization_block_type.field_block_field_schema_logo
+    - field.field.block_content.schema_organization_block_type.field_block_field_state
+    - field.field.block_content.schema_organization_block_type.field_block_field_street_address
+    - field.field.block_content.schema_organization_block_type.field_block_field_zip_code
+    - image.style.thumbnail
+  module:
+    - field_collection
+    - image
+id: block_content.schema_organization_block_type.default
+targetEntityType: block_content
+bundle: schema_organization_block_type
+mode: default
+content:
+  field_block_fc_business_hours:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+    region: content
+  field_block_field_city:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_company_descri:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_company_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_phone_number:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_schema_logo:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_block_field_state:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_street_address:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_zip_code:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

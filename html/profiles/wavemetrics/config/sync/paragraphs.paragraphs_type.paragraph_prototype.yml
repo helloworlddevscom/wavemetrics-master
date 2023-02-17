@@ -1,0 +1,9 @@
+uuid: 1c41cf9b-fc09-4fe0-a805-886b9aa10400
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph_prototype
+label: 'Paragraph - Prototype'
+icon_uuid: null
+description: 'This is an administrative paragraph type. This paragraph type is a placeholder for all Paragraph fields. No content should use this type paragraph ''Paragraph - Prototype''. '
+behavior_plugins: {  }

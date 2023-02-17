@@ -1,0 +1,29 @@
+uuid: 7cabdbd4-3014-47cd-8c51-cc817b5b4f98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_ref_os_compat
+    - paragraphs.paragraphs_type.paragraph_prototype
+    - taxonomy.vocabulary.operating_system_compatability
+id: paragraph.paragraph_prototype.field_paragraph_ref_os_compat
+field_name: field_paragraph_ref_os_compat
+entity_type: paragraph
+bundle: paragraph_prototype
+label: 'Paragraph Reference to OS Compatibility'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      operating_system_compatability: operating_system_compatability
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

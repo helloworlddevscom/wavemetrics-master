@@ -1,0 +1,95 @@
+uuid: 5c8f659b-ccde-4df9-aa36-72202ea22f09
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.schema_organization_block_type
+    - field.field.block_content.schema_organization_block_type.field_block_fc_business_hours
+    - field.field.block_content.schema_organization_block_type.field_block_field_city
+    - field.field.block_content.schema_organization_block_type.field_block_field_company_descri
+    - field.field.block_content.schema_organization_block_type.field_block_field_company_name
+    - field.field.block_content.schema_organization_block_type.field_block_field_phone_number
+    - field.field.block_content.schema_organization_block_type.field_block_field_schema_logo
+    - field.field.block_content.schema_organization_block_type.field_block_field_state
+    - field.field.block_content.schema_organization_block_type.field_block_field_street_address
+    - field.field.block_content.schema_organization_block_type.field_block_field_zip_code
+  module:
+    - field_collection
+    - image
+id: block_content.schema_organization_block_type.default
+targetEntityType: block_content
+bundle: schema_organization_block_type
+mode: default
+content:
+  field_block_fc_business_hours:
+    weight: 9
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_list
+    region: content
+  field_block_field_city:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_block_field_company_descri:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_block_field_company_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_block_field_phone_number:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_block_field_schema_logo:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    type: image_url
+    region: content
+  field_block_field_state:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_block_field_street_address:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_block_field_zip_code:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

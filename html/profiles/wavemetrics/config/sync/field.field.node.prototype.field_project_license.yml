@@ -1,0 +1,19 @@
+uuid: 68151ad3-421b-4716-be8b-808aa32f81e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_license
+    - node.type.prototype
+id: node.prototype.field_project_license
+field_name: field_project_license
+entity_type: node
+bundle: prototype
+label: 'Project License'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

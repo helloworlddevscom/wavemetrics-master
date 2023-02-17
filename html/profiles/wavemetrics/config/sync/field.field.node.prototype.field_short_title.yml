@@ -1,0 +1,19 @@
+uuid: 279d510a-a999-45a2-91e7-d3af3c2cac25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_title
+    - node.type.prototype
+id: node.prototype.field_short_title
+field_name: field_short_title
+entity_type: node
+bundle: prototype
+label: short_title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

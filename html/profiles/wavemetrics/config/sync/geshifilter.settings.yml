@@ -1,0 +1,66 @@
+use_format_specific_options: false
+default_highlighting: GESHIFILTER_DEFAULT_DONOTHING
+default_line_numbering: 0
+use_highlight_string_for_php: false
+enable_keyword_urls: true
+decode_entities: true
+css_mode: 1
+code_container: '1'
+tags: code
+tag_styles:
+  1: 1
+  2: 2
+  4: 0
+  8: 0
+  16: 0
+tab_width: 4
+language:
+  php:
+    tags: php
+  cpp:
+    tags: cpp
+    enabled: true
+  java:
+    tags: java
+  actionscript:
+    tags: actionscript
+  actionscript3:
+    tags: actionscript3
+  asp:
+    tags: asp
+  c:
+    tags: ccode
+    enabled: true
+  csharp:
+    tags: csharp
+  css:
+    tags: css
+  html4strict:
+    tags: html4strict
+  html5:
+    tags: html5
+  javascript:
+    tags: javascript
+  jquery:
+    tags: jquery
+  mysql:
+    tags: mysql
+  sass:
+    tags: sass
+  sql:
+    tags: sql
+    enabled: true
+  twig:
+    tags: twig
+  vbscript:
+    tags: vbscript
+  xml:
+    tags: xml
+    enabled: true
+  yaml:
+    tags: yaml
+  igor:
+    enabled: true
+    tags: igor
+_core:
+  default_config_hash: 1jZtSc2CSiEBA45nbX0wMKFY3bmcilIwOBQCKFscK0U

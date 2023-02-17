@@ -1,0 +1,27 @@
+uuid: 325c92cc-5373-40b6-bfb1-9fe9b0c0c7d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_attachment
+    - node.type.forum
+  module:
+    - file
+id: node.forum.field_file_attachment
+field_name: field_file_attachment
+entity_type: node
+bundle: forum
+label: 'File Attachment'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'zip jpg png txt xls pxp ipf pdf dmg xop ihf csv ibw doc pxt jpeg ifn gzip tarm uxp uxt'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

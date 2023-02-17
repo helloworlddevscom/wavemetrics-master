@@ -1,0 +1,29 @@
+uuid: 0dda42d4-63e0-491e-82e8-d3b1175a5bb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code_type
+    - node.type.code_snippet
+    - taxonomy.vocabulary.type
+id: node.code_snippet.field_code_type
+field_name: field_code_type
+entity_type: node
+bundle: code_snippet
+label: 'Code Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      type: type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

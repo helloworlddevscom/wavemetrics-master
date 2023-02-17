@@ -1,0 +1,131 @@
+uuid: 75a51522-a8bd-4215-9b58-5820da2e54e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.prototype.field_blog_category
+    - field.field.node.prototype.field_blog_tag
+    - field.field.node.prototype.field_code_type
+    - field.field.node.prototype.field_document
+    - field.field.node.prototype.field_file_attachment
+    - field.field.node.prototype.field_file_mac
+    - field.field.node.prototype.field_file_win
+    - field.field.node.prototype.field_file_win_zip
+    - field.field.node.prototype.field_gallery_type_reference
+    - field.field.node.prototype.field_general_cta
+    - field.field.node.prototype.field_h2
+    - field.field.node.prototype.field_hide_main_image
+    - field.field.node.prototype.field_icon_link
+    - field.field.node.prototype.field_image_multiple
+    - field.field.node.prototype.field_image_single
+    - field.field.node.prototype.field_li
+    - field.field.node.prototype.field_meta_tags
+    - field.field.node.prototype.field_mp4_video_file
+    - field.field.node.prototype.field_not_current
+    - field.field.node.prototype.field_ogv_video_file
+    - field.field.node.prototype.field_old_menu
+    - field.field.node.prototype.field_old_path
+    - field.field.node.prototype.field_operating_system
+    - field.field.node.prototype.field_os_compatibility
+    - field.field.node.prototype.field_p
+    - field.field.node.prototype.field_paragraphs
+    - field.field.node.prototype.field_paragraphs_products_dr
+    - field.field.node.prototype.field_product_catalog_reference
+    - field.field.node.prototype.field_product_teaser_text
+    - field.field.node.prototype.field_project_changelog
+    - field.field.node.prototype.field_project_cvs
+    - field.field.node.prototype.field_project_demo
+    - field.field.node.prototype.field_project_documentation
+    - field.field.node.prototype.field_project_homepage
+    - field.field.node.prototype.field_project_license
+    - field.field.node.prototype.field_project_screenshots
+    - field.field.node.prototype.field_project_type
+    - field.field.node.prototype.field_prototype_fc_field
+    - field.field.node.prototype.field_readme_file
+    - field.field.node.prototype.field_readme_ref
+    - field.field.node.prototype.field_release_type
+    - field.field.node.prototype.field_repository
+    - field.field.node.prototype.field_repository_file_
+    - field.field.node.prototype.field_short_title
+    - field.field.node.prototype.field_software_family
+    - field.field.node.prototype.field_software_file
+    - field.field.node.prototype.field_supported_version
+    - field.field.node.prototype.field_teaser_link_text
+    - field.field.node.prototype.field_version_number
+    - field.field.node.prototype.field_view_teaser_image
+    - field.field.node.prototype.field_volume_reference
+    - field.field.node.prototype.field_voting
+    - field.field.node.prototype.field_weight
+    - node.type.prototype
+  module:
+    - user
+id: node.prototype.teaser
+targetEntityType: node
+bundle: prototype
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  share_everywhere:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_blog_category: true
+  field_blog_tag: true
+  field_code_type: true
+  field_document: true
+  field_file_attachment: true
+  field_file_mac: true
+  field_file_win: true
+  field_file_win_zip: true
+  field_gallery_type_reference: true
+  field_general_cta: true
+  field_h2: true
+  field_hide_main_image: true
+  field_icon_link: true
+  field_image_multiple: true
+  field_image_single: true
+  field_li: true
+  field_meta_tags: true
+  field_mp4_video_file: true
+  field_not_current: true
+  field_ogv_video_file: true
+  field_old_menu: true
+  field_old_path: true
+  field_operating_system: true
+  field_os_compatibility: true
+  field_p: true
+  field_paragraphs: true
+  field_paragraphs_products_dr: true
+  field_product_catalog_reference: true
+  field_product_teaser_text: true
+  field_project_changelog: true
+  field_project_cvs: true
+  field_project_demo: true
+  field_project_documentation: true
+  field_project_homepage: true
+  field_project_license: true
+  field_project_screenshots: true
+  field_project_type: true
+  field_prototype_fc_field: true
+  field_readme_file: true
+  field_readme_ref: true
+  field_release_type: true
+  field_repository: true
+  field_repository_file_: true
+  field_short_title: true
+  field_software_family: true
+  field_software_file: true
+  field_supported_version: true
+  field_teaser_link_text: true
+  field_version_number: true
+  field_view_teaser_image: true
+  field_volume_reference: true
+  field_voting: true
+  field_weight: true

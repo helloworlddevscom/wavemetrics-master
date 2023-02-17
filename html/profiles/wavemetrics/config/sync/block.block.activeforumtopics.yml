@@ -1,0 +1,29 @@
+uuid: 2a40bf2c-84c9-414e-b6ba-e203e299d3ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - forum
+    - system
+  theme:
+    - wave
+id: activeforumtopics
+theme: wave
+region: content
+weight: -8
+provider: null
+plugin: forum_active_block
+settings:
+  id: forum_active_block
+  label: 'Active forum topics'
+  provider: forum
+  label_display: visible
+  properties:
+    administrative: '1'
+  block_count: 5
+visibility:
+  request_path:
+    id: request_path
+    pages: /forum
+    negate: false
+    context_mapping: {  }

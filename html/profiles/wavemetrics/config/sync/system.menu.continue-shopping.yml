@@ -1,0 +1,8 @@
+uuid: bd58abb1-ca01-4d11-a73c-7205d80e778c
+langcode: en
+status: true
+dependencies: {  }
+id: continue-shopping
+label: 'Checkout Sidebar Menu'
+description: ''
+locked: false

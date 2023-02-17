@@ -1,0 +1,27 @@
+uuid: 6dde226e-8ef2-4e0c-bf7c-45e75f116fe0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ogv_video_file
+    - node.type.prototype
+  module:
+    - file
+id: node.prototype.field_ogv_video_file
+field_name: field_ogv_video_file
+entity_type: node
+bundle: prototype
+label: 'OGV Video File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: video-files
+  file_extensions: 'ogg ogv'
+  max_filesize: '50 MB'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

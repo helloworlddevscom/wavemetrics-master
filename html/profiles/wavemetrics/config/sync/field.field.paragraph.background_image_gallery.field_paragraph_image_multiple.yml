@@ -1,0 +1,38 @@
+uuid: 78e6600f-9eb2-4fd4-9da0-95c0dcb79292
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_image_multiple
+    - paragraphs.paragraphs_type.background_image_gallery
+  module:
+    - image
+id: paragraph.background_image_gallery.field_paragraph_image_multiple
+field_name: field_paragraph_image_multiple
+entity_type: paragraph
+bundle: background_image_gallery
+label: 'Paragraph Image Multiple'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

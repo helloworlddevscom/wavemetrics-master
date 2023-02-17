@@ -1,0 +1,15 @@
+uuid: e5689d6f-5f17-4e28-8f13-d161064f3a46
+langcode: en
+status: true
+dependencies: {  }
+name: square800
+label: Square800
+effects:
+  f3b1c44e-e74d-4b82-b000-85931e66ca1d:
+    uuid: f3b1c44e-e74d-4b82-b000-85931e66ca1d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 800
+      anchor: center-center

@@ -1,0 +1,24 @@
+uuid: efc21294-d6d9-4904-815c-53a2e2d3411d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_contlist_wavemetri
+  module:
+    - user
+id: user.user.field_profile_contlist_wavemetri
+field_name: field_profile_contlist_wavemetri
+entity_type: user
+bundle: user
+label: 'I am/was a programmer for WaveMetrics'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

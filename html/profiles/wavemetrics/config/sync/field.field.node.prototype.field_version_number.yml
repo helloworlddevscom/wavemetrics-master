@@ -1,0 +1,19 @@
+uuid: 0c2d2a7e-1c6e-436c-bf80-d1e82632eab6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_version_number
+    - node.type.prototype
+id: node.prototype.field_version_number
+field_name: field_version_number
+entity_type: node
+bundle: prototype
+label: 'Version Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

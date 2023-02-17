@@ -1,0 +1,20 @@
+uuid: d6230d7b-cee2-433c-9e7b-41856d4490fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+    - user
+id: user.field_profile_jobtitle
+field_name: field_profile_jobtitle
+entity_type: user
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

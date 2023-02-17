@@ -1,0 +1,229 @@
+uuid: 62d448c5-926b-4e0a-854a-81dd180eb778
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_prototype.field_paragraph_file
+    - field.field.paragraph.paragraph_prototype.field_paragraph_float_option
+    - field.field.paragraph.paragraph_prototype.field_paragraph_full_html
+    - field.field.paragraph.paragraph_prototype.field_paragraph_h2
+    - field.field.paragraph.paragraph_prototype.field_paragraph_image_multiple
+    - field.field.paragraph.paragraph_prototype.field_paragraph_image_single
+    - field.field.paragraph.paragraph_prototype.field_paragraph_li
+    - field.field.paragraph.paragraph_prototype.field_paragraph_link
+    - field.field.paragraph.paragraph_prototype.field_paragraph_not_current
+    - field.field.paragraph.paragraph_prototype.field_paragraph_p
+    - field.field.paragraph.paragraph_prototype.field_paragraph_ref_download_fam
+    - field.field.paragraph.paragraph_prototype.field_paragraph_ref_igor_version
+    - field.field.paragraph.paragraph_prototype.field_paragraph_ref_os_compat
+    - field.field.paragraph.paragraph_prototype.field_paragraph_single_link
+    - field.field.paragraph.paragraph_prototype.field_paragraph_title
+    - field.field.paragraph.paragraph_prototype.field_paragraph_version
+    - field.field.paragraph.paragraph_prototype.field_paragraph_version_date
+    - field.field.paragraph.paragraph_prototype.field_paragraph_version_extra
+    - field.field.paragraph.paragraph_prototype.field_paragraph_version_major
+    - field.field.paragraph.paragraph_prototype.field_paragraph_version_md5
+    - field.field.paragraph.paragraph_prototype.field_paragraph_version_patch
+    - field.field.paragraph.paragraph_prototype.field_paragraph_webform
+    - paragraphs.paragraphs_type.paragraph_prototype
+  module:
+    - file
+    - image
+    - link
+    - options
+    - text
+    - webform
+id: paragraph.paragraph_prototype.default
+targetEntityType: paragraph
+bundle: paragraph_prototype
+mode: default
+content:
+  field_paragraph_file:
+    weight: 13
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_paragraph_float_option:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_paragraph_full_html:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_paragraph_h2:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_image_multiple:
+    weight: 9
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_paragraph_image_single:
+    weight: 6
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_paragraph_li:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_link:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_paragraph_not_current:
+    weight: 22
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_paragraph_p:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_ref_download_fam:
+    weight: 21
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_paragraph_ref_igor_version:
+    weight: 11
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_paragraph_ref_os_compat:
+    weight: 10
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_paragraph_single_link:
+    weight: 8
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_paragraph_title:
+    weight: 26
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_version:
+    weight: 14
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_version_date:
+    weight: 19
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  field_paragraph_version_extra:
+    weight: 18
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_version_major:
+    weight: 17
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_version_md5:
+    weight: 20
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_version_patch:
+    weight: 16
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_webform:
+    weight: 25
+    label: above
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+hidden: {  }

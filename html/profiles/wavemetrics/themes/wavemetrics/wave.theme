@@ -1,0 +1,168 @@
+<?php
+
+
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+
+function wave_preprocess_page(&$variables)
+{
+    //always used to check for the user profile link and used in other places so lets load the curruser first.
+    $currUser = \Drupal::currentUser();
+
+    //if this page is a node, consider exposing an edit link (dependent on permissions)
+    if (!empty($variables['node'])) {
+        $id = $variables['node']->id();
+        $url = Url::fromRoute('entity.node.edit_form', array('node' => $variables['node']->id()));
+        if ($url->access($currUser)) {
+            $project_link = Link::fromTextAndUrl(t('Edit Content'), $url);
+            $project_link = $project_link->toRenderable();
+            //If you need some attributes.
+            $project_link['#attributes'] = array('class' => array('button-action'));
+            $variables['authenticated_edit_link'] = ($project_link);
+        } else {
+            $variables['authenticated_edit_link'] = "";
+        }
+    }
+    //create an edit profile link
+    if ($currUser->isAuthenticated()) {
+        //if they are on their profile page.
+        //get the current route
+        $current_route = \Drupal::routeMatch()->getRouteName();
+        //confirm this is a user profie page
+        if( $current_route == 'entity.user.canonical' ){
+            // confirm that this user profile page is the current user's profile page.
+            $current_path = \Drupal::service('path.current')->getPath();
+            $path_args = explode('/', $current_path);
+            if($path_args[2]==$currUser->id()){
+                $url = Url::fromRoute('entity.user.edit_form', array('user' => $variables['user']->id()));
+                $user_link = Link::fromTextAndUrl(t('Edit Account'), $url);
+                $user_link = $user_link->toRenderable();
+                //If you need some attributes.
+                $user_link['#attributes'] = array('class' => array('button-action'));
+                $variables['authenticated_user_edit_link'] = ($user_link);
+            }
+        }
+        //authenticated but not on a page that should render this button.
+        else{
+            $variables['authenticated_user_edit_link'] = "";
+        }
+    } else {
+        $variables['authenticated_user_edit_link'] = "";
+    }
+
+}
+
+function wave_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $content_type = $node->bundle();
+        $suggestions[] = 'page__'.$content_type;
+    }
+}
+
+
+function wave_preprocess_node(&$variables) {
+
+    //make site slogan and site name printable in node templates
+    $site_config = \Drupal::config('system.site');
+    $variables['site_name'] = $site_config->get('name');
+    $variables['site_slogan'] = $site_config->get('slogan');
+
+    // Get statistics count for current node.
+    $statistics = statistics_get($variables['node']->id());
+    $variables['node_stats'] = \Drupal::translation()->formatPlural($statistics['totalcount'], '1 view', '@count views');
+
+    // Get the current project release. We do this in the theme so that we can render this view inbetween fields (body and comments)
+    // A module, https://www.drupal.org/project/eva, could be used to do this in the GUI. It did not seem neccessary to Outlier.
+    if($variables['node']->getType()=='project_project'){
+        $block = \Drupal\block\Entity\Block::load('views_block__project_releases_block_1');
+        $variables['current_release'] = \Drupal::entityTypeManager()
+            ->getViewBuilder('block')
+            ->view($block);
+    }
+
+    //node teasers are not really used anywhere but the forum list of topics is kinda like a tease.
+    //We configure the teaser to emulate that style so that during creation, when previewing,
+    //you can choose the view mode 'teaser' and see what will appear in this list.
+    if($variables['node']->getType()=='forum' && $variables['view_mode']=='teaser' && isset($variables['node']->in_preview)  ) {
+        //format the date as relative, just like the forum topic table.
+        $variables['creation_date_relative'] = Drupal::service('date.formatter')->formatTimeDiffSince(time()-1);
+    }
+
+
+
+//    $date = $variables['node']->getCreatedTime();
+//    // Here you can use drupal's format_date() function, or some custom PHP date formatting.
+//    $variables['custom_date'] = \Drupal::service('date.formatter')->format($date, 'M d, Y');// enter date format in $format.
+
+}
+
+
+function wave_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+
+    // Block suggestions for custom block bundles.
+    if (isset($variables['elements']['content']['#block_content'])) {
+        array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+    }
+
+}
+
+
+function wave_preprocess_block(&$vars)
+{
+
+    $vars['content']['#attributes']['block'] = $vars['attributes']['id'];
+
+}
+
+
+function wave_theme_suggestions_menu_alter(array &$suggestions, array $vars)
+{
+
+    // Remove the block and replace dashes with underscores in the block ID to
+    // use for the hook name.
+    if (isset($vars['attributes']['block'])) {
+        $hook = str_replace(array('block-', '-'), array('', '_'), $vars['attributes']['block']);
+        $suggestions[] = $vars['theme_hook_original'] . '__' . $hook;
+    }
+
+}
+
+
+/**
+ * Implements hook_theme_suggestions_user_alter().
+ *
+ *   An array of alternate, more specific names for template files or theme
+ *   functions.
+ */
+function wave_theme_suggestions_user_alter(&$suggestions, $vars, $hook)
+{
+
+    // Define the view mode.
+    $mode = $vars['elements']['#view_mode'];
+
+    // Create a theme hook suggestion which has the view mode name in it.
+    $suggestions[] = 'user__' . $mode;
+
+}
+
+
+function wave_preprocess_user(&$variables)
+{
+
+    wave_get_nid($variables);
+
+}
+
+function wave_get_nid(&$variables)
+{
+
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+
+        $date = $node->getCreatedTime();
+        // Here you can use drupal's format_date() function, or some custom PHP date formatting.
+        $variables['creation_date'] = $date;// enter date format in $format.
+    }
+
+}

@@ -1,0 +1,23 @@
+uuid: 9dac78a7-6c17-49e8-b255-6fade254dfd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.authenticated_user_actions
+    - field.storage.block_content.field_authenticated_user_links
+  module:
+    - link
+id: block_content.authenticated_user_actions.field_authenticated_user_links
+field_name: field_authenticated_user_links
+entity_type: block_content
+bundle: authenticated_user_actions
+label: 'Authenticated User Links'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 2
+field_type: link

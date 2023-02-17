@@ -1,0 +1,23 @@
+<section class="paragraph product-features-table">
+        
+    {{ content.field_paragraph_h2 }}
+    {{ content.field_paragraph_p }}
+
+    <table>
+        <tbody>
+
+            {% for item in content.field_paragraph_li['#items'] %}
+
+                <tr>
+                    <td>
+                        {{ item.value }}
+                    </td>
+                    <td></td>
+                </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+            
+</section>

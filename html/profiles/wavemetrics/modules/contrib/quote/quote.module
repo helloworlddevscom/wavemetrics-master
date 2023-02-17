@@ -1,0 +1,192 @@
+<?php
+
+use Drupal\node\entity\Node;
+use Drupal\comment\entity\Comment;
+use Drupal\comment\Plugin\Field\FieldType\CommentItemInterface;
+use Drupal\Core\Url;
+
+/**
+ * @file
+ * The quote module provides a filter and appropriate links that allow users to
+ * quote nodes and other comments in their own comments.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function quote_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  if ($route_name == 'quote.settings') {
+    return '<p>' . t('The quote filter allows users to quote other posts in their
+comments. Besides the following settings, the quote filter will need to be
+enabled for each input format (as required). Please
+make sure that the quote filter is arranged <em>after</em> any HTML filters and
+<em>before</em> the line break filter. For more information, please visit the
+>project page.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function quote_theme() {
+  return array(
+    'quote' => array(
+      'variables' => array(
+        'quote_content' => NULL,
+        'quote_author' => NULL,
+        'nest' => 0
+      )
+    )
+  );
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function quote_page_attachments_alter(&$build) {
+  $config = \Drupal::config('quote.settings');
+  $build['#attached']['library'][] = 'quote/quote';
+  $build['#attached']['drupalSettings']['quote']['quote']['nest'] = $config->get('nest');
+}
+
+/**
+ * Implements hook_node_links_alter().
+ */
+function quote_node_links_alter(array &$links, $entity, array &$context) {
+  $config = \Drupal::config('quote.settings');
+  if($config->get('node_link_display') && in_array($entity->getType(), $config->get('node_types')) && \Drupal::currentUser()->hasPermission('post comments')) {
+    $fields = Drupal::service('comment.manager')->getFields($entity->getEntityTypeId());
+    foreach($fields as $field_name => $detail) {
+      // skip fields this node does not have
+      if (!$entity->hasField($field_name) || !$entity->get($field_name)->status == CommentItemInterface::OPEN) {
+        continue;
+      }
+
+      $link = array(
+        'title' => t('Quote'),
+        'url' => Url::fromRoute('comment.reply', ['entity_type' => 'node', 'entity' => $entity->id(), 'field_name' => $field_name], ['query' => ['token' => \Drupal::getContainer()->get('csrf_token')->get("comment/reply/{node->getType()}/{entity->id()}/" . $field_name)]]),
+        'attributes' => array('title' => t('Quote this post in your reply.')),
+        'query' => array('quote' => 1),
+        'fragment' => 'comment-form'
+      );
+      $links['comment__' . $field_name]['#links']['quote'] = $link;
+      if (empty($links['comment__' . $field_name]['#attributes']['class'])) {
+        $links['comment__' . $field_name]['#attributes']['class'] = array('links', 'inline');
+      }
+      else {
+        $links['comment__' . $field_name]['#attributes']['class'] += array('links', 'inline');
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_comment_links_alter().
+ */
+function quote_comment_links_alter(array &$links, $entity, array &$context) {
+  $config = \Drupal::config('quote.settings');
+  if (\Drupal::currentUser()->hasPermission('post comments')) {
+    $node = $context['commented_entity'];
+    if (in_array($node->getType(), $config->get('node_types')) && $node->get($entity->getFieldName())->status == CommentItemInterface::OPEN) {
+      $link = array(
+        'title' => t('Quote'),
+        'url' => Url::fromRoute('comment.reply', ['entity_type' => 'node', 'entity' => $node->id(), 'field_name' => $entity->getFieldName(), 'pid' => $entity->id()], ['query' => ['token' => \Drupal::getContainer()->get('csrf_token')->get("comment/reply/{node->getType()}/{node->id()}/{entity->getFieldName()}/{entity->id()}")]]),
+        'attributes' => array('title' => t('Quote this post in your reply.')),
+        'query' => array('quote' => 1),
+        'fragment' => 'comment-form'
+      );
+      $links['comment']['#links']['comment-quote'] = $link;
+      if (empty($entity->content['links']['comment']['#attributes']['class'])) {
+        $links['comment']['#attributes']['class'] = array('links', 'inline');
+      }
+      else {
+        $links['comment']['#attributes']['class'] += array('links', 'inline');
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function quote_form_alter(&$form, $form_state, $form_id) {
+  // The explanation for the $_POST check is further below.
+  if ($form['#id'] == 'comment-form' && (isset($_POST['quote']) || isset($_GET['quote']) && $_GET['quote'])) {
+
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path_args = explode('/', $current_path);
+    $nid = $path_args[4];
+    $cid = $path_args[6];
+
+    $config = \Drupal::config('quote.settings');
+    if ($cid || $config->get('node_link_display')) {
+      extract(_quote_get_quoted_data($nid, $cid));
+      $quote = "[quote=$author]" . trim($content) . "[/quote]\n";
+
+      if (array_key_exists('#default_value', $form['comment_body']['widget'][0])) {
+        // Add quoted text and preserve existing content (signature etc.).
+        $form['comment_body']['widget'][0]['#default_value'] = $quote . $form['comment_body']['widget'][0]['#default_value'];
+      }
+      else {
+        $form['comment_body']['widget'][0]['value']['#default_value'] = $quote . $form['comment_body']['widget'][0]['value']['#default_value'];
+      }
+
+      // The Form API, by default, drops name-value pairs from the form's action
+      // URL (besides ?q=). Manually adding it back in as a hidden element.
+      $form['quote'] = array(
+        '#type' => 'hidden',
+        '#value' => 1
+      );
+    }
+  }
+}
+
+/**
+ * Implements hook_wysiwyg_include_directory(). Registers the wysiwyg directory
+ * as the one containing the plugin implementation.
+ *
+ * @param $type
+ *   The type of objects being collected: either 'plugins' or 'editors'.
+ * @return
+ *   A sub-directory of the implementing module that contains the corresponding
+ *   plugin files. This directory must only contain integration files for
+ *   Wysiwyg module.
+ */
+function quote_wysiwyg_include_directory($type) {
+  return 'wysiwyg';
+}
+
+/**
+ * Retrieve the content to be quoted.
+ *
+ * @param $nid
+ *   The referring node's ID.
+ * @param $cid
+ *   The referring comment's ID (if applying).
+ *
+ * @return array
+ *   The referring object's data as:
+ *   - content: Node body or comment content
+ *   - author : Display name of the object's author
+ */
+function _quote_get_quoted_data($nid, $cid = NULL) {
+  $config = \Drupal::config('quote.settings');
+  if ($cid) {
+    $quoted_comment = Comment::load($cid);
+    $quoted_user_name = user_format_name($quoted_comment->getOwner());
+    $quoted_content = $quoted_comment->get('comment_body')->value;
+  }
+  else {
+    $quoted_node = Node::load($nid);
+    $quoted_user_name = user_format_name($quoted_node->getOwner());
+    $quoted_content = $quoted_node->body->value;
+  }
+
+  if ($config->get('format')) {
+    $quoted_content = check_markup($quoted_content, $config->get('format'));
+  }
+
+  $ret = array('content' => $quoted_content, 'author' => $quoted_user_name);
+
+  return $ret;
+}

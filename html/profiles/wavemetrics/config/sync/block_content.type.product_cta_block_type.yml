@@ -1,0 +1,8 @@
+uuid: 0541e050-ec66-4bfd-adf5-28cf9582c39f
+langcode: en
+status: true
+dependencies: {  }
+id: product_cta_block_type
+label: 'Product CTA Block Type'
+revision: 0
+description: ''

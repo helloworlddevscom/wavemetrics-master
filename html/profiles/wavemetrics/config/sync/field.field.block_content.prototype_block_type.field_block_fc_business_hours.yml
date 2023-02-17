@@ -1,0 +1,22 @@
+uuid: a05cb458-6523-4e35-bf45-abc0e332a85b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.prototype_block_type
+    - field.storage.block_content.field_block_fc_business_hours
+  module:
+    - field_collection
+id: block_content.prototype_block_type.field_block_fc_business_hours
+field_name: field_block_fc_business_hours
+entity_type: block_content
+bundle: prototype_block_type
+label: 'Block FC Business Hours'
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection

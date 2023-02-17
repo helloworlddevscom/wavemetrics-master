@@ -1,0 +1,12 @@
+<section class="paragraph two-column-with-image float-{{ content.field_paragraph_float_option["#items"].0.value }}">
+
+    <a href="{{ file_url(content.field_paragraph_image_single['#items'].entity.uri.value) }}"><img src="{{ file_url(content.field_paragraph_image_single['#items'].entity.uri.value | image_style('480px')) }}" /></a>
+
+    <div class="two-column-info">
+        {{ content.field_paragraph_h2 }}
+        {{ content.field_paragraph_p }}
+    </div>
+            
+    <div class="clearit"></div>
+    
+</section>

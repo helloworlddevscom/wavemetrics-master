@@ -1,0 +1,14 @@
+name: Commerce Choose Price
+type: module
+description: Allow your customers to set their own price for a product.
+# core: 8.x
+package: Commerce (contrib)
+dependencies:
+  - commerce:commerce
+  - commerce:commerce_price
+
+# Information added by Drupal.org packaging script on 2019-08-18
+version: '8.x-1.2'
+core: '8.x'
+project: 'commerce_choose_price'
+datestamp: 1566123787

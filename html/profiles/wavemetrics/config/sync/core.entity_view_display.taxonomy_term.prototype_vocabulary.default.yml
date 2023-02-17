@@ -1,0 +1,41 @@
+uuid: cab6122a-4e29-44b4-8bb9-a356bf39d079
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.prototype_vocabulary.field_taxonomy_image
+    - field.field.taxonomy_term.prototype_vocabulary.field_taxonomy_old_tid
+    - taxonomy.vocabulary.prototype_vocabulary
+  module:
+    - image
+    - text
+id: taxonomy_term.prototype_vocabulary.default
+targetEntityType: taxonomy_term
+bundle: prototype_vocabulary
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_taxonomy_image:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_taxonomy_old_tid:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

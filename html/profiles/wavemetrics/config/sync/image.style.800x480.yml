@@ -1,0 +1,22 @@
+uuid: 70182b97-7e47-4f13-b7f8-1739e550441d
+langcode: en
+status: true
+dependencies: {  }
+name: 800x480
+label: 800x480
+effects:
+  40fde446-97d5-486a-81d8-9d4314dcf8b7:
+    uuid: 40fde446-97d5-486a-81d8-9d4314dcf8b7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 480
+      anchor: center-center
+  faf00a9a-b6fb-40dc-a6c7-fe110824215c:
+    uuid: faf00a9a-b6fb-40dc-a6c7-fe110824215c
+    id: image_resize
+    weight: 2
+    data:
+      width: 800
+      height: 480

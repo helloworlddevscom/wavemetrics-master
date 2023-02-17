@@ -1,0 +1,92 @@
+uuid: 98454ce9-bc15-416d-9d32-2e322f962086
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.software.field_file_mac
+    - field.field.node.software.field_file_win
+    - field.field.node.software.field_file_win_zip
+    - field.field.node.software.field_not_current
+    - field.field.node.software.field_paragraphs
+    - field.field.node.software.field_product_catalog_reference
+    - field.field.node.software.field_readme_ref
+    - field.field.node.software.field_release_type
+    - field.field.node.software.field_software_family
+    - field.field.node.software.field_version_number
+    - node.type.software
+  module:
+    - link
+    - options
+    - user
+id: node.software.teaser
+targetEntityType: node
+bundle: software
+mode: teaser
+content:
+  field_file_mac:
+    type: link
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      trim_length: 300
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+  field_file_win:
+    type: link
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 300
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+  field_file_win_zip:
+    type: link
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      trim_length: 300
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+  field_product_catalog_reference:
+    type: entity_reference_label
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_release_type:
+    type: list_default
+    weight: 5
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_software_family:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+hidden:
+  field_not_current: true
+  field_paragraphs: true
+  field_readme_ref: true
+  field_version_number: true
+  links: true
+  share_everywhere: true

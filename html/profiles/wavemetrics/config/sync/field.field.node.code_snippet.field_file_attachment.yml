@@ -1,0 +1,27 @@
+uuid: 102b78f0-b876-479f-a277-b0393ce22dfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_attachment
+    - node.type.code_snippet
+  module:
+    - file
+id: node.code_snippet.field_file_attachment
+field_name: field_file_attachment
+entity_type: node
+bundle: code_snippet
+label: 'File Attachment'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: code-snippet-files/attachments
+  file_extensions: 'zip jpg png txt xls pxp ipf pdf dmg xop ihf csv ibw doc pxt jpeg ifn gzip tarm uxp uxt'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,19 @@
+uuid: e1ba8ccd-8585-47d7-b99a-1f4d029dbb0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_h2
+    - paragraphs.paragraphs_type.paragraph_two_column_with_image
+id: paragraph.paragraph_two_column_with_image.field_paragraph_h2
+field_name: field_paragraph_h2
+entity_type: paragraph
+bundle: paragraph_two_column_with_image
+label: 'Paragraph h2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

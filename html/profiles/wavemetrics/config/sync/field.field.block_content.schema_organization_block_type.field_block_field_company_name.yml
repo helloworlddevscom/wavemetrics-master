@@ -1,0 +1,19 @@
+uuid: 9f048095-1a4e-455d-8f91-830a95907565
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.schema_organization_block_type
+    - field.storage.block_content.field_block_field_company_name
+id: block_content.schema_organization_block_type.field_block_field_company_name
+field_name: field_block_field_company_name
+entity_type: block_content
+bundle: schema_organization_block_type
+label: 'Block Field - Company Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

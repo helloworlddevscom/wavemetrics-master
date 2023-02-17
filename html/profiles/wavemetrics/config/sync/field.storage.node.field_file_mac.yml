@@ -1,0 +1,19 @@
+uuid: b96bc182-398e-4163-afad-a97b7952b2dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_file_mac
+field_name: field_file_mac
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

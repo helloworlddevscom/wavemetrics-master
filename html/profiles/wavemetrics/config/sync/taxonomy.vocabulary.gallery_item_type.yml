@@ -1,0 +1,8 @@
+uuid: 2f3bd890-1286-4c3f-8fbd-8a5fba9aabbe
+langcode: en
+status: true
+dependencies: {  }
+name: 'Gallery Item Type'
+vid: gallery_item_type
+description: ''
+weight: 0

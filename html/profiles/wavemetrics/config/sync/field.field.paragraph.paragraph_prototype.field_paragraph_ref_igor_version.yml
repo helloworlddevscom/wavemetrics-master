@@ -1,0 +1,29 @@
+uuid: 1d203b19-1e12-44d4-a317-3c250ce50510
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_ref_igor_version
+    - paragraphs.paragraphs_type.paragraph_prototype
+    - taxonomy.vocabulary.supported_igor_version
+id: paragraph.paragraph_prototype.field_paragraph_ref_igor_version
+field_name: field_paragraph_ref_igor_version
+entity_type: paragraph
+bundle: paragraph_prototype
+label: 'Paragraph Reference to Igor Versions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      supported_igor_version: supported_igor_version
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

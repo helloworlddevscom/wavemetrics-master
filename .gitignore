@@ -1,0 +1,55 @@
+
+
+# Ignore configuration files that may contain sensitive information.
+/html/sites/*/settings*.php
+/html/sites/*/services*.yml
+
+# Ignore paths that contain user-generated content.
+/html/sites/*/files
+/html/sites/*/private
+
+# Ignore configuration files that may contain sensitive information.
+local.settings.php
+settings.local.php
+
+/html/robots.txt
+/html/.htaccess
+/.vagrant/
+/.idea/
+
+drushrc.php
+aliases.drushrc.php
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Thumbs.db
+.bash_history
+=======
+.DS_Store
+
+# Ignore default text files
+/CHANGELOG.txt
+/COPYRIGHT.txt
+/INSTALL*.txt
+/LICENSE.txt
+/MAINTAINERS.txt
+/UPGRADE.txt
+/README.txt
+
+/* Hide Local Vagrant VM Files */
+/Dockerfile
+/PATCHES.txt
+/Vagrantfile
+/cert/
+/dashboard/
+/default.config.yml
+/lib/
+/mkdocs.yml
+/provisioning/
+
+/*.sql
+/*.tar
+/*.gz
+/*.zip

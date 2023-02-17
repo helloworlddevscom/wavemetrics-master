@@ -1,0 +1,39 @@
+uuid: d585c8d5-bf70-4717-b596-b679a654287a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:html_block:fee04739-3507-4174-9b39-486796b380c0'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - wave
+id: userlogincontent
+theme: wave
+region: bottom_content
+weight: -6
+provider: null
+plugin: 'block_content:fee04739-3507-4174-9b39-486796b380c0'
+settings:
+  id: 'block_content:fee04739-3507-4174-9b39-486796b380c0'
+  label: 'User Login Content'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/login
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

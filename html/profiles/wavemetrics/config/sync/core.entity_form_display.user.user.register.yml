@@ -1,0 +1,120 @@
+uuid: de22baed-d64a-4c1d-bed5-512dbd024f73
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.register
+    - field.field.user.user.field_about_me
+    - field.field.user.user.field_profie_old_path
+    - field.field.user.user.field_profile_activation_key
+    - field.field.user.user.field_profile_birthday
+    - field.field.user.user.field_profile_companies
+    - field.field.user.user.field_profile_contlist_betateste
+    - field.field.user.user.field_profile_contlist_contrib
+    - field.field.user.user.field_profile_contlist_forums_li
+    - field.field.user.user.field_profile_contlist_igor_pro
+    - field.field.user.user.field_profile_contlist_igor_user
+    - field.field.user.user.field_profile_contlist_maintaine
+    - field.field.user.user.field_profile_contlist_wavemetri
+    - field.field.user.user.field_profile_contributions
+    - field.field.user.user.field_profile_country
+    - field.field.user.user.field_profile_fullname
+    - field.field.user.user.field_profile_gender
+    - field.field.user.user.field_profile_homepageurl
+    - field.field.user.user.field_profile_igor_uses
+    - field.field.user.user.field_profile_igoruse
+    - field.field.user.user.field_profile_industries
+    - field.field.user.user.field_profile_interests
+    - field.field.user.user.field_profile_jobtitle
+    - field.field.user.user.field_profile_old_id
+    - field.field.user.user.field_profile_picture
+    - field.field.user.user.field_profile_scientific_disipl
+    - field.field.user.user.field_profile_serial_number
+    - field.field.user.user.field_profile_uses_creating_grap
+    - field.field.user.user.field_profile_uses_curve_fitting
+    - field.field.user.user.field_profile_uses_data_acquisit
+    - field.field.user.user.field_profile_uses_image_analysi
+    - field.field.user.user.field_profile_uses_programming
+    - field.field.user.user.signature
+  module:
+    - allowed_formats
+    - text
+    - user
+id: user.user.register
+targetEntityType: user
+bundle: user
+mode: register
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_profile_activation_key:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+    type: text_textfield
+    region: content
+  field_profile_fullname:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+    type: text_textfield
+    region: content
+  field_profile_serial_number:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+    type: text_textfield
+    region: content
+hidden:
+  comment_notify_settings: true
+  customer_profiles: true
+  field_about_me: true
+  field_profie_old_path: true
+  field_profile_birthday: true
+  field_profile_companies: true
+  field_profile_contlist_betateste: true
+  field_profile_contlist_contrib: true
+  field_profile_contlist_forums_li: true
+  field_profile_contlist_igor_pro: true
+  field_profile_contlist_igor_user: true
+  field_profile_contlist_maintaine: true
+  field_profile_contlist_wavemetri: true
+  field_profile_contributions: true
+  field_profile_country: true
+  field_profile_gender: true
+  field_profile_homepageurl: true
+  field_profile_igor_uses: true
+  field_profile_igoruse: true
+  field_profile_industries: true
+  field_profile_interests: true
+  field_profile_jobtitle: true
+  field_profile_old_id: true
+  field_profile_picture: true
+  field_profile_scientific_disipl: true
+  field_profile_uses_creating_grap: true
+  field_profile_uses_curve_fitting: true
+  field_profile_uses_data_acquisit: true
+  field_profile_uses_image_analysi: true
+  field_profile_uses_programming: true
+  language: true
+  path: true
+  signature: true
+  timezone: true

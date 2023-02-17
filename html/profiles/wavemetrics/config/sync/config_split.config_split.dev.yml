@@ -1,0 +1,19 @@
+uuid: 285a6982-40d5-4ef5-9d12-f2d46a76b949
+langcode: en
+status: false
+dependencies: {  }
+id: dev
+label: Dev
+folder: profiles/wavemetrics/config/dev
+module:
+  devel: 0
+  reroute_email: 0
+  twig_xdebug: 0
+theme: {  }
+blacklist: {  }
+graylist:
+  - config_split.config_split.dev
+  - robotstxt.settings
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

@@ -1,0 +1,5 @@
+name: Custom Price Adjustments
+type: module
+description: Custom Price Adjustments In Commerce.
+core: 8.x
+package: Outlier

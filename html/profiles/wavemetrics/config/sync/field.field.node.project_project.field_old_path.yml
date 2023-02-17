@@ -1,0 +1,19 @@
+uuid: be911744-19f2-4143-ae57-f30a27529f42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_old_path
+    - node.type.project_project
+id: node.project_project.field_old_path
+field_name: field_old_path
+entity_type: node
+bundle: project_project
+label: 'Old Path'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

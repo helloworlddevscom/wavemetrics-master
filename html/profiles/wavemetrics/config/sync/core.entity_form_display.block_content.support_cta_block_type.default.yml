@@ -1,0 +1,29 @@
+uuid: c0c6340e-0920-4c3e-9016-12801caee379
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.support_cta_block_type
+    - field.field.block_content.support_cta_block_type.field_block_field_3_link_with_ic
+  module:
+    - field_collection
+id: block_content.support_cta_block_type.default
+targetEntityType: block_content
+bundle: support_cta_block_type
+mode: default
+content:
+  field_block_field_3_link_with_ic:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

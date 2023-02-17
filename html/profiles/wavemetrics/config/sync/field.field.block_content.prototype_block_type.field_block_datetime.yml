@@ -1,0 +1,21 @@
+uuid: 41690bf4-b956-48ac-95cd-9c9212eb545a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.prototype_block_type
+    - field.storage.block_content.field_block_datetime
+  module:
+    - datetime
+id: block_content.prototype_block_type.field_block_datetime
+field_name: field_block_datetime
+entity_type: block_content
+bundle: prototype_block_type
+label: 'Block Datetime'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

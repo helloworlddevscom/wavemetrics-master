@@ -1,0 +1,21 @@
+uuid: c8455522-5755-4671-8923-3fb18b2f47d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_release_type
+    - node.type.software
+  module:
+    - options
+id: node.software.field_release_type
+field_name: field_release_type
+entity_type: node
+bundle: software
+label: 'Release Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

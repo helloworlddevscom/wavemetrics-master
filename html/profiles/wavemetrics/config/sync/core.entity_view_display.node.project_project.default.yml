@@ -1,0 +1,147 @@
+uuid: 71f0b9f2-e4fe-454a-8696-7695757931f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_basic.default
+    - field.field.node.project_project.body
+    - field.field.node.project_project.field_comments_basic
+    - field.field.node.project_project.field_image_multiple
+    - field.field.node.project_project.field_meta_tags
+    - field.field.node.project_project.field_old_path
+    - field.field.node.project_project.field_os_compatibility
+    - field.field.node.project_project.field_paragraphs
+    - field.field.node.project_project.field_project_changelog
+    - field.field.node.project_project.field_project_cvs
+    - field.field.node.project_project.field_project_demo
+    - field.field.node.project_project.field_project_documentation
+    - field.field.node.project_project.field_project_homepage
+    - field.field.node.project_project.field_project_license
+    - field.field.node.project_project.field_project_screenshots
+    - field.field.node.project_project.field_project_type
+    - field.field.node.project_project.field_short_title
+    - field.field.node.project_project.field_supported_version
+    - image.style.content_body
+    - node.type.project_project
+  module:
+    - comment
+    - image
+    - text
+    - user
+id: node.project_project.default
+targetEntityType: node
+bundle: project_project
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_comments_basic:
+    weight: 12
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_image_multiple:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: content_body
+      image_link: file
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_os_compatibility:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_project_changelog:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_project_cvs:
+    weight: 11
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_project_demo:
+    weight: 10
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_project_documentation:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_project_homepage:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_project_license:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_project_screenshots:
+    weight: 9
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_project_type:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_supported_version:
+    weight: 4
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_meta_tags: true
+  field_old_path: true
+  field_paragraphs: true
+  field_short_title: true
+  links: true
+  share_everywhere: true

@@ -1,0 +1,29 @@
+uuid: 3453faa3-048c-4b82-8713-b1d9b697e467
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - wave
+id: tabs
+theme: wave
+region: sidebar
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

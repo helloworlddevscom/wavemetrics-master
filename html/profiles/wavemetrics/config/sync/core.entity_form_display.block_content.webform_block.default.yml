@@ -1,0 +1,30 @@
+uuid: 9256fba5-4554-4df0-a053-61c7ceaa79ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.webform_block
+    - field.field.block_content.webform_block.field_webform_reference
+  module:
+    - webform
+id: block_content.webform_block.default
+targetEntityType: block_content
+bundle: webform_block
+mode: default
+content:
+  field_webform_reference:
+    weight: 26
+    settings:
+      default_data: true
+    third_party_settings: {  }
+    type: webform_entity_reference_select
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

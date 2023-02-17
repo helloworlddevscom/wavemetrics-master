@@ -1,0 +1,553 @@
+uuid: cfb8e41b-b74a-43e0-ab44-bc7a214b14c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.prototype.field_blog_category
+    - field.field.node.prototype.field_blog_tag
+    - field.field.node.prototype.field_code_type
+    - field.field.node.prototype.field_document
+    - field.field.node.prototype.field_file_attachment
+    - field.field.node.prototype.field_file_mac
+    - field.field.node.prototype.field_file_win
+    - field.field.node.prototype.field_file_win_zip
+    - field.field.node.prototype.field_gallery_type_reference
+    - field.field.node.prototype.field_general_cta
+    - field.field.node.prototype.field_h2
+    - field.field.node.prototype.field_hide_main_image
+    - field.field.node.prototype.field_icon_link
+    - field.field.node.prototype.field_image_multiple
+    - field.field.node.prototype.field_image_single
+    - field.field.node.prototype.field_li
+    - field.field.node.prototype.field_meta_tags
+    - field.field.node.prototype.field_mp4_video_file
+    - field.field.node.prototype.field_not_current
+    - field.field.node.prototype.field_ogv_video_file
+    - field.field.node.prototype.field_old_menu
+    - field.field.node.prototype.field_old_path
+    - field.field.node.prototype.field_operating_system
+    - field.field.node.prototype.field_os_compatibility
+    - field.field.node.prototype.field_p
+    - field.field.node.prototype.field_paragraphs
+    - field.field.node.prototype.field_paragraphs_products_dr
+    - field.field.node.prototype.field_product_catalog_reference
+    - field.field.node.prototype.field_product_teaser_text
+    - field.field.node.prototype.field_project_changelog
+    - field.field.node.prototype.field_project_cvs
+    - field.field.node.prototype.field_project_demo
+    - field.field.node.prototype.field_project_documentation
+    - field.field.node.prototype.field_project_homepage
+    - field.field.node.prototype.field_project_license
+    - field.field.node.prototype.field_project_screenshots
+    - field.field.node.prototype.field_project_type
+    - field.field.node.prototype.field_prototype_fc_field
+    - field.field.node.prototype.field_readme_file
+    - field.field.node.prototype.field_readme_ref
+    - field.field.node.prototype.field_release_type
+    - field.field.node.prototype.field_repository
+    - field.field.node.prototype.field_repository_file_
+    - field.field.node.prototype.field_short_title
+    - field.field.node.prototype.field_software_family
+    - field.field.node.prototype.field_software_file
+    - field.field.node.prototype.field_supported_version
+    - field.field.node.prototype.field_teaser_link_text
+    - field.field.node.prototype.field_version_number
+    - field.field.node.prototype.field_view_teaser_image
+    - field.field.node.prototype.field_volume_reference
+    - field.field.node.prototype.field_voting
+    - field.field.node.prototype.field_weight
+    - image.style.thumbnail
+    - node.type.prototype
+  module:
+    - field_collection
+    - file
+    - image
+    - link
+    - metatag
+    - paragraphs
+    - path
+    - votingapi_widgets
+id: node.prototype.default
+targetEntityType: node
+bundle: prototype
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_blog_category:
+    weight: 17
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_blog_tag:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_code_type:
+    weight: 35
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_document:
+    weight: 27
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_file_attachment:
+    weight: 36
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_file_mac:
+    weight: 61
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_file_win:
+    weight: 62
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_file_win_zip:
+    weight: 66
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_gallery_type_reference:
+    weight: 30
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_general_cta:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_h2:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hide_main_image:
+    weight: 64
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_icon_link:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+    region: content
+  field_image_multiple:
+    weight: 10
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_image_single:
+    weight: 11
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_li:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_mp4_video_file:
+    weight: 13
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_not_current:
+    weight: 63
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_ogv_video_file:
+    weight: 14
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_operating_system:
+    weight: 34
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_os_compatibility:
+    weight: 40
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_p:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 16
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraphs_products_dr:
+    type: entity_reference_paragraphs
+    weight: 67
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_product_catalog_reference:
+    weight: 29
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_product_teaser_text:
+    weight: 70
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_changelog:
+    weight: 47
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_cvs:
+    weight: 51
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_demo:
+    weight: 48
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_documentation:
+    weight: 44
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_homepage:
+    weight: 43
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_license:
+    weight: 45
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_screenshots:
+    weight: 46
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_project_type:
+    weight: 38
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_prototype_fc_field:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+    region: content
+  field_readme_file:
+    weight: 33
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_readme_ref:
+    weight: 65
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_release_type:
+    weight: 55
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_repository:
+    weight: 39
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_repository_file_:
+    weight: 49
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_short_title:
+    weight: 42
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_software_family:
+    weight: 58
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_software_file:
+    weight: 32
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_supported_version:
+    weight: 37
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_teaser_link_text:
+    weight: 71
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_version_number:
+    weight: 56
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_view_teaser_image:
+    weight: 68
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_volume_reference:
+    weight: 52
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_voting:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: voting_api_widget
+    region: content
+  field_weight:
+    weight: 69
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_old_menu: true
+  field_old_path: true

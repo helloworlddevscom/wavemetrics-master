@@ -1,0 +1,8 @@
+uuid: d492e6f5-d53b-4365-9094-03d56f6db68d
+langcode: en
+status: true
+dependencies: {  }
+id: schema_organization_block_type
+label: 'Schema Organization Block Type'
+revision: 0
+description: ''

@@ -1,0 +1,21 @@
+uuid: 7f2879f2-1aa4-4a6c-84cf-08d4ba375fd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_menu_old_parent
+    - field.field.menu_link_content.main.field_menu_old_source
+    - system.menu.main
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content:
+  children:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_menu_old_parent: true
+  field_menu_old_source: true

@@ -1,0 +1,27 @@
+uuid: 62477eb7-3e4b-4209-9200-5be021e28b56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mp4_video_file
+    - node.type.home_page
+  module:
+    - file
+id: node.home_page.field_mp4_video_file
+field_name: field_mp4_video_file
+entity_type: node
+bundle: home_page
+label: 'MP4 Video File'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: home-page-videos
+  file_extensions: mp4
+  max_filesize: '50 MB'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

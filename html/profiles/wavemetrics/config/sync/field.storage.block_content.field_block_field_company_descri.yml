@@ -1,0 +1,21 @@
+uuid: 45a3adf7-87e3-4212-8e1a-7ca27b3a23ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_block_field_company_descri
+field_name: field_block_field_company_descri
+entity_type: block_content
+type: string
+settings:
+  max_length: 600
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

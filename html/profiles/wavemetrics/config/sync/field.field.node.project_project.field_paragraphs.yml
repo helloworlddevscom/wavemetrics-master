@@ -1,0 +1,55 @@
+uuid: 8714c1c2-1b9a-4ea9-b4bf-1d1d97a45775
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.project_project
+    - paragraphs.paragraphs_type.paragraph_project_release
+  module:
+    - entity_reference_revisions
+id: node.project_project.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: project_project
+label: 'Project Releases'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      paragraph_project_release: paragraph_project_release
+    target_bundles_drag_drop:
+      paragraph_project_release:
+        enabled: true
+        weight: 10
+      background_image_gallery:
+        weight: 11
+        enabled: false
+      paragraph_full_html:
+        weight: 12
+        enabled: false
+      paragraph_product_features_table:
+        weight: 13
+        enabled: false
+      paragraph_prototype:
+        weight: 14
+        enabled: false
+      paragraph_table:
+        weight: 15
+        enabled: false
+      paragraph_two_column_with_image:
+        weight: 16
+        enabled: false
+      short_message:
+        weight: 17
+        enabled: false
+      support_center_link:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

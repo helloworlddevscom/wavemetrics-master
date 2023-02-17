@@ -1,0 +1,16 @@
+<a class="user-profile-compact-wrapper" href="/user/{{ user.uid.0.value }}">
+        
+    <div class="user-compact-image-wrapper">
+        {{ content.field_profile_picture }}
+        
+        {% if 'wm_employee' in user.getroles  %}
+            <img class="employee-badge" src="/{{ directory }}/images/icons/employee-icon.png" />
+        {% endif %}
+    </div>
+    <div class="user-compact-info-wrapper">
+        <span class="username-wrapper">{{ user.name.0.value }}</span>
+    </div>
+    
+    <div class="clearit"></div>
+
+</a>

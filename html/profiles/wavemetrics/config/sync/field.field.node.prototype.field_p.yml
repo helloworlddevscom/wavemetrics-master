@@ -1,0 +1,19 @@
+uuid: 76ca3c9a-2031-4386-99f3-1d7bc67ed4f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_p
+    - node.type.prototype
+id: node.prototype.field_p
+field_name: field_p
+entity_type: node
+bundle: prototype
+label: P
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

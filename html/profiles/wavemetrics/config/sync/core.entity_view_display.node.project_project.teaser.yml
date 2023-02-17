@@ -1,0 +1,57 @@
+uuid: 26af8b67-eaf3-4cd7-9a28-d0504e6b0541
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.project_project.body
+    - field.field.node.project_project.field_comments_basic
+    - field.field.node.project_project.field_image_multiple
+    - field.field.node.project_project.field_meta_tags
+    - field.field.node.project_project.field_old_path
+    - field.field.node.project_project.field_os_compatibility
+    - field.field.node.project_project.field_paragraphs
+    - field.field.node.project_project.field_project_changelog
+    - field.field.node.project_project.field_project_cvs
+    - field.field.node.project_project.field_project_demo
+    - field.field.node.project_project.field_project_documentation
+    - field.field.node.project_project.field_project_homepage
+    - field.field.node.project_project.field_project_license
+    - field.field.node.project_project.field_project_screenshots
+    - field.field.node.project_project.field_project_type
+    - field.field.node.project_project.field_short_title
+    - node.type.project_project
+  module:
+    - user
+id: node.project_project.teaser
+targetEntityType: node
+bundle: project_project
+mode: teaser
+content:
+  field_project_type:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_comments_basic: true
+  field_image_multiple: true
+  field_meta_tags: true
+  field_old_path: true
+  field_os_compatibility: true
+  field_paragraphs: true
+  field_project_changelog: true
+  field_project_cvs: true
+  field_project_demo: true
+  field_project_documentation: true
+  field_project_homepage: true
+  field_project_license: true
+  field_project_release: true
+  field_project_screenshots: true
+  field_short_title: true
+  links: true
+  share_everywhere: true

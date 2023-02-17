@@ -1,0 +1,41 @@
+uuid: 7664b582-f7ed-4685-ad49-a408201d19f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.case_studies
+  module:
+    - entity_reference_revisions
+id: node.case_studies.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: case_studies
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      paragraph_full_html:
+        weight: 6
+        enabled: false
+      paragraph_product_features_table:
+        weight: 7
+        enabled: false
+      paragraph_prototype:
+        weight: 8
+        enabled: false
+      paragraph_table:
+        weight: 9
+        enabled: false
+      paragraph_two_column_with_image:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

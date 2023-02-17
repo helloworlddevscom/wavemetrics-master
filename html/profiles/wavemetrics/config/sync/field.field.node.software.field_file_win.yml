@@ -1,0 +1,23 @@
+uuid: 39199778-4571-46a9-af96-4f0072739964
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_win
+    - node.type.software
+  module:
+    - link
+id: node.software.field_file_win
+field_name: field_file_win
+entity_type: node
+bundle: software
+label: 'Windows Version (Main File - .exe or .zip)'
+description: "If this software title has both .exe and .zip formats, add the .exe format here. \r\n\r\nIf there is only on windows file, use this field regardless of the file format. "
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

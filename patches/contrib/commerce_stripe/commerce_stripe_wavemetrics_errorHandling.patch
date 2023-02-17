@@ -1,0 +1,27 @@
+diff --git a/src/ErrorHelper.php b/src/ErrorHelper.php
+index 357fd43..6dcf56c 100755
+--- a/src/ErrorHelper.php
++++ b/src/ErrorHelper.php
+@@ -7,6 +7,8 @@ use Drupal\commerce_payment\Exception\DeclineException;
+ use Drupal\commerce_payment\Exception\HardDeclineException;
+ use Drupal\commerce_payment\Exception\InvalidRequestException;
+ use Drupal\commerce_payment\Exception\InvalidResponseException;
++//Additional Stripe Error Helping - Added by Outlier For WaveMetrics
++use Drupal\wavemetrics_order_management\Controller\wavemetrics_order_managementErrorHelper;
+ 
+ /**
+  * Translates Stripe exceptions and errors into Commerce exceptions.
+@@ -33,6 +35,13 @@ class ErrorHelper {
+         throw new HardDeclineException($message);
+       }
+       else {
++
++        //Additional Stripe Error Helping - Added by Outlier For WaveMetrics
++        $message = ( !empty($exception->getMessage()) && $exception->getMessage()!==false ) ? $exception->getMessage() : "We encountered an error processing your card details. Please verify your details and try again.";
++        $wm_errorHelper = new wavemetrics_order_managementErrorHelper;
++        $wm_errorProcessing = $wm_errorHelper->ProcessErrorsFully($message);
++        drupal_set_message($message, 'warning');
++
+         throw new DeclineException('We encountered an error processing your card details. Please verify your details and try again.');
+       }
+     }

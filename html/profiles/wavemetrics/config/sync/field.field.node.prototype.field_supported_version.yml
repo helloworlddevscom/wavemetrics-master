@@ -1,0 +1,29 @@
+uuid: f73d46f5-b4c2-4770-b798-6956de2a6e88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_supported_version
+    - node.type.prototype
+    - taxonomy.vocabulary.supported_igor_version
+id: node.prototype.field_supported_version
+field_name: field_supported_version
+entity_type: node
+bundle: prototype
+label: 'Supported Version'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      supported_igor_version: supported_igor_version
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

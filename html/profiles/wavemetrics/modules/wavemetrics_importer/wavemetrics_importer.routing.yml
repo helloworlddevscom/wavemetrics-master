@@ -1,0 +1,12 @@
+wavemetrics_importer.generate:
+  path: '/admin/structure/migrate/wavemetrics'
+  defaults:
+    _controller: '\Drupal\wavemetrics_importer\Controller\wavemetrics_importerController::page'
+  requirements:
+    _permission: 'import content via the wavemetrics importer (custom)'
+wavemetrics_importer.testbed:
+  path: '/admin/testbed'
+  defaults:
+    _controller: '\Drupal\wavemetrics_importer\Controller\wavemetrics_importerController::testbed'
+  requirements:
+    _permission: 'import content via the wavemetrics importer (custom)'

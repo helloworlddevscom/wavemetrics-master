@@ -1,0 +1,38 @@
+uuid: a11e8895-4275-4e3d-8219-7ea0e87285cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_fc_field_image_single
+    - field_collection.field_collection.field_block_field_3_link_with_ic
+  module:
+    - image
+id: field_collection_item.field_block_field_3_link_with_ic.field_fc_field_image_single
+field_name: field_fc_field_image_single
+entity_type: field_collection_item
+bundle: field_block_field_3_link_with_ic
+label: 'FC Field - Image Single'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: fc-images-3-link
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

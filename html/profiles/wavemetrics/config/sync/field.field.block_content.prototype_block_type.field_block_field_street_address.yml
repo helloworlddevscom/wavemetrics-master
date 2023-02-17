@@ -1,0 +1,19 @@
+uuid: 608ebb9a-daf8-404b-83b9-01f7163e1a95
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.prototype_block_type
+    - field.storage.block_content.field_block_field_street_address
+id: block_content.prototype_block_type.field_block_field_street_address
+field_name: field_block_field_street_address
+entity_type: block_content
+bundle: prototype_block_type
+label: 'Block Field - Street Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

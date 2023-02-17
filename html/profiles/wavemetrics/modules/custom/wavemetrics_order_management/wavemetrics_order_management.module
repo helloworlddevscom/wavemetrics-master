@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file
+ * Provides the WaveMetrics Order Management Module.
+ */
+
+//use Drupal\Component\Utility\String;
+use Drupal\Component\Utility\SafeMarkup;
+
+function wavemetrics_order_management_entity_view(&$build, $entity, $display, $view_mode){
+    //Commerce is Anonymous Only. If an authenticated user visits a product page, log them out.
+    $currUser = \Drupal::currentUser();
+    $roles = $currUser->getRoles();
+    if ($currUser->isAuthenticated() && !in_array('administrator',$roles)) {
+        //If we care about DR products too.
+       // if ( !empty($entity->hasField('type')) && ( $entity->get('type')->getString() == "product_dr" || $entity->get('type')->getString() == "wavemetrics_product" || $entity->get('type')->getString() == "paybyinvoice_product_type" ) ) {
+        if ( !empty($entity->hasField('type')) && ( $entity->get('type')->getString() == "wavemetrics_product" || $entity->get('type')->getString() == "paybyinvoice_product_type" ) ) {
+            user_logout();
+        }
+    }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function wavemetrics_order_management_mail($key, &$message, $params) {
+
+    $options = array(
+        'langcode' => $message['langcode'],
+    );
+
+    switch ($key) {
+        case 'card_error':
+            $message['from'] = \Drupal::config('system.site')->get('mail');
+            $message['subject'] = t('Commerce Card Error : @user', array('@user' => $params['user_name']), $options);
+            $message['body'][] = SafeMarkup::checkPlain($params['message']);
+            break;
+    }
+}
+
+function wavemetrics_order_management_preprocess_page(&$variables) {
+    //Order Data for Fast Spring Orders are shown on confirmation pages.
+    //one of the conditions is this isn't the node edit page
+    $current_path = \Drupal::service('path.current')->getPath();
+    $fastspring_enabled = false;
+    if(!empty($variables['node']) && $variables['node']->getType()=='webform_confirmation_page'){
+        $fastspring_enabled = $variables['node']->get('field_fastspring_checkout')->getString();
+    }
+    //Always load the data and the FS Library.
+    if(!empty($variables['node']) && $variables['node']->getType()=='webform_confirmation_page' && !preg_match('/node\/(\d+)\/edit/', $current_path, $matches)){
+        //See if there is any order data
+        $session = \Drupal::service('user.private_tempstore')->get('WMFastSpringHandler');
+        $orderData = $session->get('orderData');
+        if($orderData) {
+            //add it to the JS var drupalSettings
+            $variables['#attached']['drupalSettings']['orderData'] = $orderData;
+            //attach the Javascript
+            $variables['#attached']['library'][] = 'wavemetrics_order_management/wm-fastspring';
+            $variables['#attached']['library'][] = 'wavemetrics_order_management/fastspring.builderjs';
+        }
+        //Only load the custom JS if fast spring is enabled on this node
+        if($fastspring_enabled){
+            $variables['#attached']['library'][] = 'wavemetrics_order_management/wm-fastspring-checkout';
+        }
+    }
+  if(!empty($variables['node']) && $variables['node']->getType()=='webform_confirmation_page'){
+    $stripe_enabled = $variables['node']->get('field_stripe_checkout')->getString();
+    if($stripe_enabled && !preg_match('/node\/(\d+)\/edit/', $current_path, $matches)) {
+      //see if there is an order id in the private store
+      $tempstore = \Drupal::service('tempstore.private')->get('wavemetrics_order_management');
+      $orderID = $tempstore->get('order_id');
+      if($orderID && !empty($orderID)) {
+        $variables['#attached']['library'][] = 'wavemetrics_order_management/wm-stripe-checkout-confirmation';
+        $variables['#attached']['drupalSettings']["stripeWmOrderId"] = $orderID;
+      }
+    }
+  }
+
+}
+
+function wavemetrics_order_management_theme_suggestions_input_alter(&$suggestions, array $variables) {
+  $element = $variables['element'];
+  if (isset($element['#type']) && $element['#type'] == "button" ) {
+    $suggestions[] = 'input__stripe__button';
+  }
+}

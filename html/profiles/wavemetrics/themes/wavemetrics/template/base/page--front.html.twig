@@ -1,0 +1,50 @@
+{{ page.breadcrumb }}
+
+{% if page.sidebar %}
+    <div class="sidebar-menu">
+        <div class="sidebar-inner-wrapper">
+            {{ page.sidebar }}
+        </div>
+    </div>
+{% endif %}
+
+<div class="page-content-wrapper">
+    
+    <header id="header" role="banner" aria-label="{{ 'Site header'|t }}">
+        {{ page.header }}
+    </header>
+
+    {% spaceless %}{{ page.content }}{% endspaceless %}
+            
+    <div class="content-wrapper">
+    
+        {% if page.bottom_content %}
+            {{ page.bottom_content }}
+        {% endif %}
+    </div>
+
+    <div class="clearit"></div>
+
+    {% if page.footer %}
+        <footer class="site-footer">
+            <div class="clearfix" role="complementary">
+                {{ page.footer }}
+            </div>
+        </footer>
+    {% endif %}
+
+    {% if page.highlighted %}
+        <div class="highlighted">
+            <aside class="section clearfix" role="complementary">
+                {{ page.highlighted }}
+            </aside>
+        </div>
+    {% endif %}
+
+    {% if user.hasPermission('administer nodes') %}
+        {% if node %}
+            <a class="edit-page-btn" href="/node/{{ node.nid.value }}/edit">{{ 'Edit Page'|t }}</a>
+        {% endif %}
+    {% endif %}
+    
+</div>

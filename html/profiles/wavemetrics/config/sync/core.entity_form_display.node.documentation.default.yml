@@ -1,0 +1,93 @@
+uuid: 0b51e1b9-e93a-4865-baf0-a9c49ecda666
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.documentation.field_document
+    - field.field.node.documentation.field_product_catalog_reference
+    - field.field.node.documentation.field_volume_reference
+    - node.type.documentation
+  module:
+    - file
+    - path
+id: node.documentation.default
+targetEntityType: node
+bundle: documentation
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_document:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_product_catalog_reference:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_volume_reference:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  path:
+    type: path
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

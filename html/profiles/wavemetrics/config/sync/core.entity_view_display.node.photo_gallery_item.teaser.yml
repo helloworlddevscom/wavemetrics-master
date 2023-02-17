@@ -1,0 +1,41 @@
+uuid: 169d5e11-f53e-47cd-9b89-fc7f74577682
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.photo_gallery_item.field_file_attachment
+    - field.field.node.photo_gallery_item.field_gallery_type_reference
+    - field.field.node.photo_gallery_item.field_hide_main_image
+    - field.field.node.photo_gallery_item.field_image_single
+    - field.field.node.photo_gallery_item.field_meta_tags
+    - field.field.node.photo_gallery_item.field_old_path
+    - field.field.node.photo_gallery_item.field_paragraphs
+    - image.style.400x240
+    - node.type.photo_gallery_item
+  module:
+    - image
+    - user
+id: node.photo_gallery_item.teaser
+targetEntityType: node
+bundle: photo_gallery_item
+mode: teaser
+content:
+  field_image_single:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: 400x240
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  field_file_attachment: true
+  field_gallery_type_reference: true
+  field_hide_main_image: true
+  field_meta_tags: true
+  field_old_path: true
+  field_paragraphs: true
+  links: true
+  share_everywhere: true

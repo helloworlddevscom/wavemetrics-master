@@ -1,0 +1,21 @@
+uuid: abf95987-cac0-46cf-921c-f5d1fcb53f5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_float_option
+    - paragraphs.paragraphs_type.paragraph_prototype
+  module:
+    - options
+id: paragraph.paragraph_prototype.field_paragraph_float_option
+field_name: field_paragraph_float_option
+entity_type: paragraph
+bundle: paragraph_prototype
+label: 'Paragraph Float Option'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

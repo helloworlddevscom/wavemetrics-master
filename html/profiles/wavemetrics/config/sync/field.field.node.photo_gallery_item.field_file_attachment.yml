@@ -1,0 +1,27 @@
+uuid: 7ce610ad-f9ac-46e0-853b-23d9db0e227e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_attachment
+    - node.type.photo_gallery_item
+  module:
+    - file
+id: node.photo_gallery_item.field_file_attachment
+field_name: field_file_attachment
+entity_type: node
+bundle: photo_gallery_item
+label: 'File Attachment'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx ai psd indd html php css json yml twig ico png jpg jpeg m4v mp4 mov'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

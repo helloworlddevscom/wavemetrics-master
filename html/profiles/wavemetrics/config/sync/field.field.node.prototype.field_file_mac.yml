@@ -1,0 +1,23 @@
+uuid: 335a6228-5104-44a2-8f47-8acb4ffe853b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_mac
+    - node.type.prototype
+  module:
+    - link
+id: node.prototype.field_file_mac
+field_name: field_file_mac
+entity_type: node
+bundle: prototype
+label: 'Macintosh Version'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

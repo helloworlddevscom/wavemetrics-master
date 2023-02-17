@@ -1,0 +1,19 @@
+uuid: 1877954a-7a4b-466f-a6fe-59d5cef99777
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_cvs
+    - node.type.prototype
+id: node.prototype.field_project_cvs
+field_name: field_project_cvs
+entity_type: node
+bundle: prototype
+label: 'Project CVS'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

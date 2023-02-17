@@ -1,0 +1,10 @@
+name: Codesnippet For Igor Pro
+description: 'Codesnippet For Igor Pro Language Syntax Highlighting.'
+package: Filter
+type: module
+core: 8.x
+dependencies:
+  - ckeditor
+  - geshifilter
+  - codesnippet
+  - codesnippet_geshifilter

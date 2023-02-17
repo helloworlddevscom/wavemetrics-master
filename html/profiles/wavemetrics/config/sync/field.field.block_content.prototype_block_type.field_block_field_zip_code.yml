@@ -1,0 +1,19 @@
+uuid: 0c72dbb2-aa94-46c9-a463-ce678249507f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.prototype_block_type
+    - field.storage.block_content.field_block_field_zip_code
+id: block_content.prototype_block_type.field_block_field_zip_code
+field_name: field_block_field_zip_code
+entity_type: block_content
+bundle: prototype_block_type
+label: 'Block Field - Zip Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

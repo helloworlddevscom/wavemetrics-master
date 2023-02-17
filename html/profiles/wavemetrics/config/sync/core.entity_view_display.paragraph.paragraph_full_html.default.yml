@@ -1,0 +1,22 @@
+uuid: eb7ac95f-2528-487d-bc8d-0eef68074d4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_full_html.field_paragraph_full_html
+    - paragraphs.paragraphs_type.paragraph_full_html
+  module:
+    - text
+id: paragraph.paragraph_full_html.default
+targetEntityType: paragraph
+bundle: paragraph_full_html
+mode: default
+content:
+  field_paragraph_full_html:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

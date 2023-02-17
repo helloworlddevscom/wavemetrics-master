@@ -1,0 +1,24 @@
+name: wave
+type: theme
+core: '8.x'
+description: 'A wavemetrics Theme'
+screenshot: screenshot.png
+libraries:
+ - wave/styles
+libraries-override:
+  comment/drupal.comment-new-indicator:
+    js:
+     js/comment-new-indicator.js: js/wm-comment-new-indicator.js
+regions:
+  header: 'Header'
+  drupal: 'Drupal'
+  top_content: 'Top Content'
+  support_blocks: 'Support Blocks'
+  content: 'Content'
+  bottom_content: 'Bottom Content'
+  sidebar: 'Sidebar'
+  footer: 'Footer'
+
+version: '8.x-1.0'
+project: 'wavemetrics'
+datestamp: 1455336869

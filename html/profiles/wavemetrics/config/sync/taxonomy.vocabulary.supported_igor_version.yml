@@ -1,0 +1,8 @@
+uuid: 5bab574d-b74d-4e9c-a429-e397a8f9f185
+langcode: en
+status: true
+dependencies: {  }
+name: 'Supported Igor Version'
+vid: supported_igor_version
+description: 'Select the version of Igor on which this has been tested and is supported.  In most cases this will also run on later versions o'
+weight: 0

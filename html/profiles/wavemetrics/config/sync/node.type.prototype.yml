@@ -1,0 +1,17 @@
+uuid: 64bdc4c9-65a9-4ba5-a94c-6110f5c01534
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Prototype
+type: prototype
+description: 'This is an administrative content type. This content type is a placeholder for all fields. No content of this type ''Prototype'' should be created or exist. Other content types utilize these fields. '
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

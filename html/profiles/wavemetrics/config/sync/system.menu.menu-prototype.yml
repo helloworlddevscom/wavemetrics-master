@@ -1,0 +1,8 @@
+uuid: 6e232657-28bf-4909-941f-bf64fb42e5d6
+langcode: en
+status: true
+dependencies: {  }
+id: menu-prototype
+label: 'Prototype Menu'
+description: ''
+locked: false

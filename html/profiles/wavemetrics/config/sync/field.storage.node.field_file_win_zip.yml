@@ -1,0 +1,19 @@
+uuid: 507598ee-b9bd-46e9-8efb-b86eb41a990c
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_file_win_zip
+field_name: field_file_win_zip
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

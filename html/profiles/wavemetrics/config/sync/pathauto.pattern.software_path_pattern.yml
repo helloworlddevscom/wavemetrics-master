@@ -1,0 +1,22 @@
+uuid: 277fc5a5-03ee-44dd-bc46-0843b1cf28b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: software_path_pattern
+label: 'Software Path Pattern'
+type: 'canonical_entities:node'
+pattern: '/software/[node:title]'
+selection_criteria:
+  7a96a310-9098-43b6-ac35-19b36ac5e752:
+    id: node_type
+    bundles:
+      software: software
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 7a96a310-9098-43b6-ac35-19b36ac5e752
+selection_logic: and
+weight: -5
+relationships: {  }

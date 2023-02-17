@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter()
+ */  
+   
+function custom_search_form_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+    if ($form_id == 'search_form') {
+
+		unset($form['basic']['submit']);
+		unset($form['help_link']);
+		$form['basic']['keys']['#placeholder'] = t('Search Site');
+		$form['basic']['submit'] = array('#type' => 'image_button', '#src' => \Drupal::moduleHandler()->getModule('custom_search_form')->getPath() . '/icons/search-icon.png');
+
+    }
+
+}
+
+?>

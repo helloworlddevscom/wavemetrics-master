@@ -1,0 +1,21 @@
+uuid: 3a280c14-0543-43b9-82d4-2463d4f5dead
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stripe_checkout
+    - node.type.webform_confirmation_page
+id: node.webform_confirmation_page.field_stripe_checkout
+field_name: field_stripe_checkout
+entity_type: node
+bundle: webform_confirmation_page
+label: 'Enable Stripe Checkout'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

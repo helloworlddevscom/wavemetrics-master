@@ -1,0 +1,6 @@
+local:
+  paths:
+    dump-dir: /var/www/db
+    files: /var/www/html/sites/www.wavemetrics.com/files
+  root: /var/www/html
+  uri: www.wavemetrics.com

@@ -1,0 +1,5 @@
+wavemetrics_commerce_form_mods:
+  js:
+    js/outlier_commerce_form_modifications.js: {}
+  dependencies:
+    - core/jquery

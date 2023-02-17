@@ -1,0 +1,6 @@
+name: Custom Search Form
+type: module
+description: 'Controls the markup of the search form'
+package: Outlier
+core: 8.x
+hidden: false

@@ -1,0 +1,91 @@
+{% if author_picture | render %}
+    {{ author_picture }}
+{% endif %}
+
+{% if display_submitted %}
+    <div{{ author_attributes.addClass('node__submitted') }}>
+        <p>
+            {{ date }}
+            {{ metadata }}
+        </p>
+    </div>
+{% endif %}
+
+<div class="project-wrapper">
+
+    {{ content.body }}
+
+    {% if content.field_image_multiple | render %}
+      <div class="project-image-mulitple-wrapper">
+        <h2>Images:</h2>
+        {{ content.field_image_multiple }}
+      </div>
+      <div class="clearit"></div>
+    {% endif %}
+
+    <h2>Project Details</h2>
+
+    <table class="project-details-table">
+        <tbody>
+            {% if content.field_project_changelog | render %}
+                <tr>
+                    <td>Project Changelog:</td>
+                    <td>{{ content.field_project_changelog }}</td>
+                </tr>
+            {% endif %}
+            {% if content.field_project_documentation | render %}
+                <tr>
+                    <td>Project Documentation:</td>
+                    <td>{{ content.field_project_documentation }}</td>
+                </tr>
+            {% endif %}
+            {% if content.field_project_homepage | render %}
+                <tr>
+                    <td>Project Homepage:</td>
+                    <td>{{ content.field_project_homepage }}</td>
+                </tr>
+            {% endif %}
+            {% if content.field_project_license | render %}
+                <tr>
+                    <td>Project License:</td>
+                    <td>{{ content.field_project_license }}</td>
+                </tr>
+            {% endif %}
+            {% if content.field_project_screenshots | render %}
+                <tr>
+                    <td>Project Screenshots:</td>
+                    <td>{{ content.field_project_screenshots }}</td>
+                </tr>
+            {% endif %}
+            {% if content.field_project_demo | render %}
+                <tr>
+                    <td>Project Demo:</td>
+                    <td>{{ content.field_project_demo }}</td>
+                </tr>
+            {% endif %}
+            {% if content.field_project_cvs | render %}
+                <tr>
+                    <td>Project CVS:</td>
+                    <td>{{ content.field_project_cvs }}</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    {{ current_release }}
+    <a class="button-action" href="/project-releases/{{ node.id  }}">View All Releases</a>
+
+    <div class="project-footer-wrapper">
+        {% if content.field_os_compatibility | render %}
+            <label>OS Compatbility</label>
+            {{ content.field_os_compatibility }}
+        {% endif %}
+        {% if content.field_project_type | render %}
+            <label>Project Type</label>
+            {{ content.field_project_type }}
+        {% endif %}
+    </div>
+
+    {{ content.field_comments_basic }}
+
+</div>

@@ -1,0 +1,19 @@
+uuid: 14ca9f4e-0ab4-452b-8298-ccf6dba263ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_fc_field_product_name
+    - field_collection.field_collection.field_block_field_product_cta_fc
+id: field_collection_item.field_block_field_product_cta_fc.field_fc_field_product_name
+field_name: field_fc_field_product_name
+entity_type: field_collection_item
+bundle: field_block_field_product_cta_fc
+label: 'FC Field - Product Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 6127df86-b784-45b2-af9b-1e6ac4b99357
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_screenshots
+    - node.type.prototype
+id: node.prototype.field_project_screenshots
+field_name: field_project_screenshots
+entity_type: node
+bundle: prototype
+label: 'Project Screenshots'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

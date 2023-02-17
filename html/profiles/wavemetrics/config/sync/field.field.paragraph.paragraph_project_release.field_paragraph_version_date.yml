@@ -1,0 +1,21 @@
+uuid: a6488aca-b501-41f2-9458-9d6497f86a42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_version_date
+    - paragraphs.paragraphs_type.paragraph_project_release
+id: paragraph.paragraph_project_release.field_paragraph_version_date
+field_name: field_paragraph_version_date
+entity_type: paragraph
+bundle: paragraph_project_release
+label: 'Version - Date'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1523052667
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

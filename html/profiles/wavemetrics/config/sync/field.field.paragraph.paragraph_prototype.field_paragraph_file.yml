@@ -1,0 +1,27 @@
+uuid: b8f12bbe-a4d3-46b7-974e-ead9b9982166
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_file
+    - paragraphs.paragraphs_type.paragraph_prototype
+  module:
+    - file
+id: paragraph.paragraph_prototype.field_paragraph_file
+field_name: field_paragraph_file
+entity_type: paragraph
+bundle: paragraph_prototype
+label: 'Paragraph File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: txt
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

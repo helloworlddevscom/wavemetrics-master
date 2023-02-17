@@ -1,0 +1,8 @@
+name: wavemetrics
+type: profile
+description: 'WaveMetrics Code Space'
+core: 8.x
+
+# Required modules
+dependencies:
+  - node

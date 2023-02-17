@@ -1,0 +1,23 @@
+uuid: 2cdd426c-27e6-4cf4-a0d0-d3dd8a4a9ce6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_release_type
+    - node.type.prototype
+  module:
+    - options
+id: node.prototype.field_release_type
+field_name: field_release_type
+entity_type: node
+bundle: prototype
+label: 'Release Type'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: Full
+default_value_callback: ''
+settings: {  }
+field_type: list_string

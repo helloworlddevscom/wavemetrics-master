@@ -1,0 +1,135 @@
+uuid: 1f1bb4ed-8419-4de3-a1d2-e2df145e699f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.prototype_block_type
+    - field.field.block_content.prototype_block_type.field_authenticated_user_links
+    - field.field.block_content.prototype_block_type.field_block_datetime
+    - field.field.block_content.prototype_block_type.field_block_fc_business_hours
+    - field.field.block_content.prototype_block_type.field_block_field_3_link_with_ic
+    - field.field.block_content.prototype_block_type.field_block_field_city
+    - field.field.block_content.prototype_block_type.field_block_field_company_descri
+    - field.field.block_content.prototype_block_type.field_block_field_company_name
+    - field.field.block_content.prototype_block_type.field_block_field_phone_number
+    - field.field.block_content.prototype_block_type.field_block_field_product_cta_fc
+    - field.field.block_content.prototype_block_type.field_block_field_schema_logo
+    - field.field.block_content.prototype_block_type.field_block_field_state
+    - field.field.block_content.prototype_block_type.field_block_field_street_address
+    - field.field.block_content.prototype_block_type.field_block_field_zip_code
+    - image.style.thumbnail
+  module:
+    - datetime
+    - field_collection
+    - image
+    - link
+id: block_content.prototype_block_type.default
+targetEntityType: block_content
+bundle: prototype_block_type
+mode: default
+content:
+  field_authenticated_user_links:
+    weight: 44
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_block_datetime:
+    weight: 41
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_block_fc_business_hours:
+    weight: 42
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+    region: content
+  field_block_field_3_link_with_ic:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+    region: content
+  field_block_field_city:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_company_descri:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_company_name:
+    weight: 35
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_phone_number:
+    weight: 36
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_product_cta_fc:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+    region: content
+  field_block_field_schema_logo:
+    weight: 40
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_block_field_state:
+    weight: 38
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_street_address:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_block_field_zip_code:
+    weight: 39
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

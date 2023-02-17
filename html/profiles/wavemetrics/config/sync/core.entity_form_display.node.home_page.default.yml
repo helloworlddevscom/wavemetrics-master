@@ -1,0 +1,181 @@
+uuid: 22fba84a-6a73-40cf-b6ca-170c60fbc394
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.home_page.field_general_cta
+    - field.field.node.home_page.field_image_single
+    - field.field.node.home_page.field_mp4_video_file
+    - field.field.node.home_page.field_ogv_video_file
+    - field.field.node.home_page.field_p
+    - field.field.node.home_page.field_paragraphs
+    - image.style.thumbnail
+    - node.type.home_page
+  module:
+    - field_group
+    - file
+    - image
+    - link
+    - paragraphs
+    - path
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_hero_content
+        - group_page_content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        label: Content
+        direction: horizontal
+        id: ''
+        classes: ''
+      label: Content
+      region: content
+    group_hero_content:
+      children:
+        - title
+        - field_p
+        - field_image_single
+        - field_ogv_video_file
+        - field_mp4_video_file
+        - field_general_cta
+      parent_name: group_content
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Hero Content'
+      region: content
+    group_page_content:
+      children:
+        - field_paragraphs
+      parent_name: group_content
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Page Content'
+      region: content
+id: node.home_page.default
+targetEntityType: node
+bundle: home_page
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_general_cta:
+    weight: 9
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_image_single:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_mp4_video_file:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_ogv_video_file:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_p:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraphs:
+    weight: 9
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,18 @@
+uuid: 8e3e9486-f35a-4747-a53d-f1f066115b49
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_profile_contlist_maintaine
+field_name: field_profile_contlist_maintaine
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

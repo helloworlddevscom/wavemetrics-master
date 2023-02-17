@@ -1,0 +1,41 @@
+uuid: ae1558bd-2006-47a2-bbad-4daf3580a7f3
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:authenticated_user_actions:55907662-78f8-4fbb-9bbd-3451e49843a1'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - wave
+id: usercodesnippetactions
+theme: wave
+region: drupal
+weight: 0
+provider: null
+plugin: 'block_content:55907662-78f8-4fbb-9bbd-3451e49843a1'
+settings:
+  id: 'block_content:55907662-78f8-4fbb-9bbd-3451e49843a1'
+  label: 'User Code Snippet Actions'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/code-snippets\r\n/code-snippets/*\r\n/code-snippet\r\n/code-snippet/*"
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+      wm_employee: wm_employee
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

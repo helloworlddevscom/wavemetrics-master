@@ -1,0 +1,22 @@
+uuid: edbf73d9-dc2b-4ba0-94bb-fb85a761f33a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prototype_fc_field
+    - node.type.prototype
+  module:
+    - field_collection
+id: node.prototype.field_prototype_fc_field
+field_name: field_prototype_fc_field
+entity_type: node
+bundle: prototype
+label: 'Prototype FC Field'
+description: 'This is an administrative field. This field is a placeholder for all Field Collection fields. No content types should use this field ''Prototype FC Field''.'
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection

@@ -1,0 +1,122 @@
+uuid: 8daf8987-fbfc-4155-94c3-4bf27ef6133b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_about_me
+    - field.field.user.user.field_profie_old_path
+    - field.field.user.user.field_profile_activation_key
+    - field.field.user.user.field_profile_birthday
+    - field.field.user.user.field_profile_companies
+    - field.field.user.user.field_profile_contlist_betateste
+    - field.field.user.user.field_profile_contlist_contrib
+    - field.field.user.user.field_profile_contlist_forums_li
+    - field.field.user.user.field_profile_contlist_igor_pro
+    - field.field.user.user.field_profile_contlist_igor_user
+    - field.field.user.user.field_profile_contlist_maintaine
+    - field.field.user.user.field_profile_contlist_wavemetri
+    - field.field.user.user.field_profile_contributions
+    - field.field.user.user.field_profile_country
+    - field.field.user.user.field_profile_fullname
+    - field.field.user.user.field_profile_gender
+    - field.field.user.user.field_profile_homepageurl
+    - field.field.user.user.field_profile_igor_uses
+    - field.field.user.user.field_profile_igoruse
+    - field.field.user.user.field_profile_industries
+    - field.field.user.user.field_profile_interests
+    - field.field.user.user.field_profile_jobtitle
+    - field.field.user.user.field_profile_old_id
+    - field.field.user.user.field_profile_picture
+    - field.field.user.user.field_profile_scientific_disipl
+    - field.field.user.user.field_profile_serial_number
+    - field.field.user.user.field_profile_uses_creating_grap
+    - field.field.user.user.field_profile_uses_curve_fitting
+    - field.field.user.user.field_profile_uses_data_acquisit
+    - field.field.user.user.field_profile_uses_image_analysi
+    - field.field.user.user.field_profile_uses_programming
+    - field.field.user.user.signature
+    - image.style.thumbnail
+  module:
+    - image
+    - link
+    - text
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_profile_fullname:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_profile_homepageurl:
+    type: link
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_profile_jobtitle:
+    type: text_default
+    weight: 2
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_profile_picture:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_profile_scientific_disipl:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  customer_profiles: true
+  field_about_me: true
+  field_profie_old_path: true
+  field_profile_activation_key: true
+  field_profile_birthday: true
+  field_profile_companies: true
+  field_profile_contlist_betateste: true
+  field_profile_contlist_contrib: true
+  field_profile_contlist_forums_li: true
+  field_profile_contlist_igor_pro: true
+  field_profile_contlist_igor_user: true
+  field_profile_contlist_maintaine: true
+  field_profile_contlist_wavemetri: true
+  field_profile_contributions: true
+  field_profile_country: true
+  field_profile_gender: true
+  field_profile_igor_uses: true
+  field_profile_igoruse: true
+  field_profile_industries: true
+  field_profile_interests: true
+  field_profile_old_id: true
+  field_profile_serial_number: true
+  field_profile_uses_creating_grap: true
+  field_profile_uses_curve_fitting: true
+  field_profile_uses_data_acquisit: true
+  field_profile_uses_image_analysi: true
+  field_profile_uses_programming: true
+  member_for: true
+  profile_customer: true
+  signature: true

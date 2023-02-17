@@ -1,0 +1,9 @@
+uuid: b0b3cdb1-6511-40be-a51a-59e4c6035853
+langcode: en
+status: true
+dependencies: {  }
+id: support_center_link
+label: 'Support Center Link'
+icon_uuid: null
+description: 'This paragraph should only be displayed on the Support Center page'
+behavior_plugins: {  }

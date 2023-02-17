@@ -1,0 +1,18 @@
+uuid: af538c2b-c81b-48b9-9c85-cf8f6b8e4662
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+id: field_collection_item.field_fc_support_email
+field_name: field_fc_support_email
+entity_type: field_collection_item
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

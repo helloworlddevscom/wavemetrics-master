@@ -1,0 +1,32 @@
+uuid: de32748a-af31-45f0-a120-5b06076d5131
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.webform_block
+    - field.storage.block_content.field_webform_reference
+    - webform.webform.contact
+  module:
+    - webform
+id: block_content.webform_block.field_webform_reference
+field_name: field_webform_reference
+entity_type: block_content
+bundle: webform_block
+label: 'Webform Reference'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_data: ''
+    status: open
+    open: ''
+    close: ''
+    target_uuid: ffbe21af-e896-4760-afe9-797ec21f83bf
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

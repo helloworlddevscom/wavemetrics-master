@@ -1,0 +1,27 @@
+uuid: e78143da-3d35-43fd-8fcd-ed9f5c565b94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_attachment
+    - node.type.prototype
+  module:
+    - file
+id: node.prototype.field_file_attachment
+field_name: field_file_attachment
+entity_type: node
+bundle: prototype
+label: 'File Attachment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: code-snippet-files/attachments
+  file_extensions: 'txt pdf png jpg doc docx pxp'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

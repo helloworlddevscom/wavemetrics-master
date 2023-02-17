@@ -1,0 +1,22 @@
+uuid: 7529cb3a-6530-4d7a-8371-4ddd7cfe656e
+langcode: en
+status: true
+dependencies: {  }
+name: 400x240
+label: 400x240
+effects:
+  7f5743fd-0505-461e-9f7a-5b209079eef5:
+    uuid: 7f5743fd-0505-461e-9f7a-5b209079eef5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 240
+      anchor: center-center
+  7ebe9852-e9e9-415f-922c-bc0bcfa5a6fe:
+    uuid: 7ebe9852-e9e9-415f-922c-bc0bcfa5a6fe
+    id: image_resize
+    weight: 2
+    data:
+      width: 400
+      height: 240

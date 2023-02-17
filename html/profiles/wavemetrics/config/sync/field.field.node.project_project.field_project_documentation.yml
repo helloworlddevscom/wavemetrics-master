@@ -1,0 +1,19 @@
+uuid: 33e9ba52-0616-42ef-b9ee-ecc660df01d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_documentation
+    - node.type.project_project
+id: node.project_project.field_project_documentation
+field_name: field_project_documentation
+entity_type: node
+bundle: project_project
+label: 'Project Documentation'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 5650f5c0-bb32-406f-8bd7-e3ff646612bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.operating_system_compatability.field_taxonomy_old_tid
+    - taxonomy.vocabulary.operating_system_compatability
+  module:
+    - text
+id: taxonomy_term.operating_system_compatability.default
+targetEntityType: taxonomy_term
+bundle: operating_system_compatability
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_taxonomy_old_tid: true

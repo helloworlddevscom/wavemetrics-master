@@ -1,0 +1,27 @@
+uuid: 03a8ebc6-aadd-42c4-8cc5-1e12bb461614
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.readme.field_paragraphs
+    - node.type.readme
+  module:
+    - entity_reference_revisions
+    - user
+id: node.readme.default
+targetEntityType: node
+bundle: readme
+mode: default
+content:
+  field_paragraphs:
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  links: true
+  share_everywhere: true

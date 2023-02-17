@@ -1,0 +1,30 @@
+uuid: aaa00545-3383-4e47-ba2c-e8ff4ae60081
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_companies
+  module:
+    - allowed_formats
+    - text
+    - user
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    full_html: '0'
+    admins_only: '0'
+    forum_no_editor: '0'
+    text: '0'
+    plain_text: '0'
+id: user.user.field_profile_companies
+field_name: field_profile_companies
+entity_type: user
+bundle: user
+label: 'Companies Worked For'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

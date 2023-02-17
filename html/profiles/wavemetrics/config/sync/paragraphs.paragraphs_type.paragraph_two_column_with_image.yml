@@ -1,0 +1,9 @@
+uuid: 24209d7a-35a4-418b-b822-7369343fce44
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph_two_column_with_image
+label: 'Paragraph Two Column With Image'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

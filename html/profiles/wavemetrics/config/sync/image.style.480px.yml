@@ -1,0 +1,15 @@
+uuid: 6cb5a284-cce4-462a-9431-b83536a9022a
+langcode: en
+status: true
+dependencies: {  }
+name: 480px
+label: 480px
+effects:
+  0bb88ea2-2635-4277-8cde-962c639e9537:
+    uuid: 0bb88ea2-2635-4277-8cde-962c639e9537
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: true

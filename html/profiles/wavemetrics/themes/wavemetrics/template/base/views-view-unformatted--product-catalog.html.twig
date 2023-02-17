@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<section class="view-product-catalog-section">
+
+    {% if title %}
+        <h2 class="views-product-catalog-title">{{ title }}</h2>
+    {% endif %}
+
+    {% for row in rows %}
+        {%
+            set row_classes = [
+                default_row_class ? 'views-row',
+            ]
+        %}
+        <div{{ row.attributes.addClass(row_classes) }}>
+            {{ row.content }}
+            <div class="clearit"></div>
+        </div>
+    {% endfor %}
+        
+</section>

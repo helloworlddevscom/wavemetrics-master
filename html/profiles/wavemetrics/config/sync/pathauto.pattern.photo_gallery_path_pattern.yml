@@ -1,0 +1,22 @@
+uuid: 77b3e354-2771-4096-b03b-b6a836491d56
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: photo_gallery_path_pattern
+label: 'Photo Gallery Path Pattern'
+type: 'canonical_entities:node'
+pattern: '/gallery-item/[node:title]'
+selection_criteria:
+  7132f3ad-1bc1-4893-8f4c-1c7f9a650e0e:
+    id: node_type
+    bundles:
+      photo_gallery_item: photo_gallery_item
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 7132f3ad-1bc1-4893-8f4c-1c7f9a650e0e
+selection_logic: and
+weight: -5
+relationships: {  }

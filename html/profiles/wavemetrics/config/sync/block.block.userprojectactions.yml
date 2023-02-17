@@ -1,0 +1,41 @@
+uuid: 2de3e0bc-b253-4557-922b-8ec41570aaeb
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:authenticated_user_actions:149f60d2-eada-428d-83f4-d8098287181f'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - wave
+id: userprojectactions
+theme: wave
+region: drupal
+weight: 0
+provider: null
+plugin: 'block_content:149f60d2-eada-428d-83f4-d8098287181f'
+settings:
+  id: 'block_content:149f60d2-eada-428d-83f4-d8098287181f'
+  label: 'User Project Actions'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/projects\r\n/projects/*\r\n/project\r\n/project/*"
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+      wm_employee: wm_employee
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

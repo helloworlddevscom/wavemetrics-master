@@ -1,0 +1,5 @@
+name: WaveMetrics Order Management
+type: module
+description: 'Order Integration for WaveMetrics'
+package: WaveMetrics
+core: 8.x

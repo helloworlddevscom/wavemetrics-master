@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Two column template for the checkout form.
+ *
+ * Available variables:
+ * - form: The form.
+ *
+ * @ingroup themeable
+ */
+    
+#}
+<div class="layout-checkout-form clearfix">
+    {{ form|without('sidebar', 'actions') }}
+    
+    <div class="text-right">
+        {{ form.actions }}
+    </div>
+</div>
+
+<div class="layout-checkout-sidebar">
+    <h3>{% trans %} Order Summary {% endtrans %}</h3>
+    {{ form.sidebar }}
+    <div id="commerce-badges">
+        <p>Trust that your transaction is safe:</p>
+        <a href="https://www.stripe.com" target="_blank"><img src="/{{ base_path ~ directory }}/badges/powered_by_stripe.png" /></a>
+        <a href="https://letsencrypt.org/about/" target="_blank"><img src="/{{ base_path ~ directory }}/badges/letsencrypt.png" /></a>
+    </div>
+</div>
+
+<div class="clearit"></div>

@@ -1,0 +1,85 @@
+uuid: 4a6ebcf7-c8f5-4450-bef0-50e457a232f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor
+format: full_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Format
+          items:
+            - Format
+            - BulletedList
+            - NumberedList
+            - Blockquote
+            - Bold
+            - Italic
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+            - Superscript
+            - Subscript
+            - DrupalLink
+            - DrupalUnlink
+            - RemoveFormat
+            - Source
+            - ImceImage
+            - CodeSnippet
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    codesnippet:
+      highlight_style: igor
+      highlight_languages:
+        ccode: ccode
+        igor: igor
+        sql: sql
+        xml: xml
+        cpp: cpp
+        apache: 0
+        bash: 0
+        css: 0
+        coffeescript: 0
+        dart: 0
+        dockerfile: 0
+        dust: 0
+        gherkin: 0
+        go: 0
+        haml: 0
+        handlebars: 0
+        ini: 0
+        json: 0
+        java: 0
+        javascript: 0
+        less: 0
+        makefile: 0
+        markdown: 0
+        nginx: 0
+        php: 0
+        perl: 0
+        powershell: 0
+        puppet: 0
+        python: 0
+        ruby: 0
+        scss: 0
+        twig: 0
+        typescript: 0
+        yaml: 0
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

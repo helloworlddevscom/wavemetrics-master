@@ -1,0 +1,22 @@
+uuid: 5854b3a2-0770-40ea-a716-ee34374e9327
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: case_studies_path_pattern
+label: 'Case Studies Path Pattern'
+type: 'canonical_entities:node'
+pattern: '/case-study/[node:title]'
+selection_criteria:
+  4daea144-af6e-4dfd-a31f-1835a1061356:
+    id: node_type
+    bundles:
+      case_studies: case_studies
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 4daea144-af6e-4dfd-a31f-1835a1061356
+selection_logic: and
+weight: -5
+relationships: {  }

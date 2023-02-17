@@ -1,0 +1,8 @@
+uuid: 11db28a6-2499-4a56-b791-b21fdfe0523f
+langcode: en
+status: true
+dependencies: {  }
+id: prototype_block_type
+label: 'Prototype Block Type'
+revision: 0
+description: ''

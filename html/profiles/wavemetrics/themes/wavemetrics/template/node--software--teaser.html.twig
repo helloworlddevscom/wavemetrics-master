@@ -1,0 +1,46 @@
+<section class="software-teaser-wrapper">
+    
+    <h2>{{ label }}</h2>
+    
+    <div class="software-teaser-inner-wrapper">
+
+        <table>
+            <tbody>
+                {% if content.field_release_type | render %}
+                    <tr>
+                        <td>Release Type:</td>
+                        <td>{{ content.field_release_type }}</td>
+                    </tr>
+                {% endif %}
+                {% if content.field_product_catalog_reference | render %}
+                    <tr>
+                        <td>Product Catalog:</td>
+                        <td>{{ content.field_product_catalog_reference }}</td>
+                    </tr>
+                {% endif %}
+                {% if content.field_software_family | render %}
+                    <tr>
+                        <td>Software Family:</td>
+                        <td>{{ content.field_software_family }}</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+
+        {% spaceless %}
+            {% if content.field_file_mac | render %}
+                <a class="software-link" href="{{ content.field_file_mac|escape|striptags('<!-- -->') }}">Mac (.dmg)</a>
+            {% endif %}
+            {% if content.field_file_win | render %}
+                <a class="software-link software-link-has-extras" href="{{ content.field_file_win|escape|striptags('<!-- -->') }}">Windows</a>
+            {% endif %}
+            {% if content.field_file_win_zip | render %}
+                <a class="software-link software-link-last" href="{{ content.field_file_win_zip|escape|striptags('<!-- -->') }}">Windows (.zip)</a>
+            {% endif %}
+        {% endspaceless %}
+
+    </div>
+    
+    <a class="release-notes-link" href="{{ url }}">View full info &rarr;</a>
+    
+</section>

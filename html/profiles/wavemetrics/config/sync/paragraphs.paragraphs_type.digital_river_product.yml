@@ -1,0 +1,9 @@
+uuid: d84295f8-441c-4493-987d-0b694396b558
+langcode: en
+status: true
+dependencies: {  }
+id: digital_river_product
+label: 'Digital River Product'
+icon_uuid: null
+description: 'Insert a "Buy" button for a Digitial River Product'
+behavior_plugins: {  }

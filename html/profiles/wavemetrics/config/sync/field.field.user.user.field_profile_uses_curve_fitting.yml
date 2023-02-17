@@ -1,0 +1,24 @@
+uuid: 2b60fa44-f86c-40b7-9cea-43e90b195577
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_uses_curve_fitting
+  module:
+    - user
+id: user.user.field_profile_uses_curve_fitting
+field_name: field_profile_uses_curve_fitting
+entity_type: user
+bundle: user
+label: 'Curve Fitting'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

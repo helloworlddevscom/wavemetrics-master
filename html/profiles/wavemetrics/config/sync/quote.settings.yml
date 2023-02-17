@@ -1,0 +1,7 @@
+node_types:
+  forum: forum
+node_link_display: false
+format: full_html
+nest: 2
+_core:
+  default_config_hash: 0QY2dlNQe_9PIW7E2PnuaVjAFO_jEUg1r-f8QoAlzC0

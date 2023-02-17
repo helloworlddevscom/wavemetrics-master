@@ -1,0 +1,21 @@
+name: Deploy to LiquidWeb Test Site
+on:
+  push:
+    branches:
+      - test
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to LiquidWeb Test Site
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.WM_TEST_HOST }}
+          username: ${{ secrets.WM_TEST_USERNAME }}
+          password: ${{ secrets.WM_TEST_PASSWORD }}
+          debug: true
+          script: |
+            cd ${{ secrets.WM_TEST_DOCROOT }}
+            git checkout test
+            git pull origin test
+            touch deployed.txt

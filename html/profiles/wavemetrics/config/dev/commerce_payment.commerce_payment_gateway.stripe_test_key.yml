@@ -1,0 +1,19 @@
+uuid: 1e6a7c7d-529e-453c-8800-58cf96cdf7c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_stripe
+id: stripe_test_key
+label: 'Stripe Test Key'
+weight: null
+plugin: stripe
+configuration:
+  publishable_key: pk_test_9E8ddZPwdEbPs1DOSLIR1b69
+  secret_key: sk_test_IJxn3GSumWJQcPXcpFm96oBD
+  display_label: Stripe
+  mode: test
+  payment_method_types:
+    - credit_card
+conditions: {  }
+conditionOperator: AND

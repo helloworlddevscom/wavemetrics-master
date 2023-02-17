@@ -1,0 +1,9 @@
+uuid: adcf0b89-67f9-4f96-9076-5bce4490a6bf
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph_full_html
+label: 'Paragraph - Full HTML'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,49 @@
+uuid: 5cee27cf-96df-46be-b965-9347898b074a
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_forum
+    - field.field.comment.comment_forum.comment_body
+    - field.field.comment.comment_forum.field_comment_file
+    - field.field.comment.comment_forum.field_comment_subject
+    - field.field.comment.comment_forum.field_old_cid
+  module:
+    - file
+    - text
+_core:
+  default_config_hash: Td9G-YV2hlf2GR_F3rjhQZxwdq1yD7P_W-Wl2Ivf7Iw
+id: comment.comment_forum.default
+targetEntityType: comment
+bundle: comment_forum
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_comment_file:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_comment_subject:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_old_cid: true

@@ -1,0 +1,21 @@
+uuid: 35e7a12a-7ad5-4503-a592-89fe434782ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_project_documentation
+field_name: field_project_documentation
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

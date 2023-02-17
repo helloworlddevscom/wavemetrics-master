@@ -1,0 +1,30 @@
+uuid: 3042005d-fe34-4be1-9538-73d0fff83c42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_contributions
+  module:
+    - allowed_formats
+    - text
+    - user
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    full_html: '0'
+    admins_only: '0'
+    forum_no_editor: '0'
+    text: '0'
+    plain_text: '0'
+id: user.user.field_profile_contributions
+field_name: field_profile_contributions
+entity_type: user
+bundle: user
+label: Contributions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

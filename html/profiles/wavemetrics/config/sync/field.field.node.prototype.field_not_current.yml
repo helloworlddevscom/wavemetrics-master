@@ -1,0 +1,23 @@
+uuid: 37a3bc79-18b7-4056-80db-76c5fd4d10b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_not_current
+    - node.type.prototype
+id: node.prototype.field_not_current
+field_name: field_not_current
+entity_type: node
+bundle: prototype
+label: 'Not Current The Current Release'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

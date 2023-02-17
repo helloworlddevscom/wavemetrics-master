@@ -1,0 +1,39 @@
+uuid: c775c134-52a3-4e71-90ea-29f6c3ae5f1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.admin
+  module:
+    - menu_block
+    - user
+  theme:
+    - wave
+id: administration
+theme: wave
+region: sidebar
+weight: -6
+provider: null
+plugin: 'menu_block:admin'
+settings:
+  id: 'menu_block:admin'
+  label: Administration
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand_all_items: true
+  parent: 'admin:'
+  suggestion: admin
+  label_type: block
+  label_link: false
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

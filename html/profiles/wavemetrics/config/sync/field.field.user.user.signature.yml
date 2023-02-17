@@ -1,0 +1,32 @@
+uuid: bbb0fd7f-3107-4b2a-ae08-c8b1bf5ec8e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.signature
+  module:
+    - allowed_formats
+    - text
+    - user
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    full_html: '0'
+    admins_only: '0'
+    forum_no_editor: '0'
+    text: '0'
+    plain_text: '0'
+_core:
+  default_config_hash: IniJt4FsCyg0v3hao-yOA5OjmBDi9CXXOhrk_zfKai8
+id: user.user.signature
+field_name: signature
+entity_type: user
+bundle: user
+label: 'User signature'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

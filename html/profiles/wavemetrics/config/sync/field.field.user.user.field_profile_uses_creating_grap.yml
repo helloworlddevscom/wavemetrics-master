@@ -1,0 +1,24 @@
+uuid: 5c6e9281-0423-46bd-93c7-4af6dff1885a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_uses_creating_grap
+  module:
+    - user
+id: user.user.field_profile_uses_creating_grap
+field_name: field_profile_uses_creating_grap
+entity_type: user
+bundle: user
+label: 'Creating Graphics'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

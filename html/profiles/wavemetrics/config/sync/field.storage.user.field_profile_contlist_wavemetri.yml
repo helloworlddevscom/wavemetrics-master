@@ -1,0 +1,18 @@
+uuid: 19d84dc9-5189-4897-b8a3-e50aaf22fb11
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_profile_contlist_wavemetri
+field_name: field_profile_contlist_wavemetri
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

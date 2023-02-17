@@ -1,0 +1,10 @@
+<section class="paragraph background-image-wrapper">
+    {% if content.field_paragraph_h2|render %}
+        <h2 title="{{content.field_paragraph_h2['#items'].0.value}}">{{content.field_paragraph_h2['#items'].0.value}}</h2>
+    {% endif %}
+    {% if content.field_paragraph_image_multiple | render %}
+        <div class="background-image-inner-wrapper">
+            {{content.field_paragraph_image_multiple}}
+        </div>
+    {% endif %}
+</section>

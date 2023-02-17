@@ -1,0 +1,20 @@
+uuid: 7da41b44-356a-4914-bfc2-28087f7b3f19
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_os_compatibility
+field_name: field_os_compatibility
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

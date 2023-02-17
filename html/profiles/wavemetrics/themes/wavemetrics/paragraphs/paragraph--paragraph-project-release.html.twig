@@ -1,0 +1,81 @@
+<section class="paragraph project-release">
+
+    <div class="project-release-info">
+        
+        {{ content.field_paragraph_h2 }}
+        
+        <table>
+            <tbody>
+                {% if content.field_paragraph_file | render %}
+                    <tr>
+                        <td>Release File:</td>
+                        <td>{{ content.field_paragraph_file }}</td>
+                    </tr>
+                {% endif %}
+                {% if content.field_paragraph_version | render %}
+                    <tr>
+                        <td>Version:</td>
+                        <td>{{ content.field_paragraph_version }}</td>
+                    </tr>
+                {% endif %}
+                {% if content.field_paragraph_version_date | render %}
+                    <tr>
+                        <td>Version Date:</td>
+                        <td>{{ content.field_paragraph_version_date }}</td>
+                    </tr>
+                {% endif %}
+                {% if content.field_paragraph_version_major | render %}
+                    <tr>
+                        <td>Version Major:</td>
+                        <td>{{ content.field_paragraph_version_major }}</td>
+                    </tr>
+                {% endif %}
+                {% if content.field_paragraph_version_extra | render %}
+                    <tr>
+                        <td>Version Extra:</td>
+                        <td>{{ content.field_paragraph_version_extra }}</td>
+                    </tr>
+                {% endif %}
+                {% if content.field_paragraph_version_patch | render %}
+                    <tr>
+                        <td>Version Patch Level:</td>
+                        <td>{{ content.field_paragraph_version_patch }}</td>
+                    </tr>
+                {% endif %}
+                {% if content.field_paragraph_single_link | render %}
+                    <tr>
+                        <td>Release Link:</td>
+                        <td>{{ content.field_paragraph_single_link }}</td>
+                    </tr>
+                {% endif %}
+                {% if content.field_paragraph_ref_os_compat | render %}
+                    <tr>
+                        <td>OS Compatibility:</td>
+                        <td>{{ content.field_paragraph_ref_os_compat }}</td>
+                    </tr>
+                {% endif %}
+                {% if content.field_paragraph_ref_igor_version | render %}
+                    <tr>
+                        <td>Supported Igor Versions:</td>
+                        <td>{{ content.field_paragraph_ref_igor_version }}</td>
+                    </tr>
+                {% endif %}
+                {% if content.field_paragraph_full_html | render %}
+                    <tr>
+                        <td>Release Notes:</td>
+                        <td>{{ content.field_paragraph_full_html }}</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+                
+    </div>
+    
+    <div class="project-release-footer">
+                
+        <span>{{ node_stats }}</span>
+    </div>
+    
+    <div class="clearit"></div>
+            
+</section>

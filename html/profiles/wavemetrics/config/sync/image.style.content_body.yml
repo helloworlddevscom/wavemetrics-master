@@ -1,0 +1,15 @@
+uuid: b5fdc6d7-c552-4853-a074-68d363f1d4b3
+langcode: en
+status: true
+dependencies: {  }
+name: content_body
+label: 'Content Body'
+effects:
+  e515689f-4d06-42b3-94c3-034b59815f76:
+    uuid: e515689f-4d06-42b3-94c3-034b59815f76
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 300
+      upscale: false

@@ -1,0 +1,163 @@
+uuid: 95e1a1cc-04cc-4987-b896-067a5818b8d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_prototype_fc_field.field_close_timestamp
+    - field.field.field_collection_item.field_prototype_fc_field.field_fc_field_body
+    - field.field.field_collection_item.field_prototype_fc_field.field_fc_field_general_file
+    - field.field.field_collection_item.field_prototype_fc_field.field_fc_field_general_text
+    - field.field.field_collection_item.field_prototype_fc_field.field_fc_field_image_single
+    - field.field.field_collection_item.field_prototype_fc_field.field_fc_field_link
+    - field.field.field_collection_item.field_prototype_fc_field.field_fc_field_os_compatability
+    - field.field.field_collection_item.field_prototype_fc_field.field_fc_field_product_name
+    - field.field.field_collection_item.field_prototype_fc_field.field_fc_field_release_type
+    - field.field.field_collection_item.field_prototype_fc_field.field_fc_field_resource_type
+    - field.field.field_collection_item.field_prototype_fc_field.field_fc_field_supported_igor
+    - field.field.field_collection_item.field_prototype_fc_field.field_fc_field_title
+    - field.field.field_collection_item.field_prototype_fc_field.field_open_timestamp
+    - field.field.field_collection_item.field_prototype_fc_field.field_time_close
+    - field.field.field_collection_item.field_prototype_fc_field.field_time_open
+    - field_collection.field_collection.field_prototype_fc_field
+  module:
+    - datetime
+    - file
+    - image
+    - link
+    - options
+    - text
+id: field_collection_item.field_prototype_fc_field.default
+targetEntityType: field_collection_item
+bundle: field_prototype_fc_field
+mode: default
+content:
+  field_close_timestamp:
+    weight: 15
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  field_fc_field_body:
+    weight: 9
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_fc_field_general_file:
+    weight: 5
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_fc_field_general_text:
+    weight: 11
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_fc_field_image_single:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_fc_field_link:
+    weight: 0
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_fc_field_os_compatability:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_fc_field_product_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_fc_field_release_type:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_fc_field_resource_type:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_fc_field_supported_igor:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_fc_field_title:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_open_timestamp:
+    weight: 14
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  field_time_close:
+    weight: 13
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_time_open:
+    weight: 12
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden: {  }

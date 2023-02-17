@@ -1,0 +1,30 @@
+<div class="code-snippet-wrapper">
+    
+    {% if author_picture | render %}
+        <span class="teaser-flag">{{ author_picture }}</span>
+    {% endif %}
+
+    <div class="code-snippet-info">
+        <a href="/node/{{ node.nid.0.value }}"><h2>{{ label }}</h2></a>
+
+        <span>
+            {{ node.createdtime | date('F j, Y') }}
+        </span>
+        
+        {% if content.field_voting | render %}
+            {{ content.field_voting }}
+        {% endif %}
+
+        {% if content.field_code_type %}
+            <span>
+                {{ content.field_code_type }}
+            </span>
+        {% endif %}
+        
+        <div class="code-snippet-footer">
+            <span>{{ node_stats }}</span>
+        </div>
+        
+    </div>    
+    <div class="clearit"></div>
+</div>

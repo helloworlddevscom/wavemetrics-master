@@ -1,0 +1,24 @@
+uuid: fb4dc439-c22f-41be-91e6-1f4382c01057
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.short_message.field_paragraph_p
+    - paragraphs.paragraphs_type.short_message
+id: paragraph.short_message.default
+targetEntityType: paragraph
+bundle: short_message
+mode: default
+content:
+  field_paragraph_p:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

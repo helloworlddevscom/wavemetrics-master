@@ -1,0 +1,25 @@
+uuid: 7d4a6c8a-9d51-464b-86f6-79c46aea977f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_webform
+    - paragraphs.paragraphs_type.digital_river_product
+  module:
+    - webform
+id: paragraph.digital_river_product.field_paragraph_webform
+field_name: field_paragraph_webform
+entity_type: paragraph
+bundle: digital_river_product
+label: 'Commerce Form'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

@@ -1,0 +1,14 @@
+uuid: 407fe2a4-3fdb-4722-8b4f-2610ef475655
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.wm_employee
+  module:
+    - user
+id: user_remove_role_action.wm_employee
+label: 'Remove the WM Employee role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: wm_employee

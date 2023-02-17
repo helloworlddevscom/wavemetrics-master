@@ -1,0 +1,19 @@
+uuid: 476fa636-afeb-4c3a-9627-13e8e26c0737
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_general_cta
+field_name: field_general_cta
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

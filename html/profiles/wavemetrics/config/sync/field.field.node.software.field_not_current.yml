@@ -1,0 +1,23 @@
+uuid: ede44716-12d5-4a91-93e7-c6ff73c6e95e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_not_current
+    - node.type.software
+id: node.software.field_not_current
+field_name: field_not_current
+entity_type: node
+bundle: software
+label: 'Not The Current Release'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

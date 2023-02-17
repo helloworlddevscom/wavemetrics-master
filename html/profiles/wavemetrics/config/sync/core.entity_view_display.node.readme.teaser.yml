@@ -1,0 +1,28 @@
+uuid: 391cf1bd-06ea-407c-876d-85729021ab5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.readme.field_paragraphs
+    - node.type.readme
+  module:
+    - entity_reference_revisions
+    - user
+id: node.readme.teaser
+targetEntityType: node
+bundle: readme
+mode: teaser
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  links: true
+  share_everywhere: true

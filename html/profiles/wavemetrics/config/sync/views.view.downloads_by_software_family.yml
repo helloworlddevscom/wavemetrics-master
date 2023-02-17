@@ -1,0 +1,1314 @@
+uuid: c1560f74-479d-4dff-8c29-78ddd79d1fcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - taxonomy.vocabulary.product_family_downloads
+  module:
+    - taxonomy
+    - user
+    - views_field_view
+id: downloads_by_software_family
+label: 'Downloads by Software Family'
+module: views
+description: ''
+tag: ''
+base_table: taxonomy_term_field_data
+base_field: tid
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: mini
+        options:
+          items_per_page: 100
+          offset: 0
+          id: 0
+          total_pages: null
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          tags:
+            previous: ‹‹
+            next: ››
+      style:
+        type: default
+        options:
+          grouping:
+            -
+              field: name
+              rendered: true
+              rendered_strip: false
+          row_class: ''
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: false
+          inline:
+            name: name
+          separator: ''
+          hide_empty: false
+      fields:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view: downloads
+          display: page_1
+          arguments: '{{ raw_fields.name }}'
+          plugin_id: view
+      filters:
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          value:
+            product_family_downloads: product_family_downloads
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+      sorts:
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+      title: 'Downloads by Software Family'
+      header:
+        view:
+          id: view
+          table: views
+          field: view
+          plugin_id: view
+      footer: {  }
+      empty: {  }
+      relationships: {  }
+      arguments: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags: {  }
+  attachment_1:
+    display_plugin: attachment
+    id: attachment_1
+    display_title: 'Current Releases - 3rd Party'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      relationships: {  }
+      defaults:
+        relationships: false
+        fields: false
+        filters: false
+        filter_groups: false
+        header: false
+        title: false
+      display_description: ''
+      fields:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view: downloads
+          display: block_3
+          arguments: '{{ raw_fields.name }}'
+          plugin_id: view
+      displays:
+        page_2: page_2
+      filters:
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          value:
+            product_family_downloads: product_family_downloads
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        tid_raw:
+          id: tid_raw
+          table: taxonomy_term_field_data
+          field: tid_raw
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: '95'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          plugin_id: numeric
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      attachment_position: after
+      header: {  }
+      title: 'Current 3rd Party Download Releases by Software Family'
+      sorts: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: 'Software Family Links - Current'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      fields:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: '/downloads/current/{{ name__value }}'
+            absolute: false
+            external: false
+            replace_spaces: true
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: true
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+      defaults:
+        fields: false
+        style: false
+        row: false
+        header: false
+        title: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline:
+            name: name
+          separator: ''
+          hide_empty: false
+      header: {  }
+      title: 'Filter To Current Releases For'
+      sorts: {  }
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags: {  }
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: 'Software Family Links - All'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      fields:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: '/downloads/filtered/{{ name__value }}'
+            absolute: false
+            external: false
+            replace_spaces: true
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: true
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+      defaults:
+        fields: false
+        style: false
+        row: false
+        header: false
+        title: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: false
+          inline:
+            name: name
+          separator: ''
+          hide_empty: false
+      header: {  }
+      title: 'Filter To Downloads For'
+      sorts: {  }
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags: {  }
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: 'All Releases'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: downloads
+      display_description: ''
+      fields:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view: downloads
+          display: block_1
+          arguments: '{{ raw_fields.name }}'
+          plugin_id: view
+      defaults:
+        fields: false
+        header: false
+        title: false
+      header:
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: 'Menu to Filter Downloads by Family'
+          empty: false
+          view_to_insert: 'downloads_by_software_family:block_2'
+          inherit_arguments: false
+          plugin_id: view
+      title: 'All Downloads by Software Family'
+      sorts: {  }
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags: {  }
+  page_2:
+    display_plugin: page
+    id: page_2
+    display_title: 'Current Releases'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      path: downloads/current
+      relationships: {  }
+      defaults:
+        relationships: false
+        fields: false
+        filters: false
+        filter_groups: false
+        header: false
+        title: false
+      display_description: ''
+      fields:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view: downloads
+          display: block_2
+          arguments: '{{ raw_fields.name }}'
+          plugin_id: view
+      menu:
+        type: normal
+        title: Downloads
+        description: ''
+        expanded: true
+        parent: ''
+        weight: -42
+        context: '0'
+        menu_name: main
+        enabled: true
+      filters:
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          value:
+            product_family_downloads: product_family_downloads
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        tid_raw:
+          id: tid_raw
+          table: taxonomy_term_field_data
+          field: tid_raw
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value:
+            min: ''
+            max: ''
+            value: '95'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          plugin_id: numeric
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      header:
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: 'Menu to Filter Downloads by Family to Current'
+          empty: false
+          view_to_insert: 'downloads_by_software_family:block_1'
+          inherit_arguments: false
+          plugin_id: view
+      title: 'Current Download Releases by Software Family'
+      sorts: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags: {  }

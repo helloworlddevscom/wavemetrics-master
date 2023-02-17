@@ -1,0 +1,39 @@
+uuid: 24788059-2055-4564-b593-84811e793bc9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:authenticated_user_actions:e060e957-5f54-4260-a466-398a5e9ffc0a'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - wave
+id: anonuserforumactions
+theme: wave
+region: drupal
+weight: 0
+provider: null
+plugin: 'block_content:e060e957-5f54-4260-a466-398a5e9ffc0a'
+settings:
+  id: 'block_content:e060e957-5f54-4260-a466-398a5e9ffc0a'
+  label: 'Anon User Forum Actions'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/forum\r\n/forum/*"
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

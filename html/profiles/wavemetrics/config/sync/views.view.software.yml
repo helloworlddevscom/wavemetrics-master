@@ -1,0 +1,629 @@
+uuid: dc8ddb82-b221-46f9-9c00-cf5a8955dc70
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.storage.node.field_readme_file
+    - field.storage.node.field_software_file
+    - node.type.software
+    - taxonomy.vocabulary.operating_system
+    - taxonomy.vocabulary.product_catalog
+  module:
+    - better_exposed_filters
+    - file
+    - node
+    - taxonomy
+    - user
+id: software
+label: Software
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          input_required: false
+          text_input_required: 'Select any filter and click on Apply to see results'
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_hide: true
+              input_required: false
+              text_input_required: 'Select any filter and click on Apply to see results'
+              text_input_required_format: basic_html
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+            filter:
+              field_product_catalog_reference_target_id:
+                plugin_id: bef_links
+                select_all_none: false
+                advanced:
+                  collapsible: false
+                  is_secondary: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  sort_options: false
+              field_operating_system_target_id:
+                plugin_id: bef_links
+                select_all_none: false
+                advanced:
+                  collapsible: false
+                  is_secondary: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  sort_options: false
+          text_input_required_format: full_html
+      pager:
+        type: none
+        options:
+          items_per_page: null
+          offset: 0
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: "{{ title }}\n<span>{{ field_readme_file }}</span>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        field_software_file:
+          id: field_software_file
+          table: node__field_software_file
+          field: field_software_file
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Software
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ title }}'
+            make_link: true
+            path: '{{ field_software_file }}'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: file_url_plain
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_readme_file:
+          id: field_readme_file
+          table: node__field_readme_file
+          field: field_readme_file
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Readme
+          exclude: false
+          alter:
+            alter_text: true
+            text: Readme
+            make_link: true
+            path: '{{ field_readme_file }}'
+            absolute: true
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: file_url_plain
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        filesize:
+          id: filesize
+          table: file_managed
+          field: filesize
+          relationship: field_software_file_target_id
+          group_type: group
+          admin_label: ''
+          label: 'File Size'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: file_size
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: file
+          entity_field: filesize
+          plugin_id: field
+        created:
+          id: created
+          table: file_managed
+          field: created
+          relationship: field_software_file_target_id
+          group_type: group
+          admin_label: ''
+          label: Date
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: timestamp
+          settings:
+            date_format: custom
+            custom_date_format: 'M d Y'
+            timezone: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: file
+          entity_field: created
+          plugin_id: field
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            software: software
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_product_catalog_reference_target_id:
+          id: field_product_catalog_reference_target_id
+          table: node__field_product_catalog_reference
+          field: field_product_catalog_reference_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_product_catalog_reference_target_id_op
+            label: 'Filter by Product'
+            description: ''
+            use_operator: false
+            operator: field_product_catalog_reference_target_id_op
+            identifier: product-software
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: product_catalog
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_operating_system_target_id:
+          id: field_operating_system_target_id
+          table: node__field_operating_system
+          field: field_operating_system_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_operating_system_target_id_op
+            label: 'Filter by Operating System'
+            description: ''
+            use_operator: false
+            operator: field_operating_system_target_id_op
+            identifier: operating-system
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: operating_system
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+      title: Software
+      header: {  }
+      footer: {  }
+      empty: {  }
+      relationships:
+        field_software_file_target_id:
+          id: field_software_file_target_id
+          table: node__field_software_file
+          field: field_software_file_target_id
+          relationship: none
+          group_type: group
+          admin_label: 'file from field_software_file'
+          required: false
+          plugin_id: standard
+        field_product_catalog_reference:
+          id: field_product_catalog_reference
+          table: node__field_product_catalog_reference
+          field: field_product_catalog_reference
+          relationship: none
+          group_type: group
+          admin_label: 'field_product_catalog_reference: Taxonomy term'
+          required: false
+          plugin_id: standard
+      arguments: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_readme_file'
+        - 'config:field.storage.node.field_software_file'
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: software
+      menu:
+        type: none
+        title: Downloads
+        description: ''
+        expanded: false
+        parent: ''
+        weight: -44
+        context: '0'
+        menu_name: main
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_readme_file'
+        - 'config:field.storage.node.field_software_file'

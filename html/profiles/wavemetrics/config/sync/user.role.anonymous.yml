@@ -1,0 +1,27 @@
+uuid: b09f55bb-6dfa-4a6c-bfdb-64b3f8df8315
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: -10
+is_admin: false
+permissions:
+  - 'access cart'
+  - 'access checkout'
+  - 'access comments'
+  - 'access content'
+  - 'access devel information'
+  - 'access kint'
+  - 'access user profiles'
+  - 'edit own vote on node:forum:field_voting'
+  - 'search content'
+  - 'use text format basic_html'
+  - 'use text format forum_no_editor'
+  - 'use text format plain_text_forced'
+  - 'use text format text'
+  - 'view commerce_product'
+  - 'view post access counter'
+  - 'vote on node:forum:field_voting'

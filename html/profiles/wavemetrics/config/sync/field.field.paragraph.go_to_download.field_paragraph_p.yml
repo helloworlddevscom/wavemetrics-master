@@ -1,0 +1,19 @@
+uuid: 888526df-c00b-4c65-ac26-7063043a438b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_p
+    - paragraphs.paragraphs_type.go_to_download
+id: paragraph.go_to_download.field_paragraph_p
+field_name: field_paragraph_p
+entity_type: paragraph
+bundle: go_to_download
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,28 @@
+<section class="project-teaser-wrapper">
+
+    {% if author_picture | render %}
+        <span class="teaser-flag">{{ author_picture }}</span>
+    {% endif %}
+
+    <div class="project-teaser-info">
+        <a href="/node/{{ node.nid.0.value }}"><h2>{{ label }}</h2></a>
+        
+        {% if content.field_voting | render %}
+            {{ content.field_voting }}
+        {% endif %}
+
+        {% if content.field_project_type %}
+            <span>
+                {{ content.field_project_type }}
+            </span>
+        {% endif %}
+        
+        <div class="project-teaser-footer">
+            <span>{{ node.createdtime | date('F j, Y') }}</span>
+            <span>{{ node_stats }}</span>
+        </div>
+        
+    </div>    
+    <div class="clearit"></div>
+
+</section>

@@ -1,0 +1,19 @@
+uuid: 57c359f0-cfbb-407e-be2e-42e4aa3083e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_fc_tech_email
+    - field_collection.field_collection.field_block_fc_business_hours
+id: field_collection_item.field_block_fc_business_hours.field_fc_tech_email
+field_name: field_fc_tech_email
+entity_type: field_collection_item
+bundle: field_block_fc_business_hours
+label: 'FC Tech Email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

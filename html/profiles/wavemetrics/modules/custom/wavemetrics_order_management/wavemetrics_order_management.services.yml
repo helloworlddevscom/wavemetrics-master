@@ -1,0 +1,10 @@
+services:
+  wavemetrics_order_management.db_logic:
+    class: Drupal\wavemetrics_order_management\Controller\wavemetrics_order_managementDbLogic
+    arguments: ['@database']
+    tags:
+    - { name: backend_overridable }
+  wavemetrics_order_management.db_logic.order_subscriber:
+    class: Drupal\wavemetrics_order_management\EventSubscriber\wavemetrics_order_managementOrderSubscriber
+    tags:
+      - { name: 'event_subscriber' }

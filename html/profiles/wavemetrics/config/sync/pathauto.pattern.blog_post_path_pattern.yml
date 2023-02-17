@@ -1,0 +1,22 @@
+uuid: 4412789c-bc6f-45a6-aa50-1861f6dbf2bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: blog_post_path_pattern
+label: 'Blog Post Path Pattern'
+type: 'canonical_entities:node'
+pattern: '/news/[node:title]'
+selection_criteria:
+  63ecb55c-ee1a-4360-b82b-71887c5bba0f:
+    id: node_type
+    bundles:
+      blog_post: blog_post
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 63ecb55c-ee1a-4360-b82b-71887c5bba0f
+selection_logic: and
+weight: -5
+relationships: {  }

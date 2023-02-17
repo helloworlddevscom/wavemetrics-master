@@ -1,0 +1,36 @@
+
+<article {{ attributes }}>
+
+    {% if content.field_image_single | render %}
+        <div class="product-hero">
+            <img src="{{ file_url(content.field_image_single['#items'].entity.uri.value | image_style('1440px')) }}" />
+        </div>
+    {% endif %}
+
+    <h1>{{ label }}</h1>
+
+    <div class="content-wrapper">
+        <h4>{{ content.field_short_title }}</h4>
+        <div id="products-dr-links">
+            {# We loop over the Field Item List to know how many items there are (count isn't allowed due to twig sec rules #}
+            {% for entity in content.field_paragraphs_products_dr['#items'] %}
+                <span class="product-dr-link button-action" data-id="{{ loop.index0 }}">
+                    {# We don't render the Field List Item entity, instead we want to render a field inside the paragraph. We use the loop id for this #}
+                    {{ content.field_paragraphs_products_dr[loop.index0]['#paragraph'].field_paragraph_title.value }}
+                </span>
+            {% endfor %}
+        </div>
+
+        <div id="products-dr">
+            {% for entity in content.field_paragraphs_products_dr['#items'] %}
+                <div class="product-dr" id="product-dr-{{ loop.index0 }}">
+                    {{ content.field_paragraphs_products_dr[loop.index0] }}
+                </div>
+            {% endfor %}
+        </div>
+
+        {% spaceless %}{{ content.field_paragraphs }}{% endspaceless %}
+
+    </div>
+    
+</article>

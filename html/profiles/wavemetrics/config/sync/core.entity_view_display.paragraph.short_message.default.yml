@@ -1,0 +1,21 @@
+uuid: 71b9eedb-f99e-4fe6-bc15-46bbf96b904b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.short_message.field_paragraph_p
+    - paragraphs.paragraphs_type.short_message
+id: paragraph.short_message.default
+targetEntityType: paragraph
+bundle: short_message
+mode: default
+content:
+  field_paragraph_p:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

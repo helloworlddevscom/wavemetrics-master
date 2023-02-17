@@ -1,0 +1,17 @@
+uuid: 0a40465e-a432-405d-844c-256c92037daf
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Project
+type: project_project
+description: 'A project is a body of code containing Igor procedure files and/or C/C++ source code with compiled XOPs.  Projects allow individuals and groups to work together and can optionally have issue tracking, integration with revision control systems, automatic or manual releases, and so on.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,27 @@
+uuid: 42815f9a-acea-4ed6-a030-bbc75b99da21
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.authenticated_user_actions
+    - field.field.block_content.authenticated_user_actions.field_authenticated_user_links
+  module:
+    - link
+id: block_content.authenticated_user_actions.default
+targetEntityType: block_content
+bundle: authenticated_user_actions
+mode: default
+content:
+  field_authenticated_user_links:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

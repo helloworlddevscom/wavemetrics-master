@@ -1,0 +1,32 @@
+uuid: 448c8296-56ee-415e-9677-ebeb41f867e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_block_field_product_cta_fc.field_fc_field_link
+    - field.field.field_collection_item.field_block_field_product_cta_fc.field_fc_field_product_name
+    - field_collection.field_collection.field_block_field_product_cta_fc
+  module:
+    - link
+id: field_collection_item.field_block_field_product_cta_fc.default
+targetEntityType: field_collection_item
+bundle: field_block_field_product_cta_fc
+mode: default
+content:
+  field_fc_field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_fc_field_product_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden: {  }

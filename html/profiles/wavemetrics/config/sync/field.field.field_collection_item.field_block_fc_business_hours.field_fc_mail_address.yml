@@ -1,0 +1,19 @@
+uuid: 5406ff3c-4996-4f06-a23c-2991164bbe3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_fc_mail_address
+    - field_collection.field_collection.field_block_fc_business_hours
+id: field_collection_item.field_block_fc_business_hours.field_fc_mail_address
+field_name: field_fc_mail_address
+entity_type: field_collection_item
+bundle: field_block_fc_business_hours
+label: 'FC Mail Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

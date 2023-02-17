@@ -1,0 +1,23 @@
+uuid: 2837da24-ddd9-4174-ad48-5a47b094c065
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_repository
+    - node.type.prototype
+  module:
+    - link
+id: node.prototype.field_repository
+field_name: field_repository
+entity_type: node
+bundle: prototype
+label: Repository
+description: 'All URLs must be full paths. If you are linking to an internal project use the domain http://svn.igorexchange.com/'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

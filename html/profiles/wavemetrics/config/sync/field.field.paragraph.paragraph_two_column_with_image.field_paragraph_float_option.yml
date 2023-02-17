@@ -1,0 +1,23 @@
+uuid: 9e667533-c83e-4a4f-b1fd-1d6f92b5f4ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_float_option
+    - paragraphs.paragraphs_type.paragraph_two_column_with_image
+  module:
+    - options
+id: paragraph.paragraph_two_column_with_image.field_paragraph_float_option
+field_name: field_paragraph_float_option
+entity_type: paragraph
+bundle: paragraph_two_column_with_image
+label: 'Paragraph Float Option'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

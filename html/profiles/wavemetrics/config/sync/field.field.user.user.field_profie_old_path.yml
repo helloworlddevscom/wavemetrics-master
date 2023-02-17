@@ -1,0 +1,20 @@
+uuid: 556e7b85-3b0b-452b-b3e6-f4feddc8fd9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profie_old_path
+  module:
+    - user
+id: user.user.field_profie_old_path
+field_name: field_profie_old_path
+entity_type: user
+bundle: user
+label: 'Old Path'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

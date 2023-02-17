@@ -1,0 +1,29 @@
+uuid: 4d3284e6-53dc-4dd4-b185-206ada33f8b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_fc_field_supported_igor
+    - field_collection.field_collection.field_prototype_fc_field
+    - taxonomy.vocabulary.supported_igor_version
+id: field_collection_item.field_prototype_fc_field.field_fc_field_supported_igor
+field_name: field_fc_field_supported_igor
+entity_type: field_collection_item
+bundle: field_prototype_fc_field
+label: 'FC Field - Supported Igor Versions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      supported_igor_version: supported_igor_version
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

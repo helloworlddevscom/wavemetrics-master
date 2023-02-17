@@ -1,0 +1,24 @@
+<?php
+/**
+* @file
+*Codesnippet For Igor Pro Language Syntax Highlighting.
+*/
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ * Add extra languages for CodeSnippet
+ * @param $form
+ * @param FormStateInterface $form_state
+ * @param $form_id
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+function codesnippet_igor_form_filter_format_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    if (isset($form['editor']['settings']['subform']['plugins']['codesnippet'])) {
+        $form['editor']['settings']['subform']['plugins']['codesnippet']['highlight_languages']['#options']['igor'] = 'Igor';
+        $form['editor']['settings']['subform']['plugins']['codesnippet']['highlight_languages']['#options']['cpp'] = 'c++';
+        $form['editor']['settings']['subform']['plugins']['codesnippet']['highlight_languages']['#options']['ccode'] = 'C';
+        asort($form['editor']['settings']['subform']['plugins']['codesnippet']['highlight_languages']['#options']);
+    }
+}

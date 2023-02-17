@@ -1,0 +1,21 @@
+uuid: 62fc3b8c-95bd-4552-8ecd-fa7eefe5186e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_close_timestamp
+    - field_collection.field_collection.field_prototype_fc_field
+id: field_collection_item.field_prototype_fc_field.field_close_timestamp
+field_name: field_close_timestamp
+entity_type: field_collection_item
+bundle: field_prototype_fc_field
+label: 'Close Timestamp'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1530644601
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

@@ -1,0 +1,30 @@
+uuid: afc235fd-5233-4e9c-b66b-3a664dc0c927
+langcode: en
+status: false
+dependencies: {  }
+name: 'Plain Text - Forced (the default is only a fallback)'
+format: text
+weight: 0
+filters:
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: ''
+      filter_html_help: false
+      filter_html_nofollow: false
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: true
+    weight: -10
+    settings: {  }

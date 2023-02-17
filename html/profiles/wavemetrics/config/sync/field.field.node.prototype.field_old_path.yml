@@ -1,0 +1,19 @@
+uuid: f545e277-e549-4e78-91fe-cd6b98588bdb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_old_path
+    - node.type.prototype
+id: node.prototype.field_old_path
+field_name: field_old_path
+entity_type: node
+bundle: prototype
+label: 'Old Path'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

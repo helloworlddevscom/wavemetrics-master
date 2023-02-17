@@ -1,0 +1,35 @@
+<section class="home-page-hero" style="background-image: url({% spaceless %}{{ file_url(content.field_image_single['#items'].entity.uri.value | image_style('1440px')) }}{% endspaceless %});">
+    
+<!--    <div class="brand-overlay"></div>-->
+    
+    {% if content.field_mp4_video_file|render %}
+                
+        <video autoplay loop muted poster="{{file_url(content.field_image_single['#items'].entity.uri.value | image_style('1440px'))}}">
+            <source src="{{file_url(content.field_mp4_video_file['#items'].entity.uri.value)}}" type="video/mp4">
+            <source src="{{file_url(content.field_ogg_video_file['#items'].entity.uri.value)}}" type="video/ogg">
+            <p>Your web browser does not support html5 video</p>
+        </video>
+        
+    {% endif %}
+    
+    <div class="content-wrapper">
+        <div class="home-page-hero-info">
+            <h1 class="home-page-title" title="{{ label }}">{{ label }}</h1>
+            {% if content.field_p | render %}
+                <p>{{ content.field_p['#items'].0.value }}</p>
+            {% endif %}
+            {% if content.field_general_cta | render %}
+                {{content.field_general_cta}}
+            {% endif %}
+        </div>
+    </div>
+    
+</section>
+
+<div class="product-data">
+    <p>{{ site_slogan }}</p>
+</div>
+
+<div class="content-wrapper">
+    {{ content.field_paragraphs }}
+</div>

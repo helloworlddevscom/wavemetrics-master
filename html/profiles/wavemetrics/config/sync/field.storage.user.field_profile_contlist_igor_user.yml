@@ -1,0 +1,18 @@
+uuid: 5fca3a61-3b41-4a71-88d8-9e0d11f05234
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_profile_contlist_igor_user
+field_name: field_profile_contlist_igor_user
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

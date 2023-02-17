@@ -1,0 +1,20 @@
+{#
+/**
+ * Default theme implementation for a quote with its content and author.
+ *
+ * Available variables:
+ *   quote_content - The quote's string content.
+ *   quote_author  - The name of the author of the quote.
+ *   nest - The nesting level of the current quote.
+ */
+#}
+<blockquote class="quote-msg quote-nest-{{nest}} {{ nest b-and 1 ? 'odd' : 'even' }}">
+<div class="quote-author">
+{% if quote_author != '' %}
+  {{ quote_author }} wrote: 
+{% else %}
+  Quote: 
+{% endif %}
+</div>
+{{ quote_content | raw}}
+</blockquote>

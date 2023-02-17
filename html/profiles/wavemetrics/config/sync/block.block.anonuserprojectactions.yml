@@ -1,0 +1,39 @@
+uuid: 9f8c8b31-6424-4616-bb4b-b7c84d4ac021
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:authenticated_user_actions:c6887eb2-b5f5-4972-abc7-1c9f240ba9cb'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - wave
+id: anonuserprojectactions
+theme: wave
+region: drupal
+weight: 0
+provider: null
+plugin: 'block_content:c6887eb2-b5f5-4972-abc7-1c9f240ba9cb'
+settings:
+  id: 'block_content:c6887eb2-b5f5-4972-abc7-1c9f240ba9cb'
+  label: 'Anon User Project Actions'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/projects\r\n/projects/*\r\n/project\r\n/project/*"
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

@@ -1,0 +1,11 @@
+<section class="support-cta-wrapper">
+
+    {% for item in content.field_block_field_3_link_with_ic['#items'] %}
+        <a class="support-column {% if loop.first %}support-column-first{% endif %} {% if loop.last %}support-column-last{% endif %}" href="{{ item.getFieldCollectionItem().field_fc_field_link.0.url }}">
+            <img class="icon" src="{{ item.getFieldCollectionItem().field_fc_field_image_single.entity.uri.value | image_style('medium') }}" />
+            <p>{{ item.getFieldCollectionItem().field_fc_field_link.0.title }}</p>
+        </a>
+    {% endfor %}
+
+    <div class="clearit"></div>
+</section>

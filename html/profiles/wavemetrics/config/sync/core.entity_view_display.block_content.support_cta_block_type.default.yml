@@ -1,0 +1,22 @@
+uuid: 5d00072d-027e-4fac-80b6-fa621032efb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.support_cta_block_type
+    - field.field.block_content.support_cta_block_type.field_block_field_3_link_with_ic
+  module:
+    - field_collection
+id: block_content.support_cta_block_type.default
+targetEntityType: block_content
+bundle: support_cta_block_type
+mode: default
+content:
+  field_block_field_3_link_with_ic:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_items
+    region: content
+hidden: {  }

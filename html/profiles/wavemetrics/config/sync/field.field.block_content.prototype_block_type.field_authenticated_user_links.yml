@@ -1,0 +1,23 @@
+uuid: 50b1500d-312f-48c4-94d7-8269633840c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.prototype_block_type
+    - field.storage.block_content.field_authenticated_user_links
+  module:
+    - link
+id: block_content.prototype_block_type.field_authenticated_user_links
+field_name: field_authenticated_user_links
+entity_type: block_content
+bundle: prototype_block_type
+label: 'Authenticated User Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 2
+field_type: link

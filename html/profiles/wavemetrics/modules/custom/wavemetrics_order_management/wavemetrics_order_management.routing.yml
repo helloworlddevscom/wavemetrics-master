@@ -1,0 +1,24 @@
+wavemetrics_order_management.testbed:
+  path: '/admin/orders/testbed'
+  defaults:
+    _controller: '\Drupal\wavemetrics_order_management\Controller\wavemetrics_order_managementController::testbed'
+  requirements:
+    _permission: 'Access the order integration module for WaveMetrics'
+wavemetrics_order_management.stripe_checkout:
+  path: '/order/checkout/stripe'
+  defaults:
+    _controller: '\Drupal\wavemetrics_order_management\Controller\wavemetrics_order_managementStripeCheckout::wm_stripe_checkout_checkout_page'
+  requirements:
+    _permission: 'access content'
+wavemetrics_order_management.stripe_checkout_json:
+  path: '/order/checkout/stripe/json'
+  defaults:
+    _controller: '\Drupal\wavemetrics_order_management\Controller\wavemetrics_order_managementStripeCheckout::wm_stripe_checkout_json_page'
+  requirements:
+    _permission: 'access content'
+wavemetrics_order_management.stripe_checkout_pi_update:
+  path: '/order/checkout/stripe/pi/update/{piid}'
+  defaults:
+    _controller: '\Drupal\wavemetrics_order_management\Controller\wavemetrics_order_managementStripeCheckout::wm_stripe_checkout_pi_update'
+  requirements:
+    _permission: 'access content'

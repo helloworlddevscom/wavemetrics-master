@@ -1,0 +1,41 @@
+uuid: bfe258bc-1523-450b-be82-1bbe7f5617f5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:authenticated_user_actions:f59924fb-6410-46f5-8b32-27b28b7ff4f8'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - wave
+id: userforumactions
+theme: wave
+region: drupal
+weight: 0
+provider: null
+plugin: 'block_content:f59924fb-6410-46f5-8b32-27b28b7ff4f8'
+settings:
+  id: 'block_content:f59924fb-6410-46f5-8b32-27b28b7ff4f8'
+  label: 'User Forum Actions'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/forum\r\n/forum/*"
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+      wm_employee: wm_employee
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

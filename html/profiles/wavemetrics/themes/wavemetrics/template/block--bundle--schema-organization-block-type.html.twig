@@ -1,0 +1,52 @@
+<section class="schema-organization" itemscope itemtype="http://schema.org/LocalBusiness">
+    
+    <div class="content-wrapper">
+        
+        <h2 itemprop="name">{{ content.field_block_field_company_name }}</h2>
+    
+        <p itemprop="description">{{ content.field_block_field_company_descri }}</p>
+
+        <div class="two-column two-column-first">
+            <h3>Business Information</h3>
+            <h4>Hours:</h4>
+            <ul>
+                <li>Mon-Fri</li>
+                <li><meta itemprop="openingHours" content="Mo-Fr 09:00-17:00">9:00 am - 5:00 pm</li>
+            </ul>
+            <h4>Phone Number:</h4>
+            <ul>
+                <li>Portland: <span itemprop="telephone"><a href="tel:{{ content.field_block_field_company_phone_number }}">{{ content.field_block_field_phone_number }}</a></span></li>
+            </ul>
+            <h4>Address:</h4>
+            <ul>
+                <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">{{ content.field_block_field_street_address }} </span>
+                    <span itemprop="addressLocality">{{ content.field_block_field_city }}, {{ content.field_block_field_state }} </span>
+                    <span itemprop="postalCode">{{ content.field_block_field_zip_code }}</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="two-column two-column-last">
+            <h3>Support Information</h3>
+            <h4>Customer Support:</h4>
+            <ul>
+                <li>{{ content.field_block_fc_business_hours['#items'].0.getFieldCollectionItem().field_fc_support_email.0.value }}</li>
+            </ul>
+            <h4>Technical Support:</h4>
+            <ul>
+                <li>{{ content.field_block_fc_business_hours['#items'].0.getFieldCollectionItem().field_fc_tech_email.0.value }}</li>
+            </ul>
+            <h4>Mailing Address:</h4>
+            <ul>
+                <li>{{ content.field_block_fc_business_hours['#items'].0.getFieldCollectionItem().field_fc_mail_address.0.value }}</li>
+            </ul>
+        </div>
+
+        <div class="clearit"></div>
+
+        <img class="schema-logo" itemprop="image" src="{% spaceless %}{{ content.field_block_field_schema_logo }}{% endspaceless %}" alt="Wavemetrics" />
+    
+    </div>
+    
+</section>

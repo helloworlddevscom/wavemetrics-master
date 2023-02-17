@@ -1,0 +1,40 @@
+uuid: 5810fb60-0743-4654-a375-762248944abf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.go_to_download.field_paragraph_h2
+    - field.field.paragraph.go_to_download.field_paragraph_p
+    - field.field.paragraph.go_to_download.field_paragraph_ref_download_fam
+    - paragraphs.paragraphs_type.go_to_download
+id: paragraph.go_to_download.default
+targetEntityType: paragraph
+bundle: go_to_download
+mode: default
+content:
+  field_paragraph_h2:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_p:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_ref_download_fam:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

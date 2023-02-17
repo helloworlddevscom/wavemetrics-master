@@ -1,0 +1,25 @@
+uuid: 2df9af4e-bfa0-42cb-b47b-c6a0124f7f79
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wave
+id: pagetitle_2
+theme: wave
+region: top_content
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/product/*\r\n/products/*\r\n/blog/*\r\n/news/*\r\n/node/preview/*/teaser"
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,25 @@
+uuid: bac0eaa5-efac-4364-976c-db65fb95a7a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.home_page
+  module:
+    - entity_reference_revisions
+id: node.home_page.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: home_page
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+field_type: entity_reference_revisions

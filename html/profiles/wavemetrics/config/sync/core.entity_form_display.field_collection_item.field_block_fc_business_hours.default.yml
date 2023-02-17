@@ -1,0 +1,39 @@
+uuid: 7d9617f1-e2df-474d-a61a-4ec2ea78a117
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_block_fc_business_hours.field_fc_mail_address
+    - field.field.field_collection_item.field_block_fc_business_hours.field_fc_support_email
+    - field.field.field_collection_item.field_block_fc_business_hours.field_fc_tech_email
+    - field_collection.field_collection.field_block_fc_business_hours
+id: field_collection_item.field_block_fc_business_hours.default
+targetEntityType: field_collection_item
+bundle: field_block_fc_business_hours
+mode: default
+content:
+  field_fc_mail_address:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_fc_support_email:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_fc_tech_email:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+hidden: {  }

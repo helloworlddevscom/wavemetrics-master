@@ -1,0 +1,25 @@
+uuid: 423683d9-839f-4ad2-9d46-240896e76a61
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:schema_organization_block_type:52ab79bb-b576-4775-a07e-36bc3d6c81dd'
+  module:
+    - block_content
+  theme:
+    - wave
+id: wavemetricsschemaorganization
+theme: wave
+region: footer
+weight: -7
+provider: null
+plugin: 'block_content:52ab79bb-b576-4775-a07e-36bc3d6c81dd'
+settings:
+  id: 'block_content:52ab79bb-b576-4775-a07e-36bc3d6c81dd'
+  label: 'Wavemetrics Schema Organization'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 8e9e0bb1-0a18-4c9b-8dcd-e49f06c10f7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: documentation_path_pattern
+label: 'Documentation Path Pattern'
+type: 'canonical_entities:node'
+pattern: '/documentation/[node:title]'
+selection_criteria:
+  cae57f8e-65b4-4b62-8f26-937ab1b80e0f:
+    id: node_type
+    bundles:
+      documentation: documentation
+    negate: false
+    context_mapping:
+      node: node
+    uuid: cae57f8e-65b4-4b62-8f26-937ab1b80e0f
+selection_logic: and
+weight: -5
+relationships: {  }

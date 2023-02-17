@@ -1,0 +1,12 @@
+uuid: da5fef8d-a9fe-4221-a081-fcce16a602f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: hSQOsIZNeVRKYz_wYfILjG-s6ROpR0kM31jpXe3Ggwg
+id: user.signature
+label: 'User signature'
+targetEntityType: user
+cache: true

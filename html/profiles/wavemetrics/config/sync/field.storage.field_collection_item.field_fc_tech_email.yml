@@ -1,0 +1,18 @@
+uuid: 4f386176-1683-4bff-a768-5f3ba84a0b8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+id: field_collection_item.field_fc_tech_email
+field_name: field_fc_tech_email
+entity_type: field_collection_item
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

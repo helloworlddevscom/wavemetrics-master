@@ -1,0 +1,236 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% 
+    set noWrapperElements = [
+        'field_image_single',
+        'field_image_multiple',
+        'field_paragraph_image_single',
+        'field_paragraph_image_multiple',
+        'user_picture',
+        'field_a',
+        'field_paragraph_a',
+        'field_paragraph_body',
+        'field_code_type',
+        'field_product_variation_image',
+        'field_paragraphs',
+        'field_block_field_street_address',
+        'field_block_field_city',
+        'field_block_field_state',
+        'field_block_field_zip_code',
+        'field_software_family',
+        'field_authenticated_user_links',
+    ]
+%}
+
+{% 
+    set wrapAsh2 = [
+        'field_h2',
+        'field_paragraph_h2',
+    ]
+%}
+
+{% 
+    set wrapAsh3 = [
+        'field_h3',
+        'field_paragraph_h3',
+    ]
+%}
+
+{% 
+    set wrapAsh4 = [
+        'field_h4',
+        'field_paragraph_h4',
+    ]
+%}
+
+{% 
+    set wrapAsli = [
+        'field_li',
+        'field_paragraph_li',
+    ]
+%}
+
+{% 
+    set wrapAsParagraph = [
+        'field_p',
+        'field_paragraph_p',
+        'field_profile_fullname',
+        'field_profile_country',
+    ]
+%}
+
+
+
+
+
+{# field markup option #}
+{% if field_name in noWrapperElements %}
+    
+    {% for item in items %}
+        {{ item.content }}
+    {% endfor %}
+
+{# field markup option #}
+{% elseif field_name in wrapAsh2 %}
+
+    {% for item in items %}
+        <h2>{{ item.content }}</h2>
+    {% endfor %}
+
+{# field markup option #}
+{% elseif field_name in wrapAsh3 %}
+
+    {% for item in items %}
+        <h3>{{ item.content }}</h3>
+    {% endfor %}
+
+{# field markup option #}
+{% elseif field_name in wrapAsh4 %}
+
+    {% for item in items %}
+        <h4>{{ item.content }}</h4>
+    {% endfor %}
+    
+{# field markup option #}
+{% elseif field_name in wrapAsParagraph %}
+    
+    {% for item in items %}
+        <p>{{ item.content }}</p>
+    {% endfor %}
+
+{# field markup option #}
+{% elseif field_name in wrapAsli %}
+
+    <ul>
+        {% for item in items %}
+            <li>{{ item.content }}</li>
+        {% endfor %}
+    </ul>
+    
+{% elseif field_name == 'field_resource_type_reference' %}
+
+    <div class="entity-reference-wrapper">
+        {% for item in items %}
+            {{ item.content }}
+        {% endfor %}
+    </div>
+    
+{# field markup option #}
+{% elseif field_type == 'boolean' %}
+    
+    {% if items.0.content['#markup'] == 'On' %}
+        <label>{{ label }}</label>
+    {% endif %}
+    
+    
+    
+    
+    
+{# Specific field markup #}
+{% elseif field_name == 'field_project_changelog' %}
+    {% for item in items %}
+        <a href="{{ item.content }}" target="_blank">View Changelog</a>
+    {% endfor %}
+    
+{% elseif field_name == 'field_project_cvs' %}
+    {% for item in items %}
+        <a href="{{ item.content }}" target="_blank">{{ item.content }}</a>
+    {% endfor %}
+    
+{% elseif field_name == 'field_project_demo' %}
+    {% for item in items %}
+        <a href="{{ item.content }}" target="_blank">View Demo</a>
+    {% endfor %}
+    
+{% elseif field_name == 'field_project_documentation' %}
+    {% for item in items %}
+        <a href="{{ item.content }}" target="_blank">View Documentation</a>
+    {% endfor %}
+    
+{% elseif field_name == 'field_project_homepage' %}
+    {% for item in items %}
+        <a href="{{ item.content }}" target="_blank">View Homepage</a>
+    {% endfor %}
+    
+{% elseif field_name == 'field_project_license' %}
+    {% for item in items %}
+        {{ item.content }}
+    {% endfor %}
+    
+{% elseif field_name == 'field_project_screenshots' %}
+    {% for item in items %}
+        <a href="{{ item.content }}" target="_blank">{{ item.content }}</a>
+    {% endfor %}
+    
+    
+    
+    
+
+{# Final option, default field template #}
+{% else %}
+
+    {% if label_hidden %}
+      {% if multiple %}
+        <span{{ attributes.addClass(field_name | clean_class) }}>
+          {% for item in items %}
+            <span{{ item.attributes.addClass(field_type | clean_class) }}>{{ item.content }}</span>
+          {% endfor %}
+        </span>
+      {% else %}
+        {% for item in items %}
+          <span{{ attributes.addClass(field_name | clean_class) }}>{{ item.content }}</span>
+        {% endfor %}
+      {% endif %}
+    {% else %}
+      <span{{ attributes.addClass(field_name | clean_class) }}>
+        <label{{ title_attributes }}>{{ label }}</label>
+        {% if multiple %}
+        {% endif %}
+        {% for item in items %}
+          <span{{ item.attributes.addClass(field_type | clean_class) }}>{{ item.content }}</span>
+        {% endfor %}
+        {% if multiple %}
+        {% endif %}
+      </span>
+    {% endif %}
+
+{% endif %}

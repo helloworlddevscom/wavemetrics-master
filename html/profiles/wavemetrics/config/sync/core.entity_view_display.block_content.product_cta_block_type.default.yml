@@ -1,0 +1,22 @@
+uuid: 416d171b-bf78-4ec4-a79a-fdedd1a93879
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.product_cta_block_type
+    - field.field.block_content.product_cta_block_type.field_block_field_product_cta_fc
+  module:
+    - field_collection
+id: block_content.product_cta_block_type.default
+targetEntityType: block_content
+bundle: product_cta_block_type
+mode: default
+content:
+  field_block_field_product_cta_fc:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_list
+    region: content
+hidden: {  }

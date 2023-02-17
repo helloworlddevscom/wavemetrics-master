@@ -1,0 +1,29 @@
+uuid: 510eb4d7-a69c-494f-83d0-e75b67d8fb6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_operating_system
+    - node.type.prototype
+    - taxonomy.vocabulary.operating_system
+id: node.prototype.field_operating_system
+field_name: field_operating_system
+entity_type: node
+bundle: prototype
+label: 'Operating System'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      operating_system: operating_system
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

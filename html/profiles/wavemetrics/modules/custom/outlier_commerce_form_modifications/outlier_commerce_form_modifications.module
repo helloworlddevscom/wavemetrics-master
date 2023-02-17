@@ -1,0 +1,201 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+use Drupal\commerce\commerce_product;
+use Drupal\commerce;
+use Drupal\commerce_cart;
+
+use Drupal\Component\Utility\Html;
+use Drupal\webform\Utility\WebformFormHelper;
+use Drupal\webform\Utility\WebformArrayHelper;
+
+    ////**** Modify only commerce forms to keep this module in scope
+    function outlier_commerce_form_modifications_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+        //the add to cart form.
+        if (strpos($form_id, 'commerce_order_item_add_to_cart_form') !== false) {
+            //Set the submit button text
+            $form['actions']['submit']['#value'] = t('Buy Now');
+
+            //Change the Purchase Entity field type from select to radios
+            if(isset($form['purchased_entity']['widget'][0]['attributes']) && isset($form['purchased_entity']['widget'][0]['attributes']['attribute_license_user_type'])) {
+                $form['purchased_entity']['widget'][0]['attributes']['attribute_license_user_type']['#type'] = 'radios';
+            }
+            if(isset($form['purchased_entity']['widget'][0]['attributes']) && isset($form['purchased_entity']['widget'][0]['attributes']['attribute_license_type'])) {
+                $form['purchased_entity']['widget'][0]['attributes']['attribute_license_type']['#type'] = 'radios';
+            }
+
+            //by default remove the serial number and activation code questions except for upgrades field.
+            //Serial
+            if(isset($form['field_serial_number'])) {
+                $form['field_serial_number']["#access"] = false;
+                //if this product has the product attribute attribute_license_type = 10 (Upgrade), then show and require this field
+                if ($form['purchased_entity']["widget"][0]["attributes"]['attribute_license_type']["#default_value"] == 10) {
+                    //When this field is set to required via the admin panel, all three of these exist and seem to be needed.
+                    $form['field_serial_number']["#access"] = true;
+                    $form['field_serial_number']["widget"]["#required"] = true;
+                    $form['field_serial_number']["widget"][0]["#required"] = true;
+                    $form['field_serial_number']["widget"][0]["value"]["#required"] = true;
+                    //get the description.
+                    $sn_descr = $form['field_serial_number']["widget"][0]["value"]["#description"];
+                    $sn_descr = '<div class="commerce-form-help-body">'.$sn_descr.'</div>';
+                    $sn_title = $form['field_serial_number']["widget"][0]["value"]["#title"];
+                    $sn_title = $sn_title.' <span class="commerce-form-help">?</span>';
+                    $form['field_serial_number']["widget"][0]["#description"] = $sn_descr;
+                    $form['field_serial_number']["widget"][0]["value"]["#description"] = $sn_descr;
+                    $form['field_serial_number']["widget"][0]["#title"] = $sn_title;
+                    $form['field_serial_number']["widget"][0]["value"]["#title"] = $sn_title;
+                };
+            }
+            //activation
+            if(isset($form['field_activation_key'])) {
+                $form['field_activation_key']["#access"] = false;
+                //if this product has the product attribute attribute_license_type = 10 (Upgrade), then show and require this field
+                if ($form['purchased_entity']["widget"][0]["attributes"]['attribute_license_type']["#default_value"] == 10) {
+                    //When this field is set to required via the admin panel, all three of these exist and seem to be needed.
+                    $form['field_activation_key']["#access"] = true;
+                    $form['field_activation_key']["widget"]["#required"] = true;
+                    $form['field_activation_key']["widget"][0]["#required"] = true;
+                    $form['field_activation_key']["widget"][0]["value"]["#required"] = true;
+                    //get the description.
+                    $ak_descr = $form['field_activation_key']["widget"][0]["value"]["#description"];
+                    $ak_descr = '<div class="commerce-form-help-body">'.$ak_descr.'</div>';
+                    $ak_title = $form['field_activation_key']["widget"][0]["value"]["#title"];
+                    $ak_title = $ak_title.' <span class="commerce-form-help">?</span>';
+                    $form['field_activation_key']["widget"][0]["#description"] = $ak_descr;
+                    $form['field_activation_key']["widget"][0]["value"]["#description"] = $ak_descr;
+                    $form['field_activation_key']["widget"][0]["#title"] = $ak_title;
+                    $form['field_activation_key']["widget"][0]["value"]["#title"] = $ak_title;
+
+                };
+            }
+
+            //If its a PayByInvoice (custom price entered by the customer)
+            if(isset($form['unit_price']['widget']['0']['override'])) {
+                $form['unit_price']['widget']['0']['override']["#default_value"] = 1;
+                $form['unit_price']['widget']['0']['override']["#access"] = false;
+                $form['unit_price']['widget']['0']['amount']["#title"] = t("Enter the amount of your payment:");
+                $form['unit_price']['widget']['0']['amount']["#default_value"]['number'] = "";
+                $form['actions']['submit']['#value'] = t('Pay Now');
+            }
+
+            //After adding a product to cart (Buy Now) redirect to the cart.
+            foreach (array_keys($form['actions']) as $action) {
+                if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+                    $form['actions'][$action]['#submit'][] = 'outlier_commerce_form_modifications_redirect_to_cart';
+                }
+            }
+
+        }
+        //The cart page form
+        if(strpos($form_id,'form_commerce_cart')!==false && strpos($form_id,'form_commerce_carts')===false) {
+            //remove the quantity field for student licesnses, $userType = 8 (student). You can only buy one.
+            //Look at line item to see is this is a student license.
+            foreach($form['output'][0]["#rows"] as $rowKey => $row ){
+                if(strpos($rowKey,"#")===false){
+                    $variation = $row->_relationship_entities["commerce_product_variation"];
+                    if($variation->hasField('attribute_license_user_type')) {
+                        $userType = $variation->getAttributeValue("attribute_license_user_type");
+                        $userTypeID = $userType->id();
+                        if ($userTypeID == 8) {
+                            $form['edit_quantity'][$rowKey]["#default_value"] = 1;
+                            $form['edit_quantity'][$rowKey]["#min"] = 1;
+                            $form['edit_quantity'][$rowKey]["#max"] = 1;
+                            $form['edit_quantity'][$rowKey]["#type"] = "hidden";
+                        }
+                    }
+                }
+            }
+        }
+
+        //in the checkout flow
+        if (strpos($form_id, 'commerce_checkout_flow_multistep_default') !== false) {
+            //Login Step (panel)
+            if($form['#step_id']=="login"){
+                  $form['login']['guest']["text"]["#markup"] = \Drupal\Core\Field\FieldFilteredMarkup::create(t("Proceed to checkout without creating an account."));
+            }
+            //order information stemp (panel)
+            if($form['#step_id']=="order_information") {
+                $form["commerce_checkout_order_fields"]["coupons"]['#access'] = false;
+            }
+        }
+
+        // On the registration form, validate the syntax of the activation code.
+        if ($form_id === 'webform_submission_register_igor_pro_add_form') {
+            $form['#validate'][] = array(
+                'Drupal\outlier_commerce_form_modifications\Validate\ActivationNumberValidation',
+                'validate'
+            );
+        }
+
+    }
+
+    //Redirect to the cart page. Indended as a form submit handler
+    function outlier_commerce_form_modifications_redirect_to_cart(&$form, FormStateInterface $form_state) {
+        $form_state->setRedirect('commerce_cart.page');
+        return'';
+    }
+
+
+
+/**
+ * Implements hook_webform_submission_form_alter().
+ */
+function outlier_commerce_form_modifications_webform_submission_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+    // Get unique states id for each webform.
+    $unique_id = Html::getUniqueId($form_id);
+
+    // Add unique states id as prefix the form.
+    $form['#attributes']['data-states-id'] = $unique_id;
+
+    // Get unique states id prefix that need to prepended to every #states selector.
+    $unique_prefix = '[data-states-id="' . $unique_id . '"]';
+
+    $elements =& WebformFormHelper::flattenElements($form);
+    foreach ($elements as &$element) {
+        if (!isset($element['#states'])) {
+            continue;
+        }
+
+        foreach ($element['#states'] as &$triggers) {
+            if (WebformArrayHelper::isSequential($triggers)) {
+                foreach ($triggers as &$sub_triggers) {
+                    $sub_triggers = outlier_commerce_form_modifications_webform_submission_form_alter_add_unique_id_to_states($sub_triggers, $unique_prefix);
+                }
+            }
+            else {
+                $triggers = outlier_commerce_form_modifications_webform_submission_form_alter_add_unique_id_to_states($triggers, $unique_prefix);
+            }
+        }
+    }
+}
+
+/**
+ * Add unique prefix to all :input #states selectors.
+ *
+ * @param array $array
+ *   An associative array.
+ * @param string $prefix
+ *   Unique prefix to be prepended all :input #states selectors.
+ *
+ * @return array
+ *   An associative array with unique prefix added to all :input
+ *   #states selectors.
+ */
+function outlier_commerce_form_modifications_webform_submission_form_alter_add_unique_id_to_states(array $array, $prefix) {
+    $prefixed_array = [];
+    foreach ($array as $key => $value) {
+        if (strpos($key, ':input') === 0) {
+            $key = $prefix . ' ' . $key;
+        }
+        $prefixed_array[$key] = $value;
+    }
+    return $prefixed_array;
+}
+
+
+function outlier_commerce_form_modifications_page_attachments(&$attachments){
+    $attachments['#attached']['library'][] =  'outlier_commerce_form_modifications/wavemetrics_commerce_form_mods';
+}
+
+?>

@@ -1,0 +1,100 @@
+uuid: fd7d3442-a417-474d-8105-32f7e9d119b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.admins_only
+  module:
+    - ckeditor
+format: admins_only
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Format
+            - Bold
+            - Underline
+            - Italic
+            - '-'
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - '-'
+            - Outdent
+            - Indent
+            - Table
+            - Styles
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - Source
+            - RemoveFormat
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    codesnippet:
+      highlight_style: github
+      highlight_languages:
+        apache: apache
+        bash: bash
+        css: css
+        coffeescript: coffeescript
+        dart: dart
+        dockerfile: dockerfile
+        dust: dust
+        gherkin: gherkin
+        go: go
+        haml: haml
+        handlebars: handlebars
+        ini: ini
+        json: json
+        java: java
+        javascript: javascript
+        less: less
+        makefile: makefile
+        markdown: markdown
+        nginx: nginx
+        php: php
+        perl: perl
+        powershell: powershell
+        puppet: puppet
+        python: python
+        ruby: ruby
+        scss: scss
+        sql: sql
+        twig: twig
+        typescript: typescript
+        xml: xml
+        yaml: yaml
+        ccode: 0
+        igor: 0
+        cpp: 0
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

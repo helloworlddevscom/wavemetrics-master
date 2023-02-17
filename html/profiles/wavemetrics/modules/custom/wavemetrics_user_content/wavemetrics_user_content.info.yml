@@ -1,0 +1,6 @@
+name: WaveMetrics User Content
+type: module
+description: 'Adjustments and modifications to the views of user created content'
+package: WaveMetrics
+core: 8.x
+hidden: false

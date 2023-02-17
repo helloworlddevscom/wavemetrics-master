@@ -1,0 +1,21 @@
+uuid: f3dde8e2-3bfb-423c-b435-6baa6feb4bd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_icon_link
+    - node.type.prototype
+  module:
+    - field_collection
+id: node.prototype.field_icon_link
+field_name: field_icon_link
+entity_type: node
+bundle: prototype
+label: 'Icon Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection

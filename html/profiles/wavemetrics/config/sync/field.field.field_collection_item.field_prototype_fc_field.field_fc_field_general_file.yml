@@ -1,0 +1,27 @@
+uuid: cb384547-95d8-4704-97d3-b67bb15ff9bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_fc_field_general_file
+    - field_collection.field_collection.field_prototype_fc_field
+  module:
+    - file
+id: field_collection_item.field_prototype_fc_field.field_fc_field_general_file
+field_name: field_fc_field_general_file
+entity_type: field_collection_item
+bundle: field_prototype_fc_field
+label: 'FC Field - General File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'zip gzip gz tar'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

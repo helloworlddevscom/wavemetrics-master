@@ -1,0 +1,36 @@
+uuid: faf15e5a-e5ea-4b2d-8ad2-a9d6022c643a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.background_image_gallery.field_paragraph_h2
+    - field.field.paragraph.background_image_gallery.field_paragraph_image_multiple
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.background_image_gallery
+  module:
+    - image
+id: paragraph.background_image_gallery.default
+targetEntityType: paragraph
+bundle: background_image_gallery
+mode: default
+content:
+  field_paragraph_h2:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_image_multiple:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

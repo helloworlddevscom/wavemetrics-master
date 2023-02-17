@@ -1,0 +1,33 @@
+uuid: 073dc030-9329-4fa2-9d9d-c787994bd650
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comments_basic
+    - node.type.code_snippet
+  module:
+    - comment
+id: node.code_snippet.field_comments_basic
+field_name: field_comments_basic
+entity_type: node
+bundle: code_snippet
+label: 'Comments Basic'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    status: 2
+    cid: 0
+    last_comment_timestamp: 0
+    last_comment_name: null
+    last_comment_uid: 0
+    comment_count: 0
+default_value_callback: ''
+settings:
+  default_mode: 0
+  per_page: 50
+  anonymous: 0
+  form_location: true
+  preview: 1
+field_type: comment

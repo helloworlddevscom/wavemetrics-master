@@ -1,0 +1,14 @@
+uuid: 5c972f5f-9a8e-427e-b2ab-180aef468c1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.wm_employee
+  module:
+    - user
+id: user_add_role_action.wm_employee
+label: 'Add the WM Employee role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: wm_employee

@@ -1,0 +1,19 @@
+uuid: b53341f2-6062-4346-a7e1-700cb094701a
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+    - user
+id: user.field_profile_contributions
+field_name: field_profile_contributions
+entity_type: user
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

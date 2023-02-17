@@ -1,0 +1,21 @@
+uuid: 66e58718-753a-4fa3-bd87-c0aa96503693
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_full_html
+    - paragraphs.paragraphs_type.paragraph_project_release
+  module:
+    - text
+id: paragraph.paragraph_project_release.field_paragraph_full_html
+field_name: field_paragraph_full_html
+entity_type: paragraph
+bundle: paragraph_project_release
+label: 'Release Notes'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

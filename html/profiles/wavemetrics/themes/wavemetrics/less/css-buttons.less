@@ -1,0 +1,100 @@
+.arrows {
+    padding: 20px 40px;
+    min-width: 50px;
+    position: relative;
+    color: #555555;
+    font-weight: bold;
+    .transition(.3s);
+}
+
+.arrows:before {
+    content: "";
+    position: absolute;
+    top: 48%;
+    left: 20px;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #555555;
+    border-left: 2px solid #555555;
+    opacity: 0;
+    border-radius: 2px;
+    -webkit-transform: rotate(-45deg) translateY(-50%);
+    -moz-transform: rotate(-45deg) translateY(-50%);
+    transform: rotate(-45deg) translateY(-50%);
+}
+
+.arrows:after {
+    content: "";
+    position: absolute;
+    top: 48%;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    border-radius: 2px;
+    border-top: 2px solid #555555;
+    border-right: 2px solid #555555;
+    -webkit-transform: rotate(45deg) translateY(-50%);
+    -moz-transform: rotate(45deg) translateY(-50%);
+    transform: rotate(45deg) translateY(-50%);
+}
+
+.arrows:hover:before {
+    -webkit-animation: wobbleLeft 1s ease-in-out infinite;
+    animation: wobbleLeft 1s ease-in-out infinite;
+    opacity: 1;
+}
+
+.arrows:hover:after {
+    -webkit-animation: wobbleRight 1s ease-in-out infinite;
+    animation: wobbleRight 1s ease-in-out infinite;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+.arrow-left {
+    display: inline-block;
+    padding: 15px 30px;
+    min-width: 50px;
+    position: relative;
+    color: #555555;
+    font-weight: bold;
+    .transition(.3s);
+    border: 1px solid #eee;
+}
+
+.arrow-left:before {
+    content: "";
+    position: absolute;
+    top: 47%;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #555555;
+    border-left: 2px solid #555555;
+    opacity: 0;
+    border-radius: 2px;
+    -webkit-transform: rotate(-45deg) translateY(-50%);
+    -moz-transform: rotate(-45deg) translateY(-50%);
+    transform: rotate(-45deg) translateY(-50%);
+}
+
+.arrow-left:hover:before {
+    -webkit-animation: wobbleLeft 1s ease-in-out infinite;
+    animation: wobbleLeft 1s ease-in-out infinite;
+    opacity: 1;
+}
+
+
+
+
+
+
+

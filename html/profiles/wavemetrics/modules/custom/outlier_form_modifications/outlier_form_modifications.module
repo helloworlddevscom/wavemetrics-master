@@ -1,0 +1,20 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use \Drupal\Core\Field\FieldFilteredMarkup;
+
+/**
+ * Implements hook_form_alter().
+ */
+ 
+function outlier_form_modifications_form_alter(&$form, &$form_state, &$form_id) {
+
+    //We want to change the field descriptions on the login page.
+	if ($form_id == 'user_login_form') {
+        $fieldDescription = new FieldFilteredMarkup();
+        $form["name"]["#description"] = $fieldDescription->create(t('Enter your WaveMetrics.com username (or your former IgorExchange.com username). '));
+	}
+
+}
+
+?>

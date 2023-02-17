@@ -1,0 +1,23 @@
+uuid: 504c2365-11d0-4142-af5c-c06a0c139c00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_win
+    - node.type.prototype
+  module:
+    - link
+id: node.prototype.field_file_win
+field_name: field_file_win
+entity_type: node
+bundle: prototype
+label: 'Windows Version'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

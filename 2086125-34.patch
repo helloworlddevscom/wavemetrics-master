@@ -1,0 +1,451 @@
+diff --git a/core/modules/comment/src/Plugin/views/field/StatisticsLastUpdated.php b/core/modules/comment/src/Plugin/views/field/StatisticsLastUpdated.php
+index a3788e0b53..155dd58aee 100644
+--- a/core/modules/comment/src/Plugin/views/field/StatisticsLastUpdated.php
++++ b/core/modules/comment/src/Plugin/views/field/StatisticsLastUpdated.php
+@@ -2,7 +2,10 @@
+ 
+ namespace Drupal\comment\Plugin\views\field;
+ 
++use Drupal\Core\Datetime\DateFormatter;
++use Drupal\Core\Entity\EntityTypeManagerInterface;
+ use Drupal\views\Plugin\views\field\Date;
++use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+ /**
+  * Field handler to display the newer of last comment / node updated.
+@@ -13,10 +16,67 @@
+  */
+ class StatisticsLastUpdated extends Date {
+ 
++  /**
++   * The entity type manager service.
++   *
++   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
++   */
++  protected $entityTypeManager;
++
++  /**
++   * Constructs a StatisticsLastUpdated object.
++   *
++   * @param array $configuration
++   *   A configuration array containing information about the plugin instance.
++   * @param string $plugin_id
++   *   The plugin_id for the plugin instance.
++   * @param mixed $plugin_definition
++   *   The plugin implementation definition.
++   * @param \Drupal\Core\Datetime\DateFormatter $date_formatter
++   *   The date formatter service.
++   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
++   *   The entity type manager service.
++   */
++  public function __construct(array $configuration, $plugin_id, $plugin_definition, DateFormatter $date_formatter, EntityTypeManagerInterface $entity_type_manager) {
++    parent::__construct(
++      $configuration,
++      $plugin_id,
++      $plugin_definition,
++      $date_formatter,
++      $entity_type_manager->getStorage('date_format')
++    );
++
++    $this->entityTypeManager = $entity_type_manager;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
++    return new static(
++      $configuration,
++      $plugin_id,
++      $plugin_definition,
++      $container->get('date.formatter'),
++      $container->get('entity_type.manager')
++    );
++  }
++
+   public function query() {
+     $this->ensureMyTable();
+-    $this->node_table = $this->query->ensureTable('node_field_data', $this->relationship);
+-    $this->field_alias = $this->query->addField(NULL, "GREATEST(" . $this->node_table . ".changed, " . $this->tableAlias . ".last_comment_timestamp)", $this->tableAlias . '_' . $this->field);
++
++    $entity_type = $this->entityTypeManager
++      ->getDefinition($this->getEntityType());
++
++    if ($entity_type->isSubclassOf('\Drupal\Core\Entity\EntityChangedInterface')) {
++      // @todo Find proper column name.
++      $entity_data_table = $this->query->ensureTable($entity_type->getDataTable(), $this->relationship);
++      $this->field_alias = $this->query->addField(NULL, "GREATEST(" . $entity_data_table . ".changed, " . $this->tableAlias . ".last_comment_timestamp)", $this->tableAlias . '_' . $this->field);
++    }
++    else {
++      // No changed field on entity so using own table.
++      $this->field_alias = $this->query->addField(NULL, $this->tableAlias . ".last_comment_timestamp", $this->tableAlias . '_' . $this->field);
++    }
+   }
+ 
+ }
+diff --git a/core/modules/comment/src/Plugin/views/filter/StatisticsLastUpdated.php b/core/modules/comment/src/Plugin/views/filter/StatisticsLastUpdated.php
+index 046edf4c3f..c61e346891 100644
+--- a/core/modules/comment/src/Plugin/views/filter/StatisticsLastUpdated.php
++++ b/core/modules/comment/src/Plugin/views/filter/StatisticsLastUpdated.php
+@@ -2,7 +2,9 @@
+ 
+ namespace Drupal\comment\Plugin\views\filter;
+ 
++use Drupal\Core\Entity\EntityTypeManagerInterface;
+ use Drupal\views\Plugin\views\filter\Date;
++use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+ /**
+  * Filter handler for the newer of last comment / node updated.
+@@ -13,12 +15,61 @@
+  */
+ class StatisticsLastUpdated extends Date {
+ 
++  /**
++   * The entity type manager service.
++   *
++   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
++   */
++  protected $entityTypeManager;
++
++  /**
++   * Constructs a PluginBase object.
++   *
++   * @param array $configuration
++   *   A configuration array containing information about the plugin instance.
++   * @param string $plugin_id
++   *   The plugin_id for the plugin instance.
++   * @param mixed $plugin_definition
++   *   The plugin implementation definition.
++   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
++   *   The entity type manager service.
++   */
++  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager) {
++    parent::__construct($configuration, $plugin_id, $plugin_definition);
++
++    $this->entityTypeManager = $entity_type_manager;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
++    return new static(
++      $configuration,
++      $plugin_id,
++      $plugin_definition,
++      $container->get('entity_type.manager')
++    );
++  }
++
+   public function query() {
+     $this->ensureMyTable();
+-    $this->node_table = $this->query->ensureTable('node', $this->relationship);
+ 
+-    $field = "GREATEST(" . $this->node_table . ".changed, " . $this->tableAlias . ".last_comment_timestamp)";
++    $entity_type = $this->entityTypeManager
++      ->getDefinition($this->getEntityType());
++
++    if ($entity_type->isSubclassOf('\Drupal\Core\Entity\EntityChangedInterface')) {
++      // @todo Find proper column name.
++      $entity_data_table = $this->query->ensureTable($entity_type->getDataTable(), $this->relationship);
++      $field = 'GREATEST(' . $entity_data_table . '.changed, ' . $this->tableAlias . '.last_comment_timestamp)';
++    }
++    else {
++      // No changed field on entity so using own table.
++      $field = $this->tableAlias . '.last_comment_timestamp';
++    }
+ 
++    // @todo This is broken, to proceed with GREATEST() should use
++    //    \Drupal\views\Plugin\views\query\Sql::addWhereExpression().
+     $info = $this->operators();
+     if (!empty($info[$this->operator]['method'])) {
+       $this->{$info[$this->operator]['method']}($field);
+diff --git a/core/modules/comment/src/Plugin/views/sort/StatisticsLastUpdated.php b/core/modules/comment/src/Plugin/views/sort/StatisticsLastUpdated.php
+index 0f9c055ec9..691a81f808 100644
+--- a/core/modules/comment/src/Plugin/views/sort/StatisticsLastUpdated.php
++++ b/core/modules/comment/src/Plugin/views/sort/StatisticsLastUpdated.php
+@@ -2,7 +2,9 @@
+ 
+ namespace Drupal\comment\Plugin\views\sort;
+ 
++use Drupal\Core\Entity\EntityTypeManagerInterface;
+ use Drupal\views\Plugin\views\sort\Date;
++use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+ /**
+  * Sort handler for the newer of last comment / entity updated.
+@@ -13,10 +15,58 @@
+  */
+ class StatisticsLastUpdated extends Date {
+ 
++  /**
++   * The entity type manager service.
++   *
++   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
++   */
++  protected $entityTypeManager;
++
++  /**
++   * Constructs a PluginBase object.
++   *
++   * @param array $configuration
++   *   A configuration array containing information about the plugin instance.
++   * @param string $plugin_id
++   *   The plugin_id for the plugin instance.
++   * @param mixed $plugin_definition
++   *   The plugin implementation definition.
++   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
++   *   The entity type manager service.
++   */
++  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager) {
++    parent::__construct($configuration, $plugin_id, $plugin_definition);
++
++    $this->entityTypeManager = $entity_type_manager;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
++    return new static(
++      $configuration,
++      $plugin_id,
++      $plugin_definition,
++      $container->get('entity_type.manager')
++    );
++  }
++
+   public function query() {
+     $this->ensureMyTable();
+-    $this->node_table = $this->query->ensureTable('node', $this->relationship);
+-    $this->field_alias = $this->query->addOrderBy(NULL, "GREATEST(" . $this->node_table . ".changed, " . $this->tableAlias . ".last_comment_timestamp)", $this->options['order'], $this->tableAlias . '_' . $this->field);
++
++    $entity_type = $this->entityTypeManager
++      ->getDefinition($this->getEntityType());
++
++    if ($entity_type->isSubclassOf('\Drupal\Core\Entity\EntityChangedInterface')) {
++      // @todo Find proper column name.
++      $entity_data_table = $this->query->ensureTable($entity_type->getDataTable(), $this->relationship);
++      $this->field_alias = $this->query->addOrderBy(NULL, "GREATEST(" . $entity_data_table . ".changed, " . $this->tableAlias . ".last_comment_timestamp)", $this->options['order'], $this->tableAlias . '_' . $this->field);
++    }
++    else {
++      // No changed field on entity so using own table.
++      $this->field_alias = $this->query->addOrderBy(NULL, $this->tableAlias . ".last_comment_timestamp", $this->options['order'], $this->tableAlias . '_' . $this->field);
++    }
+   }
+ 
+ }
+diff --git a/core/modules/comment/src/Tests/Views/CommentStatisticsNodeTest.php b/core/modules/comment/src/Tests/Views/CommentStatisticsNodeTest.php
+new file mode 100644
+index 0000000000..237073c358
+--- /dev/null
++++ b/core/modules/comment/src/Tests/Views/CommentStatisticsNodeTest.php
+@@ -0,0 +1,31 @@
++<?php
++
++/**
++ * @file
++ * Contains \Drupal\comment\Tests\Views\CommentStatisticsNodeTest.
++ */
++
++namespace Drupal\comment\Tests\Views;
++
++use Drupal\views\Views;
++
++/**
++ * Tests the comment statistics updated/commented handlers.
++ *
++ * @group comment
++ */
++class CommentStatisticsNodeTest extends CommentTestBase {
++
++  /**
++   * Views used by this test.
++   *
++   * @var array
++   */
++  public static $testViews = array('test_ces_node');
++
++  function testCommentStatistics() {
++    $view = Views::getView('test_ces_node');
++    $this->executeView($view);
++  }
++
++}
+diff --git a/core/modules/comment/tests/modules/comment_test_views/test_views/views.view.test_ces_node.yml b/core/modules/comment/tests/modules/comment_test_views/test_views/views.view.test_ces_node.yml
+new file mode 100644
+index 0000000000..73649d425b
+--- /dev/null
++++ b/core/modules/comment/tests/modules/comment_test_views/test_views/views.view.test_ces_node.yml
+@@ -0,0 +1,169 @@
++langcode: en
++status: true
++dependencies:
++  module:
++    - comment
++    - node
++id: test_ces_node
++label: test_ces_node
++module: comment_test_views
++description: ''
++tag: ''
++base_table: comment
++base_field: cid
++core: 8.x
++display:
++  default:
++    display_plugin: default
++    id: default
++    display_title: Master
++    position: 0
++    display_options:
++      access:
++        type: perm
++        options:
++          perm: 'access content'
++      cache:
++        type: none
++        options: {  }
++      query:
++        type: views_query
++        options:
++          disable_sql_rewrite: false
++          distinct: false
++          replica: false
++          query_comment: ''
++          query_tags: {  }
++      exposed_form:
++        type: basic
++        options:
++          submit_button: Apply
++          reset_button: false
++          reset_button_label: Reset
++          exposed_sorts_label: 'Sort by'
++          expose_sort_order: true
++          sort_asc_label: Asc
++          sort_desc_label: Desc
++      pager:
++        type: full
++        options:
++          items_per_page: 10
++          offset: 0
++          id: 0
++          total_pages: null
++          expose:
++            items_per_page: false
++            items_per_page_label: 'Items per page'
++            items_per_page_options: '5, 10, 25, 50'
++            items_per_page_options_all: false
++            items_per_page_options_all_label: '- All -'
++            offset: false
++            offset_label: Offset
++          tags:
++            previous: 'â€¹ previous'
++            next: 'next â€º'
++            first: 'Â« first'
++            last: 'last Â»'
++          quantity: 9
++      style:
++        type: default
++        options:
++          grouping: {  }
++          row_class: ''
++          default_row_class: true
++          uses_fields: false
++      row:
++        type: fields
++        options:
++          inline: {  }
++          separator: ''
++          hide_empty: false
++          default_field_elements: true
++      relationships:
++        node:
++          id: node
++          table: comment_field_data
++          field: node
++          required: true
++          plugin_id: standard
++          relationship: none
++          group_type: group
++          admin_label: Content
++      fields:
++        last_updated:
++          id: last_updated
++          table: comment_entity_statistics
++          field: last_updated
++          relationship: node
++          group_type: group
++          admin_label: ''
++          label: ''
++          exclude: false
++          alter:
++            alter_text: false
++            text: ''
++            make_link: false
++            path: ''
++            absolute: false
++            external: false
++            replace_spaces: false
++            path_case: none
++            trim_whitespace: false
++            alt: ''
++            rel: ''
++            link_class: ''
++            prefix: ''
++            suffix: ''
++            target: ''
++            nl2br: false
++            max_length: 0
++            word_boundary: true
++            ellipsis: true
++            more_link: false
++            more_link_text: ''
++            more_link_path: ''
++            strip_tags: false
++            trim: false
++            preserve_tags: ''
++            html: false
++          element_type: ''
++          element_class: ''
++          element_label_type: ''
++          element_label_class: ''
++          element_label_colon: false
++          element_wrapper_type: ''
++          element_wrapper_class: ''
++          element_default_classes: true
++          empty: ''
++          hide_empty: false
++          empty_zero: false
++          hide_alter_empty: true
++          date_format: html_date
++          custom_date_format: ''
++          timezone: ''
++          plugin_id: comment_ces_last_updated
++      filters: {  }
++      sorts:
++        last_updated:
++          id: last_updated
++          table: comment_entity_statistics
++          field: last_updated
++          relationship: node
++          group_type: group
++          admin_label: ''
++          order: ASC
++          exposed: false
++          expose:
++            label: ''
++          granularity: second
++          plugin_id: comment_ces_last_updated
++      header: {  }
++      footer: {  }
++      empty: {  }
++      arguments: {  }
++      field_langcode: '***LANGUAGE_language_content***'
++      field_langcode_add_to_query: null
++      filter_groups:
++        operator: AND
++        groups: {  }
++      display_extenders: {  }
+

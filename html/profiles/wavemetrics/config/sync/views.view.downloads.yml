@@ -1,0 +1,1164 @@
+uuid: e171745d-1b56-40ad-b1f6-abcfda8f6432
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.software
+  module:
+    - node
+    - options
+    - taxonomy
+    - user
+id: downloads
+label: 'Downloads with Filters'
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: some
+        options:
+          items_per_page: 0
+          offset: 0
+      style:
+        type: default
+      row:
+        type: 'entity:node'
+        options:
+          view_mode: teaser
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: true
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            software: software
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_release_tip_value:
+          id: field_release_tip_value
+          table: node__field_release_tip
+          field: field_release_tip_value
+          plugin_id: boolean
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      sorts:
+        field_release_type_value:
+          id: field_release_type_value
+          table: node__field_release_type
+          field: field_release_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+        field_not_current_value:
+          id: field_not_current_value
+          table: node__field_not_current
+          field: field_not_current_value
+          plugin_id: standard
+      title: Downloads
+      header: {  }
+      footer: {  }
+      empty: {  }
+      relationships:
+        field_software_family:
+          id: field_software_family
+          table: node__field_software_family
+          field: field_software_family
+          relationship: none
+          group_type: group
+          admin_label: 'field_software_family: Taxonomy term'
+          required: false
+          plugin_id: standard
+      arguments:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_software_family
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: all
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          glossary: false
+          limit: 0
+          case: ucfirst
+          path_case: ucfirst
+          transform_dash: true
+          break_phrase: false
+          add_table: false
+          require_value: false
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: string
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  attachment_2:
+    display_plugin: attachment
+    id: attachment_2
+    display_title: '3rd Party for - Current - Filtered By Software Family'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            software: software
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_not_current_value:
+          id: field_not_current_value
+          table: node__field_not_current
+          field: field_not_current_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        tid_raw:
+          id: tid_raw
+          table: taxonomy_term_field_data
+          field: tid_raw
+          relationship: field_software_family
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: '95'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          plugin_id: numeric
+      defaults:
+        filters: false
+        filter_groups: false
+        sorts: false
+        title: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        field_release_type_value:
+          id: field_release_type_value
+          table: node__field_release_type
+          field: field_release_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      attachment_position: after
+      inherit_exposed_filters: true
+      displays:
+        page_2: page_2
+      title: 'Current Release'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: 'All or Filtered Block'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: 'Show all downloads or filter them by a software family. '
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            software: software
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      defaults:
+        filters: false
+        filter_groups: false
+        header: false
+        pager: false
+        sorts: false
+        title: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      header: {  }
+      pager:
+        type: none
+        options:
+          offset: 0
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      title: 'All Downloads'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: 'Current - Filtered Block'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            software: software
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_release_type_value:
+          id: field_release_type_value
+          table: node__field_release_type
+          field: field_release_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            Full: Full
+            Demo: Demo
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
+        field_not_current_value:
+          id: field_not_current_value
+          table: node__field_not_current
+          field: field_not_current_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        tid_raw:
+          id: tid_raw
+          table: taxonomy_term_field_data
+          field: tid_raw
+          relationship: field_software_family
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value:
+            min: ''
+            max: ''
+            value: '95'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          plugin_id: numeric
+      defaults:
+        filters: false
+        filter_groups: false
+        sorts: false
+        title: false
+        pager: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        field_release_type_value:
+          id: field_release_type_value
+          table: node__field_release_type
+          field: field_release_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      title: 'Current Release'
+      pager:
+        type: some
+        options:
+          items_per_page: 1
+          offset: 0
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_3:
+    display_plugin: block
+    id: block_3
+    display_title: '3rd Party for - Current - Filtered Block'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            software: software
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_not_current_value:
+          id: field_not_current_value
+          table: node__field_not_current
+          field: field_not_current_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        tid_raw:
+          id: tid_raw
+          table: taxonomy_term_field_data
+          field: tid_raw
+          relationship: field_software_family
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: '95'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          plugin_id: numeric
+      defaults:
+        filters: false
+        filter_groups: false
+        sorts: false
+        title: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        field_release_type_value:
+          id: field_release_type_value
+          table: node__field_release_type
+          field: field_release_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      title: 'Current Release'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: 'All or Filtered by Family'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: downloads/filtered
+      display_description: 'Show all downloads or filter them by a software family. '
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            software: software
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      defaults:
+        filters: false
+        filter_groups: false
+        header: false
+        pager: false
+        sorts: false
+        title: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      header: {  }
+      pager:
+        type: none
+        options:
+          offset: 0
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      menu:
+        type: none
+        title: Downloads
+        description: ''
+        expanded: false
+        parent: ''
+        weight: -45
+        context: '0'
+        menu_name: main
+      title: 'All Downloads'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_2:
+    display_plugin: page
+    id: page_2
+    display_title: 'Current - Filtered By Software Family'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      path: downloads/current/%
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            software: software
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_release_type_value:
+          id: field_release_type_value
+          table: node__field_release_type
+          field: field_release_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            Full: Full
+            Demo: Demo
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
+        field_not_current_value:
+          id: field_not_current_value
+          table: node__field_not_current
+          field: field_not_current_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        tid_raw:
+          id: tid_raw
+          table: taxonomy_term_field_data
+          field: tid_raw
+          relationship: field_software_family
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value:
+            min: ''
+            max: ''
+            value: '95'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          plugin_id: numeric
+      defaults:
+        filters: false
+        filter_groups: false
+        sorts: false
+        title: false
+        pager: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        field_release_type_value:
+          id: field_release_type_value
+          table: node__field_release_type
+          field: field_release_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      title: 'Current Release'
+      pager:
+        type: some
+        options:
+          items_per_page: 1
+          offset: 0
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

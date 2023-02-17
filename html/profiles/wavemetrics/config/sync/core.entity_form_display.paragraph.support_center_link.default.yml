@@ -1,0 +1,46 @@
+uuid: 567c2c4b-dfe5-4480-af6b-e83cec52d61f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.support_center_link.field_paragraph_image_single
+    - field.field.paragraph.support_center_link.field_paragraph_p
+    - field.field.paragraph.support_center_link.field_paragraph_single_link
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.support_center_link
+  module:
+    - image
+    - link
+id: paragraph.support_center_link.default
+targetEntityType: paragraph
+bundle: support_center_link
+mode: default
+content:
+  field_paragraph_image_single:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_paragraph_p:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_single_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

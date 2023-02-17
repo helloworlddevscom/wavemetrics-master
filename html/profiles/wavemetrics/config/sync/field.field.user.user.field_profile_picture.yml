@@ -1,0 +1,38 @@
+uuid: 2f9473f3-49b3-4e6d-a47a-eddbc55d179b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_picture
+  module:
+    - image
+    - user
+id: user.user.field_profile_picture
+field_name: field_profile_picture
+entity_type: user
+bundle: user
+label: 'Profile Picture'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[current-user:account-name]/profile-images/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ee98a223-15fd-4330-a05f-31d941b9c42c
+    alt: ''
+    title: ''
+    width: 1250
+    height: 1250
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

@@ -1,0 +1,29 @@
+uuid: 6bc81e8c-a4a8-464d-909d-55c51ea1deac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_ref_download_fam
+    - paragraphs.paragraphs_type.go_to_download
+    - taxonomy.vocabulary.product_family_downloads
+id: paragraph.go_to_download.field_paragraph_ref_download_fam
+field_name: field_paragraph_ref_download_fam
+entity_type: paragraph
+bundle: go_to_download
+label: 'Download Software Family'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_family_downloads: product_family_downloads
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

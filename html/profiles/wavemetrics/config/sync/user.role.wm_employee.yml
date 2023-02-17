@@ -1,0 +1,11 @@
+uuid: 919c7152-4740-422e-bee5-c6c7539b1172
+langcode: en
+status: true
+dependencies: {  }
+id: wm_employee
+label: 'WM Employee'
+weight: -6
+is_admin: null
+permissions:
+  - 'skip CAPTCHA'
+  - 'use text format plain_text_forced'

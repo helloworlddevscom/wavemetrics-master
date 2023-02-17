@@ -1,0 +1,19 @@
+uuid: 07ada310-0fbf-4955-822c-57a8eb027da9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_taxonomy_old_tid
+    - taxonomy.vocabulary.operating_system_compatability
+id: taxonomy_term.operating_system_compatability.field_taxonomy_old_tid
+field_name: field_taxonomy_old_tid
+entity_type: taxonomy_term
+bundle: operating_system_compatability
+label: 'Old TID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

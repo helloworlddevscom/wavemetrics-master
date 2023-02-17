@@ -1,0 +1,29 @@
+uuid: 2fd0d266-83b7-43ba-b23f-7332128520b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_catalog_reference
+    - node.type.software
+    - taxonomy.vocabulary.product_catalog
+id: node.software.field_product_catalog_reference
+field_name: field_product_catalog_reference
+entity_type: node
+bundle: software
+label: 'Product Catalog Reference'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_catalog: product_catalog
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

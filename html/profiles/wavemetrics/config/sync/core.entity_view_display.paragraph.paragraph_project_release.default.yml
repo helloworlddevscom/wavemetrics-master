@@ -1,0 +1,120 @@
+uuid: 72bb7c1f-f386-48b4-8162-7ccc7a2f1a4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_project_release.field_paragraph_file
+    - field.field.paragraph.paragraph_project_release.field_paragraph_full_html
+    - field.field.paragraph.paragraph_project_release.field_paragraph_h2
+    - field.field.paragraph.paragraph_project_release.field_paragraph_ref_os_compat
+    - field.field.paragraph.paragraph_project_release.field_paragraph_single_link
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version_date
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version_extra
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version_major
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version_md5
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version_patch
+    - paragraphs.paragraphs_type.paragraph_project_release
+  module:
+    - file
+    - link
+    - text
+id: paragraph.paragraph_project_release.default
+targetEntityType: paragraph
+bundle: paragraph_project_release
+mode: default
+content:
+  field_paragraph_file:
+    weight: 1
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_paragraph_full_html:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_paragraph_h2:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_ref_os_compat:
+    weight: 10
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_paragraph_single_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_paragraph_version:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_version_date:
+    weight: 5
+    label: hidden
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  field_paragraph_version_extra:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_version_major:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_version_md5:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_version_patch:
+    weight: 9
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

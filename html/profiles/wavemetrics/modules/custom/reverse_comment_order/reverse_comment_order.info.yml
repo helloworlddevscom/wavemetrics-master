@@ -1,0 +1,6 @@
+name: Reverse Comment Order
+type: module
+description: 'Reverses the order of comments so the most recent display on top'
+package: Outlier
+core: 8.x
+hidden: false

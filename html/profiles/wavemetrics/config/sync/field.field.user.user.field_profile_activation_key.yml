@@ -1,0 +1,30 @@
+uuid: 638bccef-390e-401f-b206-48509409cebd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_activation_key
+  module:
+    - allowed_formats
+    - text
+    - user
+third_party_settings:
+  allowed_formats:
+    plain_text: plain_text
+    full_html: '0'
+    admins_only: '0'
+    basic_html: '0'
+    forum_no_editor: '0'
+    plain_text_forced: '0'
+id: user.user.field_profile_activation_key
+field_name: field_profile_activation_key
+entity_type: user
+bundle: user
+label: 'Igor Pro Activation Key'
+description: '<span class="description">Providing the activation code for your license can expedite your new account review and approval. </span>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,19 @@
+uuid: 3d453daa-d0e8-408e-bb58-7d4303fdb841
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.prototype_block_type
+    - field.storage.block_content.field_block_field_phone_number
+id: block_content.prototype_block_type.field_block_field_phone_number
+field_name: field_block_field_phone_number
+entity_type: block_content
+bundle: prototype_block_type
+label: 'Block Field - Phone Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

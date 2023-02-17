@@ -1,0 +1,30 @@
+uuid: 7a97dd8b-583a-46d7-ba24-2910bc51344a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.documentation.field_document
+    - field.field.node.documentation.field_product_catalog_reference
+    - field.field.node.documentation.field_volume_reference
+    - node.type.documentation
+  module:
+    - file
+    - user
+id: node.documentation.default
+targetEntityType: node
+bundle: documentation
+mode: default
+content:
+  field_document:
+    weight: 0
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden:
+  field_product_catalog_reference: true
+  field_volume_reference: true
+  links: true
+  share_everywhere: true

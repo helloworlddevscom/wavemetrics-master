@@ -1,0 +1,19 @@
+uuid: 28709ac4-8c39-4f6c-b9ff-e4469142cacc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_old_menu
+    - node.type.prototype
+id: node.prototype.field_old_menu
+field_name: field_old_menu
+entity_type: node
+bundle: prototype
+label: 'Old Menu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

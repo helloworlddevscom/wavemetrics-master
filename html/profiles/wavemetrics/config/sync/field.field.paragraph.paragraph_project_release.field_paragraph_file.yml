@@ -1,0 +1,27 @@
+uuid: 82548786-36f4-4286-a686-431d92f8004f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_file
+    - paragraphs.paragraphs_type.paragraph_project_release
+  module:
+    - file
+id: paragraph.paragraph_project_release.field_paragraph_file
+field_name: field_paragraph_file
+entity_type: paragraph
+bundle: paragraph_project_release
+label: 'Release File'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: projects/releases
+  file_extensions: 'zip jpg png txt xls pxp ipf pdf dmg xop ihf csv ibw doc pxt jpeg ifn gzip gz tarm uxp uxt'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

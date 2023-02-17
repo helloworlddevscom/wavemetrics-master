@@ -1,0 +1,9 @@
+<section class="basic-page-hero">
+    
+    {% if content.field_image_single | render %}
+        <img src="{{ file_url(content.field_image_single['#items'].entity.uri.value | image_style('banner')) }}" />
+    {% endif %}
+    
+</section>
+
+{% spaceless %}{{ content.field_paragraphs }}{% endspaceless %}

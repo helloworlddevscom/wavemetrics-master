@@ -1,0 +1,9 @@
+uuid: 5db56d8f-c62c-454f-a1ab-0814f3de1e41
+langcode: en
+status: true
+dependencies: {  }
+id: background_image_gallery
+label: 'Background Image Gallery'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

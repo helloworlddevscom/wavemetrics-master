@@ -1,0 +1,21 @@
+uuid: 06491d67-29f5-4baa-96a4-3157e5bc2f5a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_li
+field_name: field_li
+entity_type: node
+type: string
+settings:
+  max_length: 600
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

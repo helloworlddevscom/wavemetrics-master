@@ -1,0 +1,12 @@
+{% if content.field_hide_main_image[0]["#markup"]==0 %}
+    {{ content.field_image_single }}
+{% endif %}
+{% if content.field_file_attachment | render %}
+    <h3>Files:</h3>
+    {{ content.field_file_attachment }}
+{% endif %}
+{% if content.field_paragraphs | render %}
+    <div class="gallery-info">
+        {{ content.field_paragraphs }}
+    </div>
+{% endif %}

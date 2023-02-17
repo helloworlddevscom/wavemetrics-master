@@ -1,0 +1,46 @@
+<span itemscope itemtype="http://schema.org/NewsArticle">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://google.com/article"/>
+    <section class="blog-post-wrapper">
+
+        <h1 itemprop="headline" id="page-title" title="{{ label }}">{{ label }}</h1>
+        <p class="post-date">
+            <span class="post-date">Created on {{ node.createdtime | date('F j') }} at {{ node.createdtime | date('h:i a') }}</span> - <span itemprop="author" itemscope itemtype="https://schema.org/Person">by: <span itemprop="name">{{ author_name }}</span></span>
+        </p>
+
+        {% if content.field_image_single | render %}
+            <div class="blog-post-hero" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <img src="{{ file_url(content.field_image_single['#items'].entity.uri.value | image_style('banner')) }}" />
+                <meta itemprop="url" content="{{ file_url(content.field_image_single['#items'].entity.uri.value | image_style('banner')) }}">
+                <meta itemprop="width" content="1440">
+                <meta itemprop="height" content="480">
+            </div>
+        {% endif %}
+
+        <div class="blog-body-wrapper">
+            {{ content.body }}
+        </div>
+
+        {% spaceless %}{{ content.field_paragraphs }}{% endspaceless %}
+
+        {% if content.field_blog_category | render %}
+            <div class="blog-category">
+                {{ content.field_blog_category }} {{ content.field_blog_tag }}
+            </div>
+        {% endif %}
+
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                <img class="site-logo" src="/{{ base_path ~ directory }}/logo.png" />
+                <meta itemprop="url" content="/{{ base_path ~ directory }}/logo.png">
+                <meta itemprop="width" content="360">
+                <meta itemprop="height" content="44">
+            </div>
+            <meta itemprop="name" content="Wavemetrics">
+            <meta itemprop="url" content="https://www.wavemetrics.com">
+        </div>
+                    
+        <meta itemprop="datePublished" content="{{ node.createdtime }}"/>
+        <meta itemprop="dateModified" content="{{ node.createdtime }}"/>
+
+    </section>
+</span>

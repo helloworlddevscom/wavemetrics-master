@@ -1,0 +1,25 @@
+uuid: 285a6982-40d5-4ef5-9d12-f2d46a76b949
+langcode: en
+status: true
+dependencies: {  }
+id: dev
+label: Dev
+description: ''
+folder: profiles/wavemetrics/config/dev
+module:
+  devel: 0
+  kint: 0
+  reroute_email: 0
+  twig_xdebug: 0
+theme: {  }
+blacklist: {  }
+graylist:
+  - commerce_payment.commerce_payment_gateway.example
+  - commerce_payment.commerce_payment_gateway.stripe_production_account
+  - commerce_payment.commerce_payment_gateway.stripe_test_key
+  - commerce_payment.commerce_payment_gateway.test_payment_gateway
+  - config_split.config_split.dev
+  - robotstxt.settings
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

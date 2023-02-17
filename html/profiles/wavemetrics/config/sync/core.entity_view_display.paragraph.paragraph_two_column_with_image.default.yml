@@ -1,0 +1,52 @@
+uuid: ffbca85c-bd4b-4ac7-b7ab-41810b949f5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_two_column_with_image.field_paragraph_float_option
+    - field.field.paragraph.paragraph_two_column_with_image.field_paragraph_h2
+    - field.field.paragraph.paragraph_two_column_with_image.field_paragraph_image_single
+    - field.field.paragraph.paragraph_two_column_with_image.field_paragraph_p
+    - image.style.480px
+    - paragraphs.paragraphs_type.paragraph_two_column_with_image
+  module:
+    - image
+    - options
+id: paragraph.paragraph_two_column_with_image.default
+targetEntityType: paragraph
+bundle: paragraph_two_column_with_image
+mode: default
+content:
+  field_paragraph_float_option:
+    type: list_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_paragraph_h2:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_image_single:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: 480px
+      image_link: file
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_paragraph_p:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

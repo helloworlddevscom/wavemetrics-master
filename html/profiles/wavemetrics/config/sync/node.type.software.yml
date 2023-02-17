@@ -1,0 +1,17 @@
+uuid: 640feb71-6f53-415e-94b3-f305f57f7ce6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Software
+type: software
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

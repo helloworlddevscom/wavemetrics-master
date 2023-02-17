@@ -1,0 +1,22 @@
+uuid: fe5969b2-f2f5-4740-b039-60f60547208f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.product_cta_block_type
+    - field.storage.block_content.field_block_field_product_cta_fc
+  module:
+    - field_collection
+id: block_content.product_cta_block_type.field_block_field_product_cta_fc
+field_name: field_block_field_product_cta_fc
+entity_type: block_content
+bundle: product_cta_block_type
+label: 'Block Field - Product CTA FC'
+description: ''
+required: false
+translatable: true
+default_value:
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection

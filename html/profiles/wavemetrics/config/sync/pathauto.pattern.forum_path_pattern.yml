@@ -1,0 +1,14 @@
+uuid: 260c24fd-b404-4339-b78f-ae6e9d61d6a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - forum
+id: forum_path_pattern
+label: 'Forum Path Pattern'
+type: forum
+pattern: '/forum/[term:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

@@ -1,0 +1,24 @@
+uuid: fecb5f60-5260-4cbd-85e3-a8924066925e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_contlist_igor_user
+  module:
+    - user
+id: user.user.field_profile_contlist_igor_user
+field_name: field_profile_contlist_igor_user
+entity_type: user
+bundle: user
+label: 'I am an Igor Pro user'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

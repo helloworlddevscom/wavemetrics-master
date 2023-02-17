@@ -1,0 +1,32 @@
+{% if author_picture | render %}
+    {{ author_picture }}
+{% endif %}
+
+{% if display_submitted %}
+    <div{{ author_attributes.addClass('node__submitted') }}>
+        <p>
+            {{ date }}
+            {{ metadata }}
+        </p>
+    </div>
+{% endif %}
+
+{% if content.field_voting | render %}
+    {{ content.field_voting }}
+{% endif %}
+
+{% if content.body | render %}
+    {{ content.body }}
+{% endif %}
+
+{% if content.field_image_multiple | render %}
+    {{ content.field_image_multiple }}
+{% endif %}
+
+{% if content.field_file_attachment | render %}
+    {{ content.field_file_attachment }}
+{% endif %}
+
+{% if content.field_comments_basic | render %}
+    {{ content.field_comments_basic }}
+{% endif %}

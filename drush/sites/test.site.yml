@@ -1,0 +1,28 @@
+test:
+  host: 67.225.181.37
+  options:
+    command-specific:
+      sql-sync:
+        sanitize: false
+        no-ordered-dump: true
+        structure-tables:
+          common:
+            - cache
+            - cache_filter
+            - cache_menu
+            - cache_page
+            - history
+            - sessions
+            - watchdog
+    source-command-specific:
+      sql-sync:
+        no-cache: true
+        structure-tables-key: common
+  paths:
+    dump-dir: /home/wavemetrics/db
+    files: /home/wavemetrics/test/sites/www.wavemetrics.com/files
+  root: /home/wavemetrics/test
+  uri: www.wavemetrics.com
+  user: wavemetrics
+  ssh:
+    options: '-o PasswordAuthentication=no -i /home/vagrant/.ssh/id_rsa.pub'

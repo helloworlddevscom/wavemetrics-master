@@ -1,0 +1,19 @@
+uuid: 008e3e98-4120-4cc0-b2af-33cbd9b1239b
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_forum
+    - field.storage.comment.field_old_cid
+id: comment.comment_forum.field_old_cid
+field_name: field_old_cid
+entity_type: comment
+bundle: comment_forum
+label: 'Old CID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

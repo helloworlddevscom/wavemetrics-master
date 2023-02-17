@@ -1,0 +1,31 @@
+uuid: f9f3cd8c-e986-4610-9bc0-7b9ee76585df
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.webform_confirmation_page.field_fastspring_checkout
+    - field.field.node.webform_confirmation_page.field_image_single
+    - field.field.node.webform_confirmation_page.field_meta_tags
+    - field.field.node.webform_confirmation_page.field_paragraphs
+    - field.field.node.webform_confirmation_page.field_stripe_checkout
+    - node.type.webform_confirmation_page
+  module:
+    - user
+id: node.webform_confirmation_page.teaser
+targetEntityType: node
+bundle: webform_confirmation_page
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+  share_everywhere:
+    weight: 10
+    region: content
+hidden:
+  field_fastspring_checkout: true
+  field_image_single: true
+  field_meta_tags: true
+  field_paragraphs: true
+  field_stripe_checkout: true

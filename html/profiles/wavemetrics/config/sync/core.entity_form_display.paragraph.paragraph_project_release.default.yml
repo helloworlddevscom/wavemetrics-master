@@ -1,0 +1,161 @@
+uuid: 314211e8-d663-43ac-8a3c-a1a84579fe7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_project_release.field_paragraph_file
+    - field.field.paragraph.paragraph_project_release.field_paragraph_full_html
+    - field.field.paragraph.paragraph_project_release.field_paragraph_h2
+    - field.field.paragraph.paragraph_project_release.field_paragraph_ref_os_compat
+    - field.field.paragraph.paragraph_project_release.field_paragraph_single_link
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version_date
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version_extra
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version_major
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version_md5
+    - field.field.paragraph.paragraph_project_release.field_paragraph_version_patch
+    - paragraphs.paragraphs_type.paragraph_project_release
+  module:
+    - field_group
+    - file
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_release_file:
+      children:
+        - field_paragraph_file
+        - field_paragraph_version_md5
+        - field_paragraph_single_link
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Release File'
+      region: content
+    group_version_info:
+      children:
+        - field_paragraph_version
+        - field_paragraph_version_date
+        - group_version_number_parts
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Version Info'
+      region: content
+    group_version_number_parts:
+      children:
+        - field_paragraph_version_major
+        - field_paragraph_version_patch
+        - field_paragraph_version_extra
+      parent_name: group_version_info
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Version Number Parts'
+      region: content
+id: paragraph.paragraph_project_release.default
+targetEntityType: paragraph
+bundle: paragraph_project_release
+mode: default
+content:
+  field_paragraph_file:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_paragraph_full_html:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_paragraph_h2:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_ref_os_compat:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_paragraph_single_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_paragraph_version:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_version_date:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_timestamp
+    region: content
+  field_paragraph_version_extra:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_version_major:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_version_md5:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_version_patch:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

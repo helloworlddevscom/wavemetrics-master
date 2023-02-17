@@ -1,0 +1,22 @@
+uuid: bfb477ec-472d-4089-8779-2fce9646af1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.case_studies
+id: node.case_studies.promote
+field_name: promote
+entity_type: node
+bundle: case_studies
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,19 @@
+uuid: 39a58e22-4424-4b0f-9638-a836173af925
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+    - user
+id: user.field_profile_interests
+field_name: field_profile_interests
+entity_type: user
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

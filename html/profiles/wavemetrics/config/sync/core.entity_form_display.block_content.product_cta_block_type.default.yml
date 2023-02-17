@@ -1,0 +1,29 @@
+uuid: d33ff227-62e8-4b85-8f46-dc92f2a2f35d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.product_cta_block_type
+    - field.field.block_content.product_cta_block_type.field_block_field_product_cta_fc
+  module:
+    - field_collection
+id: block_content.product_cta_block_type.default
+targetEntityType: block_content
+bundle: product_cta_block_type
+mode: default
+content:
+  field_block_field_product_cta_fc:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

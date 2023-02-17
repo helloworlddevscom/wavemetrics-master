@@ -1,0 +1,27 @@
+uuid: 70b8393a-2d09-4ae5-92d7-d427c30f0489
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mp4_video_file
+    - node.type.prototype
+  module:
+    - file
+id: node.prototype.field_mp4_video_file
+field_name: field_mp4_video_file
+entity_type: node
+bundle: prototype
+label: 'MP4 Video File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: video-files
+  file_extensions: mp4
+  max_filesize: '50 MB'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

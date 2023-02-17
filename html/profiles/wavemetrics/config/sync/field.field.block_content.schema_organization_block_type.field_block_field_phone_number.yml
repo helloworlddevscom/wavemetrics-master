@@ -1,0 +1,19 @@
+uuid: 5c671da2-e1f0-473e-9d35-a06e7323acb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.schema_organization_block_type
+    - field.storage.block_content.field_block_field_phone_number
+id: block_content.schema_organization_block_type.field_block_field_phone_number
+field_name: field_block_field_phone_number
+entity_type: block_content
+bundle: schema_organization_block_type
+label: 'Block Field - Phone Number'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
